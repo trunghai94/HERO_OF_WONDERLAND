@@ -20,7 +20,7 @@ public class enemyController : MonoBehaviour
     EnemyStat stat;
 
     public GameObject attackBox;
-
+    
 
     
     private float cooldown = 10f;
@@ -31,6 +31,7 @@ public class enemyController : MonoBehaviour
         target = playerManager.instance.Player.transform;
         agent = GetComponent<NavMeshAgent>();
         stat = GetComponent<EnemyStat>();
+        
     }
 
 
@@ -66,11 +67,16 @@ public class enemyController : MonoBehaviour
                 attackBox.GetComponent<Collider>().enabled = true;
                 animator.SetBool("isMoving", false);
                 animator.SetBool("isAttack", true);
-
+                
+                
+                
+                
             }
-            else
+            else 
             {
                 isAttacking = false;
+                
+                
             }
         }
         else
