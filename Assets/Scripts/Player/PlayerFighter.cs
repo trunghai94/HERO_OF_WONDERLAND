@@ -44,15 +44,15 @@ public class PlayerFighter : MonoBehaviour
         }
         if(Time.time > nextFireTime)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetAxis("Fire1") > 0)
             {
                 OnClick();
             }
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetAxis("Fire2") > 0)
             {
                 anim.SetBool("Defend",true);
             }
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetAxis("Fire2") == 0)
             {
                 anim.SetBool("Defend", false);
             }

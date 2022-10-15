@@ -1,11 +1,11 @@
-Shader "Hovl/Particles/Lit_CenterGlow"
+Shader "ERB/Particles/Lit_CenterGlow"
 {
 	Properties
 	{
-		_MainTex("MainTex", 2D) = "white" {}
 		_Color("Color", Color) = (1,1,1,1)
-		_Emission("Emission", Float) = 1.2
+		_MainTex("MainTex", 2D) = "white" {}
 		_Metallic("Metallic", Range( 0 , 1)) = 0
+		_Emission("Emission", Float) = 1.2
 		_Smoothness("Smoothness", Range( 0 , 1)) = 0.2
 		[HideInInspector] _texcoord( "", 2D ) = "white" {}
 		[HideInInspector] __dirty( "", Int ) = 1
