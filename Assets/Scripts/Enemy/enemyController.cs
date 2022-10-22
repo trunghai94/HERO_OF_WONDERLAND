@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+
 
 [RequireComponent(typeof(EnemyStat))]
 public class enemyController : MonoBehaviour
 {
+
     [SerializeField]
     private float lookRadius = 10f;
     [SerializeField]
@@ -20,11 +23,11 @@ public class enemyController : MonoBehaviour
     EnemyStat stat;
 
     public GameObject attackBox;
-    
 
-    
+    public Image Hpbar;
+
     private float cooldown = 10f;
-    private bool hitting;
+    private bool die = false;
 
     void Start()
     {
@@ -37,11 +40,11 @@ public class enemyController : MonoBehaviour
 
     void Update()
     {
-        
+        Hpbar.fillAmount = stat.currentHeath / stat.maxHeath;
         float distance = Vector3.Distance(target.position, transform.position);
         agent.speed = 0;
 
-        if (distance <= lookRadius && distance>agent.stoppingDistance)
+        if (distance <= lookRadius && distance>agent.stoppingDistance && !die)
         {
             agent.speed = moveSpeed;
             agent.SetDestination(target.position);
@@ -66,6 +69,7 @@ public class enemyController : MonoBehaviour
                 isAttacking = true;
                 attackBox.GetComponent<Collider>().enabled = true;
                 animator.SetBool("isMoving", false);
+                StartCoroutine(AttackCooldown());
                 animator.SetBool("isAttack", true);
                 
                 
@@ -86,6 +90,17 @@ public class enemyController : MonoBehaviour
             isAttacking = false;
         }
 
+        if(stat.currentHeath <= 0)
+        {
+            die = true;
+            moveSpeed = 0;
+            attackBox.GetComponent<Collider>().enabled = false;
+            
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            stat.TakeDmg(10);
+        }
     }
 
 
@@ -102,7 +117,7 @@ public class enemyController : MonoBehaviour
         {
             
 
-                stat.DealDmg(target.gameObject);
+                stat.DealDmg(other.gameObject);
                 Debug.Log("danh trung");
                 StartCoroutine(AttackCooldown());
             
@@ -113,7 +128,7 @@ public class enemyController : MonoBehaviour
     {
         if (other.gameObject == playerManager.instance.Player.gameObject)
         {
-            hitting = false;
+            
         }
     }
 
