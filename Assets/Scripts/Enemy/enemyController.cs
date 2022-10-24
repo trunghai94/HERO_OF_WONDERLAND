@@ -118,7 +118,7 @@ public class enemyController : MonoBehaviour
             
 
                 stat.DealDmg(other.gameObject);
-                Debug.Log("danh trung");
+                Debug.Log("mau con");
                 StartCoroutine(AttackCooldown());
             
             
