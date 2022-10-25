@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/enemy/Animations_Enemies/Gloom/Gloom.FBX.meta
 guid: 12ff6261fcd80b44fac100f2319a377a
+========
+<<<<<<< HEAD
+guid: 4e9fa02dc311cdd4b894ae688e038b2e
+=======
+guid: 85d967231fc144a61a1b11521f814eeb
+>>>>>>> main
+>>>>>>>> main:Assets/Mesh/Enemy/ChestMonsterPBRMesh.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []

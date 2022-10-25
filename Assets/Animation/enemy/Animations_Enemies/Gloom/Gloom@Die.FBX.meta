@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/enemy/Animations_Enemies/Gloom/Gloom@Die.FBX.meta
 guid: 92d0cfd699ee29b4f9e03d5c5ec850e4
+========
+guid: e3eeb00ae8257cf4b880fa899aaf3db3
+>>>>>>>> main:Assets/Animation/enemy/Animations_Enemies/Gloom/Gloom@Cast Spell.FBX.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:

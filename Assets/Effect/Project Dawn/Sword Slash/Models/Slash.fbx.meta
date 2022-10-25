@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Effect/Project Dawn/Sword Slash/Models/Slash.fbx.meta
 guid: 59efb54c9f2555c48aeb64375584be17
+=======
+<<<<<<< HEAD
+guid: be4228dc1a9b97443992fa8a595fbc00
+=======
+guid: 67a85791d595045d68698910fd7a65a5
+>>>>>>> main
+>>>>>>> main:Assets/Mesh/Enemy/BeholderPBRMesh.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []

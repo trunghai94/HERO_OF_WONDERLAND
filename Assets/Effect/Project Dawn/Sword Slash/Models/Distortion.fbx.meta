@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Effect/Project Dawn/Sword Slash/Models/Distortion.fbx.meta
 guid: 1fd442787753b35499fe5d441f3b3c61
+=======
+<<<<<<< HEAD
+guid: b8268144cd852eb40b89e34dd62ae964
+=======
+guid: 132cb9235a9e748919d209b9ad745a80
+>>>>>>> main
+>>>>>>> main:Assets/Mesh/Enemy/BeholderMesh.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []

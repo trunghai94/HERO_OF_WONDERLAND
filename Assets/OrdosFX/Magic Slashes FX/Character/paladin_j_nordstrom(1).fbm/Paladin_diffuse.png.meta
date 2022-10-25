@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/OrdosFX/Magic Slashes FX/Character/paladin_j_nordstrom(1).fbm/Paladin_diffuse.png.meta
 guid: 39e2c78bbeb0a0f4594b6dbf71435a02
+========
+guid: 2991486a235011d41bbaf8d47dd3dbb5
+>>>>>>>> main:Assets/UI/HP Bar/BACK_XpBar.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

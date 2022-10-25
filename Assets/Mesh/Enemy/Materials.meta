@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<<< HEAD:Assets/Effect/Project Dawn/Sword Slash.meta
 guid: 8381a630ccf600e42988328451e81adb
 ========
 guid: abaf4171fd223b049885f6e1ef22ec03
 >>>>>>>> main:Assets/Mesh/Enemy/Materials.meta
+=======
+guid: abaf4171fd223b049885f6e1ef22ec03
+>>>>>>> main
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

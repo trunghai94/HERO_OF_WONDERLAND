@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Texture/Textures_Enemy/Wraith/FX Aura.psd.meta
 guid: 173ea14c65a97664ea8e562028bbc5b8
+========
+guid: 4f14c8b0becc20b40bc0718fe3a97e4d
+>>>>>>>> main:Assets/UI/HP Bar/HeartIcon.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

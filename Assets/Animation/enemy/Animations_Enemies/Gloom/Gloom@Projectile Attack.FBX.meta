@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<<< HEAD:Assets/Effect/Project Dawn/Sword Slash/Demo/Paladin.fbx.meta
 guid: b0be6863bfad4a34c930cced900b1ef2
+=======
+<<<<<<<< HEAD:Assets/Animation/enemy/Animations_Enemies/Gloom/Gloom@Cast Spell.FBX.meta
+guid: e3eeb00ae8257cf4b880fa899aaf3db3
+>>>>>>> main
 ========
 guid: 258f105e7326dd14781d0e733f8a40be
 >>>>>>>> main:Assets/Animation/enemy/Animations_Enemies/Gloom/Gloom@Projectile Attack.FBX.meta
@@ -10,9 +15,12 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
+<<<<<<< HEAD
   - first:
       74: -203655887218126122
     second: Attack
+=======
+>>>>>>> main
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -40,6 +48,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
+<<<<<<< HEAD
     clipAnimations:
     - serializedVersion: 16
       name: Attack
@@ -70,6 +79,9 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+=======
+    clipAnimations: []
+>>>>>>> main
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -133,9 +145,16 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+<<<<<<< HEAD
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: ClipVersion=5,
+=======
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+>>>>>>> main
   assetBundleName: 
   assetBundleVariant: 

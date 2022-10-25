@@ -5,18 +5,22 @@ using UnityEngine.UI;
 
 public class PlayerStats : BaseStatSystem
 {
-    public Slider Hp;
-
+    public Image Hp;
+    
     private void Start()
     {
-        Hp.maxValue = maxHeath;
         
+        
+        caculatorStats(level);
     }
     private void Update()
     {
-        Hp.value = currentHeath;
+        
+        Hp.fillAmount = currentHeath / maxHeath;
+        
     }
 
+    
 
 
 }

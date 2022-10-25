@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/enemy/Animations_Enemies/Gloom/Gloom@Head Attack.FBX.meta
 guid: 874b351a5b6a7ae43bac2798a0840f74
+========
+guid: 92d0cfd699ee29b4f9e03d5c5ec850e4
+>>>>>>>> main:Assets/Animation/enemy/Animations_Enemies/Gloom/Gloom@Die.FBX.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:

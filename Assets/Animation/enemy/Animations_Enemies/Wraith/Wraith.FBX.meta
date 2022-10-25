@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/enemy/Animations_Enemies/Wraith/Wraith.FBX.meta
 guid: 3739c082c4e17224e9e58b41bc862c4e
+========
+<<<<<<< HEAD
+guid: 3dd2168facba33a45909df952bb6a10b
+=======
+guid: 9a90a63068acc49519300e8eccd2c706
+>>>>>>> main
+>>>>>>>> main:Assets/Mesh/Enemy/ChestMonsterMesh.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
