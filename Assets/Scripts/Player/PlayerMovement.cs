@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         cam = Camera.main.transform;
+        
     }
 
     // Update is called once per frame
@@ -95,6 +96,12 @@ public class PlayerMovement : MonoBehaviour
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.E))
         {
             SpawnShield.instance.spawnShied();
+        }
+        if (characterController.isGrounded && Input.GetKeyDown(KeyCode.R))
+        {
+            animator.SetTrigger("Tornado");
+            SwordAttack.instance.TornadoAttack();
+            StartCoroutine(DelayMove());
         }
     }
 

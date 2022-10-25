@@ -6,6 +6,8 @@ public class SwordAttack : MonoBehaviour
 {
     public static SwordAttack instance;
     public float delayToDestroy = 5;
+    public GameObject StartTornado;
+    public GameObject tornadoAttack;
     public GameObject swordAttack;
     public GameObject swordAirAttack;
 
@@ -15,6 +17,12 @@ public class SwordAttack : MonoBehaviour
         instance = this;
     }
 
+    public void TornadoAttack()
+    {
+        var tornadoVfx = Instantiate(tornadoAttack, StartTornado.transform) as GameObject;
+        tornadoVfx.transform.SetParent(StartTornado.transform);
+        Destroy(tornadoVfx, delayToDestroy);
+    }
     public void SwordAirAttack()
     {
         var swordAirVfx = Instantiate(swordAirAttack,this.transform) as GameObject;
