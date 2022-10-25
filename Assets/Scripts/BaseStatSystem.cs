@@ -12,7 +12,9 @@ public class BaseStatSystem : MonoBehaviour
 
     private void Awake()
     {
+        caculatorStats(level);
         currentHeath = maxHeath;
+
         
     }
 
@@ -27,6 +29,7 @@ public class BaseStatSystem : MonoBehaviour
         str -= agi.getValue();
         str = Mathf.Clamp(str, 0 ,int.MaxValue);
         currentHeath -= str;
+        currentHeath = Mathf.Clamp(currentHeath, 0 ,int.MaxValue);
         Debug.Log(transform.name +"get" + str + "damages.");
         Debug.Log(transform.name + "con" + currentHeath + "HP");
         if (currentHeath <= 0)
