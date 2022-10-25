@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed = 1f;
+    private float moveSpeed = 5f;
     [SerializeField]
     private float jump = 0;
 
@@ -15,8 +15,9 @@ public class PlayerMovement : MonoBehaviour
     private float verticalVelocity = 10f;
     private CharacterController characterController;
     private Animator animator;
+    private float Sprint = 1f;
+    private bool Delay = false;
 
-    
     public bool isSprint;
 
     void Start()
@@ -38,7 +39,25 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         isSprint = Input.GetKey(KeyCode.LeftShift);
-        float sprint = isSprint ? 3f : 1f;
+        if(isSprint == true)
+        {
+            if(Delay == false)
+            {
+                Sprint = 4f;
+                StartCoroutine(DelaySprint());
+            }
+            else
+            {
+                isSprint = false;
+                Sprint = 1f;
+                StartCoroutine(PlaySprint());
+            }
+        }
+        else
+        {
+            Sprint = 1f;
+        }
+        //float sprint = isSprint ? 3f : 1f;
         animator.SetBool("isSprint", isSprint);
 
         Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
@@ -60,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         moveDirection = cam.TransformDirection(moveDirection);
-        moveDirection = new Vector3(moveDirection.x * moveSpeed * sprint, verticalVelocity, moveDirection.z * moveSpeed * sprint);
+        moveDirection = new Vector3(moveDirection.x * moveSpeed * Sprint, verticalVelocity, moveDirection.z * moveSpeed * Sprint);
         characterController.Move(moveDirection * Time.deltaTime);
     }
 
@@ -68,12 +87,32 @@ public class PlayerMovement : MonoBehaviour
     {
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Q))
         {
+            moveSpeed = 0f;
             animator.SetTrigger("SwordAir");
             SwordAttack.instance.SwordAirAttack();
+            StartCoroutine(DelayMove());
         }
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.E))
         {
             SpawnShield.instance.spawnShied();
         }
+    }
+
+    IEnumerator DelaySprint()
+    {
+        yield return new WaitForSeconds(3f);
+        Delay = true;
+    }
+
+    IEnumerator PlaySprint()
+    {
+        yield return new WaitForSeconds(5f);
+        Delay = false;
+    }
+
+    IEnumerator DelayMove()
+    {
+        yield return new WaitForSeconds(3f);
+        moveSpeed = 5f;
     }
 }
