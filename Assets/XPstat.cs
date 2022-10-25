@@ -118,6 +118,6 @@ public class XPstat : MonoBehaviour
     public float CaculatorXPgain(int enemylvl)
     {
         XP = 1 * Mathf.Pow(enemylvl,2) - (1 * enemylvl);
-        return XP / 4;
+        return XP / level;
     }
 }
