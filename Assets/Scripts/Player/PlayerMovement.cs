@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement instance;
     [SerializeField]
-    private float moveSpeed = 5f;
+    private float moveSpeed = 0f;
     [SerializeField]
-    private float jump = 0;
+    private float jump = 0f;
 
     private Transform cam;
     private float gravity = 9.81f;
     private float verticalVelocity = 10f;
     private CharacterController characterController;
     private Animator animator;
+    private PlayerStats stat;
     private float Sprint = 1f;
     private bool Delay = false;
 
@@ -24,8 +26,10 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        stat = GetComponent<PlayerStats>();
         cam = Camera.main.transform;
-        
+        animator.fireEvents = false;
+        instance = this;
     }
 
     // Update is called once per frame
@@ -68,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         if (characterController.isGrounded)
         {
             animator.SetBool("isJump", false);
-            if (Input.GetAxis("Jump") > 0)
+            if (Input.GetAxis("Jump") != 0)
             {
                 verticalVelocity = jump;
                 animator.SetBool("isJump", true);
@@ -77,6 +81,11 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             verticalVelocity -= gravity * Time.deltaTime;
+        }
+
+        if(stat.currentHeath <= 0)
+        {
+            moveSpeed = 0f;
         }
 
         moveDirection = cam.TransformDirection(moveDirection);
@@ -91,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = 0f;
             animator.SetTrigger("SwordAir");
             SwordAttack.instance.SwordAirAttack();
-            StartCoroutine(DelayMove());
+            StartCoroutine(DelayMove(3f));
         }
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.E))
         {
@@ -99,9 +108,24 @@ public class PlayerMovement : MonoBehaviour
         }
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.R))
         {
+            moveSpeed = 0f;
             animator.SetTrigger("Tornado");
             SwordAttack.instance.TornadoAttack();
-            StartCoroutine(DelayMove());
+            StartCoroutine(DelayMove(3f));
+        }
+        if (characterController.isGrounded && Input.GetKeyDown(KeyCode.T))
+        {
+            moveSpeed = 0f;
+            animator.SetTrigger("Wave");
+            SwordAttack.instance.WaveFireAttack();
+            StartCoroutine(DelayMove(3.5f));
+        }
+        if (characterController.isGrounded && Input.GetKeyDown(KeyCode.F))
+        {
+            moveSpeed = 0f;
+            animator.SetTrigger("BirdLight");
+            SwordAttack.instance.BirdLightAttack();
+            StartCoroutine(DelayMove(1f));
         }
     }
 
@@ -117,9 +141,9 @@ public class PlayerMovement : MonoBehaviour
         Delay = false;
     }
 
-    IEnumerator DelayMove()
+    IEnumerator DelayMove(float delay)
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(delay);
         moveSpeed = 5f;
     }
 }

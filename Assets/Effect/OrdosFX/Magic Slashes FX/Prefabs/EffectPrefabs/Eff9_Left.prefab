@@ -4833,7 +4833,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 3776b8503520a604b89169d567fd7d4c, type: 2}
-  - {fileID: 2100000, guid: 3776b8503520a604b89169d567fd7d4c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4895,6 +4894,7 @@ GameObject:
   - component: {fileID: 4479663830067502}
   - component: {fileID: 108121163847636884}
   - component: {fileID: 114111105694393718}
+  - component: {fileID: 6684079972546845090}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -5057,6 +5057,26 @@ MonoBehaviour:
   GraphIntensityMultiplier: 3
   IsLoop: 0
   canUpdate: 0
+--- !u!114 &6684079972546845090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416436349899224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1548188886767720
 GameObject:
   m_ObjectHideFlags: 0
@@ -9888,7 +9908,6 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a15a712eb9fd3648ae20a72d1eb84a7, type: 2}
   - {fileID: 2100000, guid: 0a15a712eb9fd3648ae20a72d1eb84a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -14790,7 +14809,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 61f3d79d0820c1a4387f0b45233db483, type: 2}
-  - {fileID: 2100000, guid: 61f3d79d0820c1a4387f0b45233db483, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16383,7 +16401,7 @@ ParticleSystem:
     sprites:
     - sprite: {fileID: 0}
     flipU: 0
-    flipV: 0.5
+    flipV: 0
   VelocityModule:
     enabled: 0
     x:
@@ -19673,7 +19691,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 68db281e55dd04345847019a942d7a88, type: 2}
-  - {fileID: 2100000, guid: 68db281e55dd04345847019a942d7a88, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19707,7 +19724,7 @@ ParticleSystemRenderer:
   m_ShadowBias: 0
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
-  m_Flip: {x: 0, y: 0, z: 0}
+  m_Flip: {x: 0, y: 0.5, z: 0}
   m_UseCustomVertexStreams: 1
   m_EnableGPUInstancing: 0
   m_ApplyActiveColorSpace: 0

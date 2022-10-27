@@ -21,13 +21,14 @@ public class XPstat : MonoBehaviour
     public Image backXPBar;
     [Header("Mutilplier")]
     [Range(1f, 300f)]
-    public float additionMutiplier = 300;
+    public float additionMutiplier = 300f;
     [Range(2f, 4f)]
-    public float powerMutiplier = 2;
+    public float powerMutiplier = 2f;
     [Range(7f, 14f)]
-    public float divisionMutiplier = 7;
+    public float divisionMutiplier = 7f;
     public float XP;
     public TMP_Text textlV;
+
     public void Start()
     {
         //enemy = GetComponent<EnemyStat>();
@@ -36,7 +37,6 @@ public class XPstat : MonoBehaviour
         requireXP = CaculatorXP();
         player=GetComponent<PlayerStats>();
         player.level = level;
-        
     }
 
     public void Update()
@@ -65,10 +65,10 @@ public class XPstat : MonoBehaviour
         {
             delayTimer += Time.deltaTime;
             backXPBar.fillAmount = xpFaction;
-            if (delayTimer > 3)
+            if (delayTimer > 3f)
             {
                 lerpTimer += Time.deltaTime;
-                float percentComplete = lerpTimer / 4;
+                float percentComplete = lerpTimer / 4f;
                 frontXPBar.fillAmount = Mathf.Lerp(FXP, backXPBar.fillAmount, percentComplete);
             }
         }
@@ -77,31 +77,29 @@ public class XPstat : MonoBehaviour
     public void GainXPFlatRate(float xpGained)
     {
         currentXP += xpGained;
-        lerpTimer = 0;
+        lerpTimer = 0f;
     }
 
     public void GainXPScalatable(float xpGained, int passedLevel)
     {
         if (passedLevel < level)
         {
-            float multiplier = 1 + (level - passedLevel) * 0.1f;
+            float multiplier = 1f + (level - passedLevel) * 0.1f;
             currentXP += xpGained * multiplier;
-
         }
         else
         {
             currentXP += xpGained;
-
         }
-        lerpTimer = 0;
-        delayTimer = 0;
+        lerpTimer = 0f;
+        delayTimer = 0f;
     }
 
     public void LevelUp()
     {
         level++;
-        frontXPBar.fillAmount = 0;
-        backXPBar.fillAmount = 0;
+        frontXPBar.fillAmount = 0f;
+        backXPBar.fillAmount = 0f;
         currentXP = Mathf.RoundToInt(currentXP - requireXP);
         requireXP = CaculatorXP();
     }
