@@ -7,7 +7,7 @@ public class SpawnShieldRipples : MonoBehaviour
 {
     public GameObject shieldRipples;  
 
-    private VisualEffect shieldRipplesVFX;  
+    private VisualEffect shieldRipplesVFX;
 
     private void OnCollisionEnter(Collision co)
     {
@@ -16,7 +16,6 @@ public class SpawnShieldRipples : MonoBehaviour
             var ripples = Instantiate(shieldRipples, transform) as GameObject;
             shieldRipplesVFX = ripples.GetComponent<VisualEffect>();
             shieldRipplesVFX.SetVector3("SphereCenter", co.contacts[0].point);
-
             Destroy(ripples, 2);
         }
     }

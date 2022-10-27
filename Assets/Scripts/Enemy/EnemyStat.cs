@@ -8,16 +8,17 @@ public class EnemyStat : BaseStatSystem
     public Animator animator;
     
     XPstat GetXPstat;
-    private bool die= false;
+    private bool die = false;
     private bool dead = false;
 
     private float delay = 6f;
+
     private void Start()
     {
         GetXPstat = playerManager.instance.Player.GetComponent<XPstat>();
         caculatorStats(level);
-
     }
+
     private void Update()
     {
         if (die && !dead)
@@ -26,16 +27,12 @@ public class EnemyStat : BaseStatSystem
             GetXPstat.GainXPFlatRate(GetXPstat.CaculatorXPgain(level));
             dead = true;
             Destroy(gameObject, 5f);
-            
         }
     }
-
-    
 
     public override void Die()
     {
         die=true;
         base.Die();
-        
     }
 }

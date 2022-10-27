@@ -14,8 +14,6 @@ public class BaseStatSystem : MonoBehaviour
     {
         caculatorStats(level);
         currentHeath = maxHeath;
-
-        
     }
 
     private void Update()
@@ -35,7 +33,6 @@ public class BaseStatSystem : MonoBehaviour
         if (currentHeath <= 0)
         {
             Die();
-            
         }
     }
 
@@ -45,10 +42,8 @@ public class BaseStatSystem : MonoBehaviour
         
         if(atm != null)
         {
-            
             atm.TakeDmg(str.getValue());
         }
-          
     }
 
     public void regen(float HPregen)
@@ -56,11 +51,12 @@ public class BaseStatSystem : MonoBehaviour
         currentHeath += HPregen;
         currentHeath = Mathf.Clamp(currentHeath, 0, maxHeath);
     }
+
     public virtual void Die()
     {
-
         Debug.Log(transform.name + "died.");
     }
+
     public void caculatorStats(int level)
     {
         int LVL = Mathf.Clamp(level - 1, 1,int.MaxValue);

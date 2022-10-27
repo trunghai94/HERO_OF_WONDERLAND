@@ -336,6 +336,8 @@ GameObject:
   - component: {fileID: 1259830707704670813}
   - component: {fileID: 1259830707704670810}
   - component: {fileID: 1887010400133574896}
+  - component: {fileID: 102559810806178384}
+  - component: {fileID: 5510335666619192774}
   m_Layer: 0
   m_Name: ModularCharacter
   m_TagString: Player
@@ -362,6 +364,8 @@ Transform:
   - {fileID: 2330809708292529460}
   - {fileID: 2317114880431192938}
   - {fileID: 3991393076620636744}
+  - {fileID: 6435592793849724023}
+  - {fileID: 5679967139954658240}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -589,8 +593,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayToDestroy: 5
+  waveAttack: {fileID: 0}
+  birdLightAttack: {fileID: 0}
+  tornadoAttack: {fileID: 1646871050452766, guid: 95b3ea755bc01f344a99fccc5f4702f8, type: 3}
   swordAttack: {fileID: 1529907042512856, guid: ffef45a79ddad9c48a486d763f114750, type: 3}
   swordAirAttack: {fileID: 1303666379773578, guid: 5d66692c1b381a64a8306b0f6d8b92f7, type: 3}
+  StartTornado: {fileID: 7942881551417608784}
+  StartWave: {fileID: 0}
+--- !u!114 &102559810806178384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259830707704670788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653596eaf25c42c46992cc2a16932c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  currentXP: 0
+  requireXP: 0
+  frontXPBar: {fileID: 0}
+  backXPBar: {fileID: 0}
+  additionMutiplier: 300
+  powerMutiplier: 2
+  divisionMutiplier: 7
+  XP: 0
+  textlV: {fileID: 0}
+--- !u!114 &5510335666619192774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259830707704670788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf15f1c5ece50c945b9523c0eb4fb776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHeath: 0
+  basicHP: 100
+  level: 0
+  str:
+    baseValue: 0
+  agi:
+    baseValue: 0
+  Hp: {fileID: 0}
+--- !u!1 &1296308702051768550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5679967139954658240}
+  m_Layer: 0
+  m_Name: StartEffectWaveFire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5679967139954658240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296308702051768550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1887010400133574910}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1492873302401173095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,7 +1482,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3991393076620636744}
-  - component: {fileID: 3991393076620636747}
   m_Layer: 0
   m_Name: MeshTrailTut
   m_TagString: Untagged
@@ -1423,19 +1504,6 @@ Transform:
   m_Father: {fileID: 1887010400133574910}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3991393076620636747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3991393076620636745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cffa77a92a38fc41b83cec5a0a1be51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Inventory: {fileID: 0}
 --- !u!1 &3991393077365704740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,14 +2227,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4811161063652907167}
-  m_LocalRotation: {x: -0.49840647, y: 0.50158846, z: -0.49840647, w: 0.50158846}
-  m_LocalPosition: {x: 0, y: 0.9140077, z: 0.01866436}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1887010400133574910}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
 --- !u!1 &5100258892873539582
 GameObject:
   m_ObjectHideFlags: 0
@@ -3174,6 +3242,37 @@ Transform:
   m_Father: {fileID: 3704042797721184307}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7942881551417608784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435592793849724023}
+  m_Layer: 0
+  m_Name: StartEffectTornado
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435592793849724023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7942881551417608784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1887010400133574910}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8010352582061428722
 GameObject:
   m_ObjectHideFlags: 0
@@ -3252,6 +3351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayToDestroy: 5
+  energyVFX: {fileID: 1148156256932182, guid: 28a4398affc61c34b9d35ff05a71c011, type: 3}
   shieldVFX: {fileID: 7134693753853045369, guid: eb55c9e199c43b543b63194735ad53ed, type: 3}
   groundCrack: {fileID: 1159970587636746, guid: e7473d9620ab29341b98bf21b400e598, type: 3}
   shieldOffset: {x: 0, y: 0, z: 0}

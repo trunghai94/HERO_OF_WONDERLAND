@@ -34,9 +34,7 @@ public class enemyController : MonoBehaviour
         target = playerManager.instance.Player.transform;
         agent = GetComponent<NavMeshAgent>();
         stat = GetComponent<EnemyStat>();
-        
     }
-
 
     void Update()
     {
@@ -49,13 +47,10 @@ public class enemyController : MonoBehaviour
             agent.speed = moveSpeed;
             agent.SetDestination(target.position);
             animator.SetBool("isMoving", true);
-            
-
-           
         }
         else if(distance > lookRadius && distance > agent.stoppingDistance)
         {
-            agent.speed = 0;
+            agent.speed = 0f;
             animator.SetBool("isMoving",false);
             animator.SetBool("isAttack", false);
         }
@@ -71,21 +66,14 @@ public class enemyController : MonoBehaviour
                 animator.SetBool("isMoving", false);
                 StartCoroutine(AttackCooldown());
                 animator.SetBool("isAttack", true);
-                
-                
-                
-                
             }
             else 
             {
                 isAttacking = false;
-                
-                
             }
         }
         else
         {
-
             animator.SetBool("isAttack", false);
             isAttacking = false;
         }
@@ -93,9 +81,8 @@ public class enemyController : MonoBehaviour
         if(stat.currentHeath <= 0)
         {
             die = true;
-            moveSpeed = 0;
+            moveSpeed = 0f;
             attackBox.GetComponent<Collider>().enabled = false;
-            
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -115,13 +102,10 @@ public class enemyController : MonoBehaviour
     {
         if (other.gameObject == playerManager.instance.Player.gameObject)
         {
-            
-
                 stat.DealDmg(other.gameObject);
+                PlayerMovement.instance.GetComponent<Animator>().SetTrigger("Hit");
                 Debug.Log("mau con");
                 StartCoroutine(AttackCooldown());
-            
-            
         }
     }
     private void OnTriggerExit(Collider other)
@@ -134,11 +118,8 @@ public class enemyController : MonoBehaviour
 
     IEnumerator AttackCooldown()
     {
-        
         yield return new WaitForSeconds(cooldown);
-        
     }
-
 
     private void OnDrawGizmosSelected()
     {
