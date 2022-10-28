@@ -12,7 +12,8 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetStarQuality();
+        SetStarVolume();
     }
 
     public void ResumeGame()
@@ -45,9 +46,28 @@ public class GameManager : Singleton<GameManager>
     private void SetStarVolume()
     {
 
+        if (!PlayerPrefs.HasKey(CONSTANT.PP_VOLUME))
+        {
+            PlayerPrefs.SetFloat(CONSTANT.PP_VOLUME, CONSTANT.DEFAULT_VOLUME);
+            AudioListener.volume = CONSTANT.DEFAULT_VOLUME;
+        }
+        else
+        {
+            float volume = PlayerPrefs.GetFloat(CONSTANT.PP_VOLUME);
+            AudioListener.volume = volume;
+        }
     }
     private void SetStarQuality()
     {
-
+        if (!PlayerPrefs.HasKey(CONSTANT.PP_QUALITY))
+        {
+            PlayerPrefs.SetFloat(CONSTANT.PP_QUALITY, CONSTANT.DEFAULT_QUALITY);
+            QualitySettings.SetQualityLevel(CONSTANT.DEFAULT_QUALITY);
+        }
+        else
+        {
+            int QualityIndex = PlayerPrefs.GetInt(CONSTANT.PP_QUALITY);
+            QualitySettings.SetQualityLevel(QualityIndex);
+        }
     }
 }
