@@ -5,18 +5,30 @@ using UnityEngine.UI;
 
 public class PlayerStats : BaseStatSystem
 {
-    public Slider Hp;
+    public Image Hp;
+    private Animator animator;
+    private bool die = false;
+    private bool dead = false;
 
     private void Start()
     {
-        Hp.maxValue = maxHeath;
-        
+        caculatorStats(level);
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
-        Hp.value = currentHeath;
+        Hp.fillAmount = currentHeath / maxHeath;
+        if (die && !dead)
+        {
+            animator.SetTrigger("Died");
+            dead = true;
+            //Destroy(gameObject, 5f);
+        }
     }
 
-
-
+    public override void Die()
+    {
+        die = true;
+        base.Die();
+    }
 }

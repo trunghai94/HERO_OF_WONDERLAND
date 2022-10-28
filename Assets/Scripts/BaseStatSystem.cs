@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class BaseStatSystem : MonoBehaviour
 {
-    public float maxHeath = 100f;
+    public float maxHeath;
+    public float basicHP;
+    public int level;
     public float currentHeath { get; private set; }
 
     public StatSystem str;
@@ -10,12 +12,13 @@ public class BaseStatSystem : MonoBehaviour
 
     private void Awake()
     {
+        caculatorStats(level);
         currentHeath = maxHeath;
     }
 
     private void Update()
     {
-            
+        
     }
 
 
@@ -24,8 +27,10 @@ public class BaseStatSystem : MonoBehaviour
         str -= agi.getValue();
         str = Mathf.Clamp(str, 0 ,int.MaxValue);
         currentHeath -= str;
+        currentHeath = Mathf.Clamp(currentHeath, 0 ,int.MaxValue);
         Debug.Log(transform.name +"get" + str + "damages.");
-        if(currentHeath <= 0)
+        Debug.Log(transform.name + "con" + currentHeath + "HP");
+        if (currentHeath <= 0)
         {
             Die();
         }
@@ -37,14 +42,25 @@ public class BaseStatSystem : MonoBehaviour
         
         if(atm != null)
         {
-            
             atm.TakeDmg(str.getValue());
         }
-          
     }
+
+    public void regen(float HPregen)
+    {
+        currentHeath += HPregen;
+        currentHeath = Mathf.Clamp(currentHeath, 0, maxHeath);
+    }
+
     public virtual void Die()
     {
-
         Debug.Log(transform.name + "died.");
+    }
+
+    public void caculatorStats(int level)
+    {
+        int LVL = Mathf.Clamp(level - 1, 1,int.MaxValue);
+        maxHeath =basicHP + ((10 * LVL) / Mathf.Sqrt(LVL));
+        Debug.Log("max heath: " + maxHeath);
     }
 }
