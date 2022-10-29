@@ -15,16 +15,18 @@ public class PlayerMovement : MonoBehaviour
     private float gravity = 9.81f;
     private float verticalVelocity = 10f;
     private CharacterController characterController;
+    private CharacterAiming aiming;
     private Animator animator;
     private PlayerStats stat;
     private float Sprint = 1f;
     private bool Delay = false;
-
+    
     public bool isSprint;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        aiming = GetComponent<CharacterAiming>();
         animator = GetComponent<Animator>();
         stat = GetComponent<PlayerStats>();
         cam = Camera.main.transform;
@@ -43,6 +45,10 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+        Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
+        animator.SetFloat("InputX", horizontalInput);
+        animator.SetFloat("InputY", verticalInput);
+
         isSprint = Input.GetKey(KeyCode.LeftShift);
         if(isSprint == true)
         {
@@ -65,10 +71,6 @@ public class PlayerMovement : MonoBehaviour
         //float sprint = isSprint ? 3f : 1f;
         animator.SetBool("isSprint", isSprint);
 
-        Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
-        animator.SetFloat("InputX", horizontalInput);
-        animator.SetFloat("InputY", verticalInput);
-
         if (characterController.isGrounded)
         {
             animator.SetBool("isJump", false);
@@ -82,9 +84,10 @@ public class PlayerMovement : MonoBehaviour
         {
             verticalVelocity -= gravity * Time.deltaTime;
         }
-
-        if(stat.currentHeath <= 0)
+        
+        if (stat.currentHeath <= 0)
         {
+            aiming.enabled = false;
             moveSpeed = 0f;
         }
 
