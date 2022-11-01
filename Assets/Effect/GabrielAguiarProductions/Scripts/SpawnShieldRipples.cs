@@ -5,13 +5,13 @@ using UnityEngine.VFX;
 
 public class SpawnShieldRipples : MonoBehaviour
 {
-    public GameObject shieldRipples;  
+    public GameObject shieldRipples;
 
     private VisualEffect shieldRipplesVFX;
 
     private void OnCollisionEnter(Collision co)
     {
-        if (co.gameObject.tag == "Bullet")
+        if (co.gameObject.tag == "Bullet" || co.gameObject.tag == "Enemy")
         {
             var ripples = Instantiate(shieldRipples, transform) as GameObject;
             shieldRipplesVFX = ripples.GetComponent<VisualEffect>();

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 198253971608474962}
   - component: {fileID: 199997866886373830}
   - component: {fileID: 114247353068908138}
+  - component: {fileID: 4412732081097091725}
   m_Layer: 0
   m_Name: SwordAOE
   m_TagString: Untagged
@@ -3939,7 +3940,7 @@ ParticleSystem:
     radiusScale: 0.0001
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 2147483647
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4995,9 +4996,22 @@ MonoBehaviour:
   UseWorldSpacePosition: 1
   Offset: 0
   rotationOffset: {x: 90, y: 0, z: 0}
-  useOnlyRotationOffset: 0
+  useOnlyRotationOffset: 1
   UseFirePointRotation: 0
   DestoyMainEffect: 0
+--- !u!114 &4412732081097091725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529907042512856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9814fe4ed1a043941bc8addc1fe418f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &1679125748932252
 GameObject:
   m_ObjectHideFlags: 0

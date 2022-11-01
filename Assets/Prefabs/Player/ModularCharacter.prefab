@@ -352,7 +352,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259830707704670788}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -37.925594, y: 0, z: -8.407899}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -593,13 +593,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayToDestroy: 5
-  waveAttack: {fileID: 0}
-  birdLightAttack: {fileID: 0}
+  waveAttack: {fileID: 1949624779417528, guid: e73124b5ba126cc499fb7e927b7a79ac, type: 3}
+  birdLightAttack: {fileID: 1543153927702632, guid: 638bf80b37fd48a458d61ac9d454265e, type: 3}
   tornadoAttack: {fileID: 1646871050452766, guid: 95b3ea755bc01f344a99fccc5f4702f8, type: 3}
   swordAttack: {fileID: 1529907042512856, guid: ffef45a79ddad9c48a486d763f114750, type: 3}
   swordAirAttack: {fileID: 1303666379773578, guid: 5d66692c1b381a64a8306b0f6d8b92f7, type: 3}
-  StartTornado: {fileID: 7942881551417608784}
-  StartWave: {fileID: 0}
+  StartTornado: {fileID: 6435592793849724023}
+  StartWave: {fileID: 5679967139954658240}
 --- !u!114 &102559810806178384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,8 +945,8 @@ GameObject:
   m_Name: Head02_Female
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 0
 --- !u!4 &3759602791721902359
 Transform:
@@ -1227,8 +1227,8 @@ GameObject:
   m_Name: Eye02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 0
 --- !u!4 &6777679818195654363
 Transform:
@@ -1405,8 +1405,8 @@ GameObject:
   m_Name: Hair06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 0
 --- !u!4 &4037940703326994250
 Transform:
@@ -1775,8 +1775,8 @@ GameObject:
   m_Name: Shield08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &3991393078194969263
 Transform:
@@ -2021,8 +2021,8 @@ GameObject:
   m_Name: Hair01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8634349263013460016
 Transform:
@@ -2167,8 +2167,8 @@ GameObject:
   m_Name: Eye01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &6054200652890674619
 Transform:
@@ -2476,8 +2476,8 @@ GameObject:
   m_Name: Mouth01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2069401875297958561
 Transform:
@@ -2622,8 +2622,8 @@ GameObject:
   m_Name: Head01_Male
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2676588390021157290
 Transform:
@@ -2705,8 +2705,8 @@ GameObject:
   m_Name: Mouth02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 0
 --- !u!4 &2289332532433855711
 Transform:
@@ -3288,8 +3288,8 @@ GameObject:
   m_Name: Backpack01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &45336773542484809
 Transform:
