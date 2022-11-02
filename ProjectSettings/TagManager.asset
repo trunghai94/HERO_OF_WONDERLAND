@@ -8,6 +8,7 @@ TagManager:
   - playerhitted
   - Enemy
   - Bullet
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
+  - PostProcessing
+  - Enemy
   - 
   - 
   - 

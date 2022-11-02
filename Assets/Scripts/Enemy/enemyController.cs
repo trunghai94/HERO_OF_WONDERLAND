@@ -107,6 +107,12 @@ public class enemyController : MonoBehaviour
                 Debug.Log("mau con");
                 StartCoroutine(AttackCooldown());
         }
+
+        if (other.CompareTag("Weapon"))
+        {
+            stat.TakeDmg(10);
+        }
+
     }
     private void OnTriggerExit(Collider other)
     {
