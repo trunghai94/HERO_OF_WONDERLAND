@@ -10,6 +10,9 @@ public class BaseStatSystem : MonoBehaviour
     public StatSystem str;
     public StatSystem agi;
 
+    public float dmg;
+    public float armor;
+
     private void Awake()
     {
         caculatorStats(level);
@@ -22,11 +25,11 @@ public class BaseStatSystem : MonoBehaviour
     }
 
 
-    public void TakeDmg(int str)
+    public void TakeDmg(float dmg)
     {
-        str -= agi.getValue();
-        str = Mathf.Clamp(str, 0 ,int.MaxValue);
-        currentHeath -= str;
+        dmg -= armor;
+        dmg = Mathf.Clamp(dmg, 0 ,int.MaxValue);
+        currentHeath -= dmg;
         currentHeath = Mathf.Clamp(currentHeath, 0 ,int.MaxValue);
         Debug.Log(transform.name +"get" + str + "damages.");
         Debug.Log(transform.name + "con" + currentHeath + "HP");
@@ -42,7 +45,7 @@ public class BaseStatSystem : MonoBehaviour
         
         if(atm != null)
         {
-            atm.TakeDmg(str.getValue());
+            atm.TakeDmg(dmg);
         }
     }
 
@@ -60,7 +63,12 @@ public class BaseStatSystem : MonoBehaviour
     public void caculatorStats(int level)
     {
         int LVL = Mathf.Clamp(level - 1, 1,int.MaxValue);
-        maxHeath =basicHP + ((10 * LVL) / Mathf.Sqrt(LVL));
+        maxHeath =((basicHP * LVL) / Mathf.Sqrt(LVL));
         Debug.Log("max heath: " + maxHeath);
+        dmg = str.getValue()+((str.getValue()*LVL)-(str.getValue()/LVL));
+        Debug.Log("dmg: " + dmg);
+        armor = agi.getValue()+((agi.getValue()*LVL)-(agi.getValue()/LVL));
+        Debug.Log("amor: "+ armor);
     }
+    
 }

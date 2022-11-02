@@ -22,6 +22,8 @@ public class enemyController : MonoBehaviour
 
     EnemyStat stat;
 
+    private float dmg;
+
     public GameObject attackBox;
 
     public Image Hpbar;
@@ -34,10 +36,15 @@ public class enemyController : MonoBehaviour
         target = playerManager.instance.Player.transform;
         agent = GetComponent<NavMeshAgent>();
         stat = GetComponent<EnemyStat>();
+        
     }
-
+    private void Awake()
+    {
+        
+    }
     void Update()
     {
+        dmg = playerManager.instance.Player.GetComponent<PlayerStats>().dmg;
         Hpbar.fillAmount = stat.currentHeath / stat.maxHeath;
         float distance = Vector3.Distance(target.position, transform.position);
         agent.speed = 0;
@@ -84,10 +91,7 @@ public class enemyController : MonoBehaviour
             moveSpeed = 0f;
             attackBox.GetComponent<Collider>().enabled = false;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            stat.TakeDmg(10);
-        }
+        
     }
 
 
@@ -108,9 +112,11 @@ public class enemyController : MonoBehaviour
                 StartCoroutine(AttackCooldown());
         }
 
-        if (other.CompareTag("Weapon"))
+        if(other.gameObject == other.CompareTag("Weapon"))
         {
-            stat.TakeDmg(10);
+            stat.TakeDmg(dmg);
+            StartCoroutine(AttackCooldown());
+
         }
 
     }
@@ -120,6 +126,13 @@ public class enemyController : MonoBehaviour
         {
             
         }
+        if (other.gameObject == other.CompareTag("Weapon"))
+        {
+            
+
+
+        }
+
     }
 
     IEnumerator AttackCooldown()

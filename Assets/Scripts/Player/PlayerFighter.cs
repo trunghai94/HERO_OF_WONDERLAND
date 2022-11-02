@@ -66,6 +66,7 @@ public class PlayerFighter : MonoBehaviour
         if (noOfClick == 1)
         {
             anim.SetBool("Attack1", true);
+
         }
         noOfClick = Mathf.Clamp(noOfClick, 0, 4);
         if (noOfClick >= 2 && anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("Attack01"))
