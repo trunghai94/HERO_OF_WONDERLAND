@@ -13,6 +13,7 @@ public class SpawnShieldRipples : MonoBehaviour
     {
         if (co.gameObject.tag == "Bullet" || co.gameObject.tag == "Enemy")
         {
+            enemyController.instance.attackBox.GetComponent<Collider>().enabled = false;
             var ripples = Instantiate(shieldRipples, transform) as GameObject;
             shieldRipplesVFX = ripples.GetComponent<VisualEffect>();
             shieldRipplesVFX.SetVector3("SphereCenter", co.contacts[0].point);

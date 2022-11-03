@@ -8,7 +8,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(EnemyStat))]
 public class enemyController : MonoBehaviour
 {
-
+    public static enemyController instance;
     [SerializeField]
     private float lookRadius = 10f;
     [SerializeField]
@@ -34,6 +34,7 @@ public class enemyController : MonoBehaviour
         target = playerManager.instance.Player.transform;
         agent = GetComponent<NavMeshAgent>();
         stat = GetComponent<EnemyStat>();
+        instance = this;
     }
 
     void Update()
@@ -69,6 +70,7 @@ public class enemyController : MonoBehaviour
             }
             else 
             {
+                attackBox.GetComponent<Collider>().enabled = false;
                 isAttacking = false;
             }
         }
@@ -84,12 +86,11 @@ public class enemyController : MonoBehaviour
             moveSpeed = 0f;
             attackBox.GetComponent<Collider>().enabled = false;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            stat.TakeDmg(10);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    stat.TakeDmg(10);
+        //}
     }
-
 
     void FaceTarget()
     {
