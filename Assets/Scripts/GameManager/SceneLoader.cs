@@ -20,7 +20,7 @@ public class SceneLoader : MonoBehaviour
     {
        
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-        //MainMenu.SetActive(false);
+        MainMenu.SetActive(false);
         LoadingScene.SetActive(true);
         
 
