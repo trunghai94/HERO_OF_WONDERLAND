@@ -5,19 +5,31 @@ using UnityEngine.UI;
 
 public class SoundSettings : MonoBehaviour
 {
-    public Slider VolumeSlider;
+    public Slider BGVolumeSlider;
+    public Slider EffectVolumeSlider;
     // Start is called before the first frame update
     void Start()
     {
         
     }
+    public void SetEffectVolume(float value)
+    {
+        
+        PlayerPrefs.SetFloat(CONSTANT.PP_EFVOLUME, value);
+        AudioListener.volume = value;
+    }
+    void LoadEffectVolume()
+    {
+        EffectVolumeSlider.value = PlayerPrefs.GetFloat(CONSTANT.PP_EFVOLUME); 
+    }
     public void SetVolume(float value)
     {
-        AudioListener.volume = value;
+        
         PlayerPrefs.SetFloat(CONSTANT.PP_VOLUME, value);
+        AudioListener.volume = value;
     }
-    void LoadVolume()
+    void LoadBGVolume()
     {
-        VolumeSlider.value = PlayerPrefs.GetFloat(CONSTANT.PP_VOLUME);
+        BGVolumeSlider.value = PlayerPrefs.GetFloat(CONSTANT.PP_VOLUME);
     }
 }
