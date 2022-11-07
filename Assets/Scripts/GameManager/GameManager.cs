@@ -14,6 +14,7 @@ public class GameManager : Singleton<GameManager>
     {
         SetStarQuality();
         SetStarVolume();
+        SetStartSoundEffect();
     }
 
     public void ResumeGame()
@@ -54,6 +55,19 @@ public class GameManager : Singleton<GameManager>
         else
         {
             float volume = PlayerPrefs.GetFloat(CONSTANT.PP_VOLUME);
+            AudioListener.volume = volume;
+        }
+    }
+    private void SetStartSoundEffect()
+    {
+        if(!PlayerPrefs.HasKey(CONSTANT.PP_EFVOLUME))
+        {
+            PlayerPrefs.SetFloat(CONSTANT.PP_EFVOLUME, CONSTANT.DEFAULT_EFVOLUME);
+            AudioListener.volume = CONSTANT.DEFAULT_EFVOLUME;
+        }
+        else
+        {
+            float volume = PlayerPrefs.GetFloat(CONSTANT.PP_EFVOLUME);
             AudioListener.volume = volume;
         }
     }

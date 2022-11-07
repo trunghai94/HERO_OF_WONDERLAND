@@ -10,7 +10,8 @@ public class SoundSettings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        LoadBGVolume();
+        LoadEffectVolume();
     }
     public void SetEffectVolume(float value)
     {
