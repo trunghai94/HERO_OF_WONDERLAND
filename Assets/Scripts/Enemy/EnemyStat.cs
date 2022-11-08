@@ -11,8 +11,6 @@ public class EnemyStat : BaseStatSystem
     private bool die = false;
     private bool dead = false;
 
-    private float delay = 6f;
-
     private void Start()
     {
         GetXPstat = playerManager.instance.Player.GetComponent<XPstat>();

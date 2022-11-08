@@ -540,12 +540,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 100
+  basicHP: 0
+  level: 0
   str:
     baseValue: 5
   agi:
     baseValue: 0
+  dmg: 0
+  armor: 0
   animator: {fileID: 1163386927420637920}
-  level: 0
 --- !u!114 &1254070191454928702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,7 +564,7 @@ MonoBehaviour:
   lookRadius: 10
   moveSpeed: 3
   animator: {fileID: 1163386927420637920}
-  attackBox: {fileID: 5707875953007158935, guid: 8c8976644c67ef24e938face489d7307, type: 3}
+  attackBox: {fileID: 7696162019237896576}
   Hpbar: {fileID: 2735989982126389322}
 --- !u!1 &2735989981910490015
 GameObject:
@@ -824,6 +827,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1258991226914758300}
     m_Modifications:
+    - target: {fileID: 2181883476858326005, guid: 8c8976644c67ef24e938face489d7307, type: 3}
+      propertyPath: m_Center.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2181883476858326005, guid: 8c8976644c67ef24e938face489d7307, type: 3}
+      propertyPath: m_Center.z
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 5707875953007158933, guid: 8c8976644c67ef24e938face489d7307, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -874,6 +885,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8976644c67ef24e938face489d7307, type: 3}
+--- !u!1 &7696162019237896576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5707875953007158935, guid: 8c8976644c67ef24e938face489d7307, type: 3}
+  m_PrefabInstance: {fileID: 2735989982139991831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7696162019237896578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5707875953007158933, guid: 8c8976644c67ef24e938face489d7307, type: 3}
