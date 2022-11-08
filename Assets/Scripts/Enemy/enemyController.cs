@@ -36,16 +36,9 @@ public class enemyController : MonoBehaviour
         target = playerManager.instance.Player.transform;
         agent = GetComponent<NavMeshAgent>();
         stat = GetComponent<EnemyStat>();
-<<<<<<< HEAD
         instance = this;
-=======
-        
     }
-    private void Awake()
-    {
-        
->>>>>>> main
-    }
+ 
     void Update()
     {
         dmg = playerManager.instance.Player.GetComponent<PlayerStats>().dmg;
@@ -80,7 +73,6 @@ public class enemyController : MonoBehaviour
             }
             else 
             {
-                attackBox.GetComponent<Collider>().enabled = false;
                 isAttacking = false;
             }
         }
@@ -88,6 +80,7 @@ public class enemyController : MonoBehaviour
         {
             animator.SetBool("isAttack", false);
             isAttacking = false;
+            attackBox.GetComponent<Collider>().enabled = false;
         }
 
         if(stat.currentHeath <= 0)
@@ -96,14 +89,6 @@ public class enemyController : MonoBehaviour
             moveSpeed = 0f;
             attackBox.GetComponent<Collider>().enabled = false;
         }
-<<<<<<< HEAD
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    stat.TakeDmg(10);
-        //}
-=======
-        
->>>>>>> main
     }
 
     void FaceTarget()
@@ -127,7 +112,6 @@ public class enemyController : MonoBehaviour
         {
             stat.TakeDmg(dmg);
             StartCoroutine(AttackCooldown());
-
         }
 
     }

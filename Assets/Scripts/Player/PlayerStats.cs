@@ -17,6 +17,7 @@ public class PlayerStats : BaseStatSystem
     }
     private void Update()
     {
+        
         Hp.fillAmount = currentHeath / maxHeath;
         if (die && !dead)
         {
