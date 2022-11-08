@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -12,24 +13,34 @@ public class SceneLoader : MonoBehaviour
     public GameObject MainMenu;
     public Slider LoadingSlider;
     public Text text;
+
+    private float LoadingValue;
+    private float timeLoading;
+    private bool StartGame=false;
+    private void Update()
+    {
+        if (StartGame)
+        {
+            timeLoading += Time.deltaTime * 0.1f;
+            
+        }
+        LoadingSlider.value = timeLoading;
+
+        text.text = " " + Mathf.Round(LoadingSlider.value * 100)+" %";
+    }
     public void LoadLevel(string sceneName)
     {
+        MainMenu.SetActive(false);
+        LoadingScene.SetActive(true);
+        StartGame = true;
         StartCoroutine(LevelLoader(sceneName));
+
     }
     IEnumerator LevelLoader(string sceneName)
     {
-       
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-        MainMenu.SetActive(false);
-        LoadingScene.SetActive(true);
+        yield return new WaitForSeconds(9.9f);
+        SceneManager.LoadScene(sceneName);
         
-
-        while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            LoadingSlider.value = progress;
-            text.text = progress * 100f+"%"; 
-            yield return null;
-        }
+       
     }
 }

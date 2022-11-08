@@ -14,10 +14,8 @@ public class SoundSettings : MonoBehaviour
         LoadEffectVolume();
     }
     public void SetEffectVolume(float value)
-    {
-        
+    {   
         PlayerPrefs.SetFloat(CONSTANT.PP_EFVOLUME, value);
-        AudioListener.volume = value;
     }
     void LoadEffectVolume()
     {

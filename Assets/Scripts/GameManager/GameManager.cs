@@ -13,8 +13,6 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         SetStarQuality();
-        SetStarVolume();
-        SetStartSoundEffect();
     }
 
     public void ResumeGame()
@@ -43,33 +41,6 @@ public class GameManager : Singleton<GameManager>
         EditorApplication.isPlaying = false;
 #endif
         Application.Quit();
-    }
-    private void SetStarVolume()
-    {
-
-        if (!PlayerPrefs.HasKey(CONSTANT.PP_VOLUME))
-        {
-            PlayerPrefs.SetFloat(CONSTANT.PP_VOLUME, CONSTANT.DEFAULT_VOLUME);
-            AudioListener.volume = CONSTANT.DEFAULT_VOLUME;
-        }
-        else
-        {
-            float volume = PlayerPrefs.GetFloat(CONSTANT.PP_VOLUME);
-            AudioListener.volume = volume;
-        }
-    }
-    private void SetStartSoundEffect()
-    {
-        if(!PlayerPrefs.HasKey(CONSTANT.PP_EFVOLUME))
-        {
-            PlayerPrefs.SetFloat(CONSTANT.PP_EFVOLUME, CONSTANT.DEFAULT_EFVOLUME);
-            AudioListener.volume = CONSTANT.DEFAULT_EFVOLUME;
-        }
-        else
-        {
-            float volume = PlayerPrefs.GetFloat(CONSTANT.PP_EFVOLUME);
-            AudioListener.volume = volume;
-        }
     }
     private void SetStarQuality()
     {
