@@ -9,9 +9,7 @@ public class EnemyStat : BaseStatSystem
     
     XPstat GetXPstat;
     private bool die = false;
-    
-
-    
+    private bool dead = false;
 
     private void Start()
     {
@@ -21,19 +19,18 @@ public class EnemyStat : BaseStatSystem
 
     private void Update()
     {
-        
+        if (die && !dead)
+        {
+            animator.SetTrigger("die");
+            GetXPstat.GainXPFlatRate(GetXPstat.CaculatorXPgain(level));
+            dead = true;
+            Destroy(gameObject, 5f);
+        }
     }
 
     public override void Die()
     {
-        if (!die)
-        {
-            die = true;
-            animator.SetTrigger("die");
-            GetXPstat.GainXPFlatRate(GetXPstat.CaculatorXPgain(level));
-            Destroy(gameObject, 5f);
-
-        }
+        die=true;
         base.Die();
     }
 }

@@ -108,6 +108,8 @@ public class PlayerMovement : MonoBehaviour
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.E))
         {
             SpawnShield.instance.spawnShied();
+            playerManager.instance.Player.GetComponent<PlayerStats>().armor += 10f;
+            StartCoroutine(RemoveArmor());
         }
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.R))
         {
@@ -148,5 +150,11 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         moveSpeed = 5f;
+    }
+
+    IEnumerator RemoveArmor()
+    {
+        yield return new WaitForSeconds(6f);
+        playerManager.instance.Player.GetComponent<PlayerStats>().armor -= 10f;
     }
 }

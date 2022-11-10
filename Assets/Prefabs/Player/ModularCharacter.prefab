@@ -635,12 +635,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 0
-  basicHP: 100
-  level: 0
+  basicHP: 1000
+  level: 10
   str:
     baseValue: 0
   agi:
     baseValue: 0
+  dmg: 10
+  armor: 0
   Hp: {fileID: 0}
 --- !u!1 &1296308702051768550
 GameObject:

@@ -15,8 +15,8 @@ public class BaseStatSystem : MonoBehaviour
 
     private void Awake()
     {
-        caculatorStats(level);
         currentHeath = maxHeath;
+        caculatorStats(level);
     }
 
     private void Update()
