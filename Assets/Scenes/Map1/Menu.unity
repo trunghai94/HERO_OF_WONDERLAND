@@ -353,8 +353,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 260945592}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SetBGMVolume
+        m_TargetAssemblyTypeName: SettingAudio, Assembly-CSharp
+        m_MethodName: SetBGMUsicVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -809,11 +809,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 260945590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7f07f40659fd5345b6875e599300cd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 33b56db120026410c88eb30478a1030c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: []
-  soundEffect: []
+  BGVolumeSlider: {fileID: 122163672}
+  EffectVolumeSlider: {fileID: 439569233}
+  AudioSource: {fileID: 2026891771}
 --- !u!1 &321633044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1254,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 260945592}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: SettingAudio, Assembly-CSharp
         m_MethodName: SetEffectVolume
         m_Mode: 0
         m_Arguments:
@@ -3004,6 +3005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenu: {fileID: 1936585598}
   SettingsMenu: {fileID: 449368240}
+  settingAudio: {fileID: 260945592}
 --- !u!1 &1346122200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4384,8 +4386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1c9543955ed06408f32b5cb44a5538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AlreadyCreated: 1
-  IsCanDestroy: 0
   SceneLoader: {fileID: 1549681558}
 --- !u!4 &1858031158
 Transform:
@@ -4813,37 +4813,7 @@ MonoBehaviour:
     pitch: 0
     source: {fileID: 0}
     loop: 0
-  soundEffect:
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
+  soundEffect: []
 --- !u!4 &2026891772
 Transform:
   m_ObjectHideFlags: 0

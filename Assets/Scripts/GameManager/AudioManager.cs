@@ -18,11 +18,12 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         base.Awake();
 
-        bgmVolume = PlayerPrefs.GetFloat("BGM", 0.75f);
-        effectVolume = PlayerPrefs.GetFloat("Effect", 0.75f);
+        bgmVolume = PlayerPrefs.GetFloat(CONSTANT.PP_VOLUME, CONSTANT.DEFAULT_VOLUME);
+        effectVolume = PlayerPrefs.GetFloat(CONSTANT.PP_EFVOLUME, CONSTANT.DEFAULT_EFVOLUME);
 
         CreateAudioSource(backgroundMusic, bgmVolume);
         CreateAudioSource(soundEffect, effectVolume);
+
     }
 
     void Update() //for 1 bgm
@@ -90,24 +91,24 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         foreach (Sound bgm in backgroundMusic)
         {
-            float curBGMVolume = PlayerPrefs.GetFloat("BGM", 0.75f);
+            float curBGMVolume = PlayerPrefs.GetFloat(CONSTANT.PP_VOLUME, CONSTANT.DEFAULT_VOLUME);
             if (volume != curBGMVolume)
             {
                 bgm.source.volume = volume;
-                PlayerPrefs.SetFloat("BGM", volume);
+                PlayerPrefs.SetFloat(CONSTANT.PP_VOLUME, volume);
             }
         }
     }
 
     public void SetEffectVolume(float volume)
     {
-        float curEffectVolume = PlayerPrefs.GetFloat("Effect", 0.75f);
+        float curEffectVolume = PlayerPrefs.GetFloat(CONSTANT.PP_EFVOLUME, CONSTANT.DEFAULT_EFVOLUME);
         foreach (Sound effect in soundEffect)
         {
             if (volume != curEffectVolume)
             {
                 effect.source.volume = volume;
-                PlayerPrefs.SetFloat("Effect", volume);
+                PlayerPrefs.SetFloat(CONSTANT.PP_EFVOLUME, volume);
             }
         }
     }

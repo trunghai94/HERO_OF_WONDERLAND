@@ -6,6 +6,7 @@ public class MenuUIManager : MonoBehaviour
 {
     public GameObject MainMenu;
     public GameObject SettingsMenu;
+    public SettingAudio settingAudio;
     
     public void OnClickSettingButton()
     {
@@ -16,6 +17,7 @@ public class MenuUIManager : MonoBehaviour
     {
         MainMenu.SetActive(true);
         SettingsMenu.SetActive(false);
+        settingAudio.OnApplySetting();
     }
    
 }

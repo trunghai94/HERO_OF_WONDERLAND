@@ -12,6 +12,7 @@ public class SettingsGraphic : MonoBehaviour
     {
         indexDD = PlayerPrefs.GetInt(CONSTANT.PP_QUALITY);
         qualityIndex.value = indexDD;
+        
     }
 
    public void SetQuality(int qualityIndex)
