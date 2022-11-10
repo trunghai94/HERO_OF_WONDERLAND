@@ -10,6 +10,7 @@ public class PlayerFighter : MonoBehaviour
     public static int noOfClick = 0;
     private float lastClickTime = 0f;
     private float maxComboDelay = 1f;
+    private bool isAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +62,7 @@ public class PlayerFighter : MonoBehaviour
 
     void OnClick()
     {
+        isAttack = true;
         lastClickTime = Time.time;
         noOfClick++;
         if (noOfClick == 1)
