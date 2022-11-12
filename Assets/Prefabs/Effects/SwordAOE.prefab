@@ -9882,7 +9882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EffectsOnCollision:
-  - {fileID: 1106083537938030, guid: 68ad232820027fb46ab18b209499dc65, type: 3}
+  - {fileID: 7434082324598571255, guid: 9f0cdbf45726f0e48b6f6c8ed02ce41c, type: 3}
   DestroyTimeDelay: 2
   UseWorldSpacePosition: 1
   Offset: 0
@@ -9899,7 +9899,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 868228002401032828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9814fe4ed1a043941bc8addc1fe418f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e3aedeb12d02491c9d29d045f3e73c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &868890490091691334
