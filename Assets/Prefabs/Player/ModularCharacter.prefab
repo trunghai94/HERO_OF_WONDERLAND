@@ -468,11 +468,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayToDestroy: 5
-  waveAttack: {fileID: 1949624779417528, guid: e73124b5ba126cc499fb7e927b7a79ac, type: 3}
-  birdLightAttack: {fileID: 1543153927702632, guid: 638bf80b37fd48a458d61ac9d454265e, type: 3}
-  tornadoAttack: {fileID: 1646871050452766, guid: 95b3ea755bc01f344a99fccc5f4702f8, type: 3}
-  swordAttack: {fileID: 1529907042512856, guid: ffef45a79ddad9c48a486d763f114750, type: 3}
-  swordAirAttack: {fileID: 1303666379773578, guid: 5d66692c1b381a64a8306b0f6d8b92f7, type: 3}
+  waveAttack: {fileID: 9198949100364755590, guid: 25fd6be28e448264fac2c61bf98b02f9, type: 3}
+  birdLightAttack: {fileID: 4249807951058165759, guid: 45acf0715e1334e4db069a9224a3e9db, type: 3}
+  tornadoAttack: {fileID: 1678514039330991452, guid: fa6c07817177a4740bc8bd3c6a9838a6, type: 3}
+  swordAttack: {fileID: 868228002401032828, guid: 0c39ef5ca11ca96448e5d0053016ed0a, type: 3}
+  swordAirAttack: {fileID: 364861265726770149, guid: cac56905530f95f4baf32e3d2b05da1a, type: 3}
   StartTornado: {fileID: 6435592793849724023}
   StartWave: {fileID: 5679967139954658240}
 --- !u!114 &102559810806178384
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36c4db15bcb1124ea93b043760c50a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fxLevelUp: {fileID: 1624714524768532, guid: c9eb15264aa6c4348b00d5b9b3daab2a, type: 3}
+  fxLevelUp: {fileID: 3216935092709244198, guid: b69abc927d5dfd14389adfcda24f4e1a, type: 3}
 --- !u!1 &2187679567525904928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,9 +3158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayToDestroy: 5
-  energyVFX: {fileID: 1148156256932182, guid: 28a4398affc61c34b9d35ff05a71c011, type: 3}
-  shieldVFX: {fileID: 7134693753853045369, guid: eb55c9e199c43b543b63194735ad53ed, type: 3}
-  groundCrack: {fileID: 1159970587636746, guid: e7473d9620ab29341b98bf21b400e598, type: 3}
+  energyVFX: {fileID: 5777580152988554854, guid: 97ceea1dff06e83409ecb7451485ae8f, type: 3}
+  shieldVFX: {fileID: 3167633284310176616, guid: b0d1fb3c5cc8d644a9bf338ce20c978c, type: 3}
+  groundCrack: {fileID: 3056370086023087776, guid: d739ec5df2f18754c90b9d58d4945129, type: 3}
   shieldOffset: {x: 0, y: 0, z: 0}
   groundOffset: {x: 0, y: -0.7, z: 0}
 --- !u!1 &8290546111984537733
