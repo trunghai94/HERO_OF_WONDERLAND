@@ -15,18 +15,12 @@ public class PlayerMovement : MonoBehaviour
     private float gravity = 9.81f;
     private float verticalVelocity = 10f;
     private CharacterController characterController;
-<<<<<<< HEAD
-=======
     private ManagerWeaponChange mngrWeaponChange;
     private CharacterAiming aiming;
->>>>>>> main
     private Animator animator;
     private PlayerStats stat;
     private float Sprint = 1f;
     private bool Delay = false;
-<<<<<<< HEAD
-
-=======
     private bool ShiedDelay = true;
     private bool SwordAirDelay = true;
     private bool TornadoDelay = true;
@@ -34,17 +28,13 @@ public class PlayerMovement : MonoBehaviour
     private bool BirdLightDelay = true;
 
     public int indexWeapons = 0;
->>>>>>> main
     public bool isSprint;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-<<<<<<< HEAD
-=======
         mngrWeaponChange = GetComponent<ManagerWeaponChange>();
         aiming = GetComponent<CharacterAiming>();
->>>>>>> main
         animator = GetComponent<Animator>();
         stat = GetComponent<PlayerStats>();
         cam = Camera.main.transform;
