@@ -65,6 +65,7 @@ public class BaseStatSystem : MonoBehaviour
         int LVL = Mathf.Clamp(level - 1, 1,int.MaxValue);
         maxHeath =((basicHP * LVL) / Mathf.Sqrt(LVL));
         Debug.Log("max heath: " + maxHeath);
+        Debug.Log("LVL: " + LVL);
         dmg = str.getValue()+((str.getValue()*LVL)-(str.getValue()/LVL));
         Debug.Log("dmg: " + dmg);
         armor = agi.getValue()+((agi.getValue()*LVL)-(agi.getValue()/LVL));

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 708529145083992416}
   - component: {fileID: 3328657967434100138}
   - component: {fileID: 6767357569379811485}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: OHS06
   m_TagString: Weapon
   m_Icon: {fileID: 0}

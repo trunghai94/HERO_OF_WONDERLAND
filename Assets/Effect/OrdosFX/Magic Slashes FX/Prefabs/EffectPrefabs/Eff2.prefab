@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4012060819963040}
   - component: {fileID: 108042921161160210}
   - component: {fileID: 1630090352263951069}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 108169005729349074}
   - component: {fileID: 114332126554409158}
   - component: {fileID: 6224022511413847993}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 4743014983219186}
   - component: {fileID: 198597971716200606}
   - component: {fileID: 199121920327921920}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5318,7 +5318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4375328247878702}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Eff2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5358,7 +5358,7 @@ GameObject:
   - component: {fileID: 198745338743235764}
   - component: {fileID: 199964148514862762}
   - component: {fileID: 7868165629276496596}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ring2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10194,7 +10194,7 @@ GameObject:
   - component: {fileID: 4591457475188372}
   - component: {fileID: 198433996790655116}
   - component: {fileID: 199701758307249038}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ring1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15036,7 +15036,7 @@ GameObject:
   - component: {fileID: 4070003325562822}
   - component: {fileID: 198414443961364654}
   - component: {fileID: 199622077022496354}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19888,7 +19888,7 @@ GameObject:
   - component: {fileID: 198020054918895504}
   - component: {fileID: 199970770681265502}
   - component: {fileID: 8183002321056523985}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24819,7 +24819,7 @@ GameObject:
   - component: {fileID: 7683909438451304023}
   - component: {fileID: 199521766032936452}
   - component: {fileID: 5684950510706827356}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SlashWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}

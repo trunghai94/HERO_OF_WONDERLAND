@@ -15,17 +15,25 @@ public class PlayerMovement : MonoBehaviour
     private float gravity = 9.81f;
     private float verticalVelocity = 10f;
     private CharacterController characterController;
+    private ManagerWeaponChange mngrWeaponChange;
     private CharacterAiming aiming;
     private Animator animator;
     private PlayerStats stat;
     private float Sprint = 1f;
     private bool Delay = false;
-    
+    private bool ShiedDelay = true;
+    private bool SwordAirDelay = true;
+    private bool TornadoDelay = true;
+    private bool WaveDelay = true;
+    private bool BirdLightDelay = true;
+
+    public int indexWeapons = 0;
     public bool isSprint;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        mngrWeaponChange = GetComponent<ManagerWeaponChange>();
         aiming = GetComponent<CharacterAiming>();
         animator = GetComponent<Animator>();
         stat = GetComponent<PlayerStats>();
@@ -39,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     {
         CharacterMove();
         CharacterSkill();
+        ChangeWeapons();
     }
 
     private void CharacterMove()
@@ -96,41 +105,78 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
     }
 
+    private void ChangeWeapons()
+    {
+        mngrWeaponChange.ChangeWeapon(indexWeapons);
+        if(playerManager.instance.Player.GetComponent<PlayerStats>().level == 5)
+        {
+            mngrWeaponChange.ChangeWeapon(indexWeapons = 1);
+        }
+        if (playerManager.instance.Player.GetComponent<PlayerStats>().level == 10)
+        {
+            mngrWeaponChange.ChangeWeapon(indexWeapons = 2);
+        }
+        if (playerManager.instance.Player.GetComponent<PlayerStats>().level == 15)
+        {
+            mngrWeaponChange.ChangeWeapon(indexWeapons = 3);
+        }
+    }
+
     private void CharacterSkill()
     {
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Q))
         {
-            moveSpeed = 0f;
-            animator.SetTrigger("SwordAir");
-            SwordAttack.instance.SwordAirAttack();
-            StartCoroutine(DelayMove(3f));
+            if(SwordAirDelay == true)
+            {
+                SwordAirDelay = false;
+                moveSpeed = 0f;
+                animator.SetTrigger("SwordAir");
+                SwordAttack.instance.SwordAirAttack();
+                StartCoroutine(DelayMove(3f));
+            }
         }
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.E))
         {
-            SpawnShield.instance.spawnShied();
-            playerManager.instance.Player.GetComponent<PlayerStats>().armor += 10f;
-            StartCoroutine(RemoveArmor());
+            if(ShiedDelay == true)
+            {
+                ShiedDelay = false;
+                SpawnShield.instance.spawnShied();
+                playerManager.instance.Player.GetComponent<PlayerStats>().armor += 10f;
+                StartCoroutine(RemoveArmor());
+            }
         }
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.R))
         {
-            moveSpeed = 0f;
-            animator.SetTrigger("Tornado");
-            SwordAttack.instance.TornadoAttack();
-            StartCoroutine(DelayMove(3f));
+            if(TornadoDelay == true)
+            {
+                TornadoDelay = false;
+                moveSpeed = 0f;
+                animator.SetTrigger("Tornado");
+                SwordAttack.instance.TornadoAttack();
+                StartCoroutine(DelayMove(3f));
+            }
         }
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.T))
         {
-            moveSpeed = 0f;
-            animator.SetTrigger("Wave");
-            SwordAttack.instance.WaveFireAttack();
-            StartCoroutine(DelayMove(3.5f));
+            if(WaveDelay == true)
+            {
+                WaveDelay = false;
+                moveSpeed = 0f;
+                animator.SetTrigger("Wave");
+                SwordAttack.instance.WaveFireAttack();
+                StartCoroutine(DelayMove(3.5f));
+            }
         }
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.F))
         {
-            moveSpeed = 0f;
-            animator.SetTrigger("BirdLight");
-            SwordAttack.instance.BirdLightAttack();
-            StartCoroutine(DelayMove(1f));
+            if(BirdLightDelay == true)
+            {
+                BirdLightDelay = false;
+                moveSpeed = 0f;
+                animator.SetTrigger("BirdLight");
+                SwordAttack.instance.BirdLightAttack();
+                StartCoroutine(DelayMove(1f));
+            }
         }
     }
 
@@ -150,11 +196,57 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         moveSpeed = 5f;
+        if(SwordAirDelay == false)
+        {
+            StartCoroutine(DelaySwordAir(8f));
+        }
+        if(TornadoDelay == false)
+        {
+            StartCoroutine(DelayTornado(5f));
+        }
+        if(WaveDelay == false)
+        {
+            StartCoroutine(DelayWave(6f));
+        }
+        if(BirdLightDelay == false)
+        {
+            StartCoroutine(DelayBirdLight(7f));
+        }
     }
 
+    IEnumerator DelayShied()
+    {
+        yield return new WaitForSeconds(5f);
+        ShiedDelay = true;
+    }
+
+    IEnumerator DelaySwordAir(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SwordAirDelay = true;
+    }
+
+    IEnumerator DelayTornado(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        TornadoDelay = true;
+    }
+
+    IEnumerator DelayWave(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        WaveDelay = true;
+    }
+
+    IEnumerator DelayBirdLight(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        BirdLightDelay = true;
+    }
     IEnumerator RemoveArmor()
     {
         yield return new WaitForSeconds(6f);
         playerManager.instance.Player.GetComponent<PlayerStats>().armor -= 10f;
+        StartCoroutine(DelayShied());
     }
 }

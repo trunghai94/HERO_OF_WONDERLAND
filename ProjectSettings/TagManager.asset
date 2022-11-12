@@ -13,14 +13,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
   - PostProcessing
   - Enemy
-  - 
-  - 
+  - Minimap
+  - Weapon
   - 
   - 
   - 

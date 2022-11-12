@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 108210954407723066}
   - component: {fileID: 114937777062949626}
   - component: {fileID: 2766865211703858100}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 4715160172389446}
   - component: {fileID: 198729440871064528}
   - component: {fileID: 199341102356136652}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ColorRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5088,7 +5088,7 @@ GameObject:
   - component: {fileID: 4849999013921574}
   - component: {fileID: 198027676968103492}
   - component: {fileID: 199914225213745742}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BirdLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9990,7 +9990,7 @@ GameObject:
   - component: {fileID: 198451512612665502}
   - component: {fileID: 199945137123557290}
   - component: {fileID: 8597688709584727172}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BlackRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14885,7 +14885,7 @@ GameObject:
   - component: {fileID: 198160674423751306}
   - component: {fileID: 199832596277006094}
   - component: {fileID: 5788001664108406413}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FireTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19780,7 +19780,7 @@ GameObject:
   - component: {fileID: 4935879237432948}
   - component: {fileID: 198757529904151086}
   - component: {fileID: 199072303713979308}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24611,7 +24611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4862423274284122}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Eff12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24650,7 +24650,7 @@ GameObject:
   - component: {fileID: 4676293414105162}
   - component: {fileID: 198197787516278374}
   - component: {fileID: 199888912145290718}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29484,7 +29484,7 @@ GameObject:
   - component: {fileID: 198808606363845638}
   - component: {fileID: 199115570672626388}
   - component: {fileID: 8900275185068211364}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34399,7 +34399,7 @@ GameObject:
   - component: {fileID: 198601181413286654}
   - component: {fileID: 199049448983377168}
   - component: {fileID: 2321907537123406449}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FireTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39294,7 +39294,7 @@ GameObject:
   - component: {fileID: 4765637102272710}
   - component: {fileID: 108440867313052868}
   - component: {fileID: 7036539768304138900}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39410,7 +39410,7 @@ GameObject:
   - component: {fileID: 1226618051231548686}
   - component: {fileID: 2450341765779935703}
   - component: {fileID: 4626161745234003429}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39603,7 +39603,7 @@ GameObject:
   - component: {fileID: 246893464182383671}
   - component: {fileID: 1977135600490202791}
   - component: {fileID: 1862875958978398592}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ColorRing (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44487,7 +44487,7 @@ GameObject:
   - component: {fileID: 1440343789259805560}
   - component: {fileID: 5557727328905379114}
   - component: {fileID: 8514341897179894820}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BlackRing (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
