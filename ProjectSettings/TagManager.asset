@@ -8,6 +8,7 @@ TagManager:
   - playerhitted
   - Enemy
   - Bullet
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -16,18 +17,11 @@ TagManager:
   - Water
   - UI
   - Ground
-<<<<<<< HEAD
-  - 
-  - 
-  - 
-  - 
-=======
   - PostProcessing
   - Enemy
   - Minimap
   - Weapon
->>>>>>> main
-  - 
+  - Test
   - 
   - 
   - 
