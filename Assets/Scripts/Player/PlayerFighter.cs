@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerFighter : MonoBehaviour
 {
     private Animator anim;
-    public GameObject weapon;
-    public float coolDownTime = 2f;
     private float nextFireTime = 0f;
-    public static int noOfClick = 0;
     private float lastClickTime = 0f;
     private float maxComboDelay = 1f;
+
+    public float coolDownTime = 2f;
+    public static int noOfClick = 0;
+    public bool checkAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class PlayerFighter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        weapon.GetComponent<Collider>().enabled = false;
+        checkAttack = false;
         if (anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("Attack01"))
         {
             anim.SetBool("Attack1", false);
@@ -49,7 +50,7 @@ public class PlayerFighter : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 OnClick();
-                weapon.GetComponent<Collider>().enabled = true;
+                checkAttack = true;
             }
             if (Input.GetMouseButtonDown(1))
             {

@@ -12,7 +12,12 @@ GameObject:
   - component: {fileID: 198253971608474962}
   - component: {fileID: 199997866886373830}
   - component: {fileID: 114247353068908138}
+<<<<<<< HEAD
   m_Layer: 0
+=======
+  - component: {fileID: 4412732081097091725}
+  m_Layer: 3
+>>>>>>> main
   m_Name: SwordAOE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5024,7 +5029,7 @@ GameObject:
   - component: {fileID: 4894875413241290}
   - component: {fileID: 198007759194621460}
   - component: {fileID: 199701598471160120}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9915,7 +9920,7 @@ GameObject:
   - component: {fileID: 4918968508511142}
   - component: {fileID: 198309749469805022}
   - component: {fileID: 199538200106586276}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14811,7 +14816,7 @@ GameObject:
   - component: {fileID: 4988077246226686}
   - component: {fileID: 198242681687460370}
   - component: {fileID: 199302153750633672}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19644,7 +19649,7 @@ GameObject:
   - component: {fileID: 4511364195862482}
   - component: {fileID: 198904949171487826}
   - component: {fileID: 199910928733300968}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCrater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
