@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4389388452392774}
   - component: {fileID: 198140180218588782}
   - component: {fileID: 199601937288198934}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CoreSmoke2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4930,7 +4930,7 @@ GameObject:
   - component: {fileID: 4303662262235520}
   - component: {fileID: 198479283055124364}
   - component: {fileID: 199164829702140710}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CoreWind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9851,7 +9851,7 @@ GameObject:
   - component: {fileID: 199326022881300590}
   - component: {fileID: 108588665517406674}
   - component: {fileID: 5262401872289802722}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15005,7 +15005,7 @@ GameObject:
   - component: {fileID: 4032825083805982}
   - component: {fileID: 198265014745675586}
   - component: {fileID: 199411216320096660}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Derbis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19898,7 +19898,7 @@ GameObject:
   - component: {fileID: 198054240389567362}
   - component: {fileID: 199118843874192308}
   - component: {fileID: 82676191985198906}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sword air attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24966,7 +24966,7 @@ GameObject:
   - component: {fileID: 4487743116100968}
   - component: {fileID: 198852450570525094}
   - component: {fileID: 199371792270798258}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29809,7 +29809,7 @@ GameObject:
   - component: {fileID: 4027022531923932}
   - component: {fileID: 198795229200523682}
   - component: {fileID: 199884957926311398}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SparksLifetime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34692,7 +34692,7 @@ GameObject:
   - component: {fileID: 4255207655908692}
   - component: {fileID: 198602301605939534}
   - component: {fileID: 199514034856753066}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CoreWind2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39611,7 +39611,7 @@ GameObject:
   - component: {fileID: 4563700342798774}
   - component: {fileID: 198593278729863044}
   - component: {fileID: 199434396383597936}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Derbis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44561,7 +44561,7 @@ GameObject:
   - component: {fileID: 4930075338010218}
   - component: {fileID: 198932704328207160}
   - component: {fileID: 199830410902017852}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CoreSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49480,7 +49480,7 @@ GameObject:
   - component: {fileID: 4484771590483878}
   - component: {fileID: 198908432006171686}
   - component: {fileID: 199949297291003678}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54421,7 +54421,7 @@ GameObject:
   - component: {fileID: 4623230960968254}
   - component: {fileID: 198511855786896040}
   - component: {fileID: 199161916581667358}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59313,7 +59313,7 @@ GameObject:
   - component: {fileID: 4872993840665484}
   - component: {fileID: 198566743134224912}
   - component: {fileID: 199134244624767056}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64210,7 +64210,7 @@ GameObject:
   - component: {fileID: 4303431507252364}
   - component: {fileID: 198238191616185174}
   - component: {fileID: 199022134872635846}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stones
   m_TagString: Untagged
   m_Icon: {fileID: 0}

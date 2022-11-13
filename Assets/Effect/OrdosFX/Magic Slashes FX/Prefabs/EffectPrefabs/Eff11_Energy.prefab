@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4089046129329242}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Eff11_Energy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4431371271726294}
   - component: {fileID: 198971777195009028}
   - component: {fileID: 199878604103340184}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Energy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4870,7 +4870,7 @@ GameObject:
   - component: {fileID: 4539125767697102}
   - component: {fileID: 198104227249865584}
   - component: {fileID: 199225080181038744}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BlackEnergy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9696,7 +9696,7 @@ GameObject:
   - component: {fileID: 108150015645904270}
   - component: {fileID: 114126753596400356}
   - component: {fileID: 3048361992604064361}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

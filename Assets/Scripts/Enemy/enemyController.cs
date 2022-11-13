@@ -108,6 +108,8 @@ public class enemyController : MonoBehaviour
                 Debug.Log("mau con");
                 StartCoroutine(AttackCooldown());
         }
+//<<<<<<< HEAD
+//=======
 
         if(other.gameObject == other.CompareTag("Weapon"))
         {
@@ -115,6 +117,7 @@ public class enemyController : MonoBehaviour
             StartCoroutine(AttackCooldown());
         }
 
+//>>>>>>> main
     }
     private void OnTriggerExit(Collider other)
     {

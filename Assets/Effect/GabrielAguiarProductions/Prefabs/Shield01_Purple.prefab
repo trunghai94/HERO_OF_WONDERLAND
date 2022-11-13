@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8053262946394580474}
   - component: {fileID: 696386050369493562}
   - component: {fileID: -2466323450055184065}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shield01_Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 8053262945644904689}
   - component: {fileID: 8053262945644904691}
   - component: {fileID: 8053262945644904690}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -7,7 +7,6 @@ public class SkillAttack : MonoBehaviour
     private ParticleSystem _particleSystem;
     private List<ParticleCollisionEvent> particleCollisionEvents;
 
-    // Start is called before the first frame update
     void Start()
     {
         _particleSystem = GetComponent<ParticleSystem>();
