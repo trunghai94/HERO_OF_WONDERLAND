@@ -13,6 +13,11 @@ public class BaseStatSystem : MonoBehaviour
     public float dmg;
     public float armor;
 
+    private void Start()
+    {
+        currentHeath = maxHeath;
+    }
+
     private void Awake()
     {
         currentHeath = maxHeath;
