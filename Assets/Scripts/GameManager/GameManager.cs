@@ -37,6 +37,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void OnClickStartGame()
     {
         SceneLoader.LoadLevel("Map1");
+        AudioManager.Instance.StopBackgroundMusic();
     }
     public void OnClickExitGame()
     {
