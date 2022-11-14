@@ -15,13 +15,14 @@ public class BaseStatSystem : MonoBehaviour
 
     private void Start()
     {
-        currentHeath = maxHeath;
+        
     }
 
     private void Awake()
     {
-        currentHeath = maxHeath;
         caculatorStats(level);
+        currentHeath = maxHeath;
+        
     }
 
     private void Update()

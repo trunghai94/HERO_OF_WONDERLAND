@@ -6419,13 +6419,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7882cf3ece012eb409662593bef6286f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeath: 100
-  str:
-    baseValue: 0
-  agi:
-    baseValue: 0
-  animator: {fileID: 509366916360074582}
+  maxHeath: 0
+  basicHP: 15000
   level: 0
+  str:
+    baseValue: 30
+  agi:
+    baseValue: 15
+  dmg: 0
+  armor: 0
+  animator: {fileID: 509366916360074582}
 --- !u!114 &6537642240711849369
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class EnemyStat : BaseStatSystem
     {
         GetXPstat = playerManager.instance.Player.GetComponent<XPstat>();
         caculatorStats(level);
+        
     }
 
     private void Update()

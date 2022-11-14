@@ -542,7 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeath: 100
   basicHP: 100
-  level: 10
+  level: 8
   str:
     baseValue: 5
   agi:
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4b4a263dd0a7344824b4998fb4ca23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 10
+  lookRadius: 20
   moveSpeed: 3
   animator: {fileID: 1163386927420637920}
   attackBox: {fileID: 7696162019237896576}
