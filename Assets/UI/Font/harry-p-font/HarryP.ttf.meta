@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3dcbecd82c728454ea4c8a50bd00a302
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Harry P
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 57db59be39b175b4ba101252193adba1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

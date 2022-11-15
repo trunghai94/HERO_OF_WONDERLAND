@@ -38,7 +38,7 @@ public class SceneLoader : MonoBehaviour
     }
     IEnumerator LevelLoader(string sceneName)
     {
-        yield return new WaitForSeconds(9.9f);
+        yield return new WaitForSeconds(10f);
         SceneManager.LoadScene(sceneName);
         
        
