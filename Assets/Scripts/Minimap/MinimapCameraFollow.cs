@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MinimapCameraFollow : MonoBehaviour
 {
-    [SerializeField] private MinimapSetting settings;
-    [SerializeField] private float cameraHeight;
+    private MinimapSetting settings;
+    private float cameraHeight;
 
     private void Awake()
     {
