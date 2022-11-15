@@ -108,16 +108,13 @@ public class enemyController : MonoBehaviour
                 Debug.Log("mau con");
                 StartCoroutine(AttackCooldown());
         }
-//<<<<<<< HEAD
-//=======
 
         if(other.gameObject == other.CompareTag("Weapon"))
         {
-            stat.TakeDmg(dmg);
-            StartCoroutine(AttackCooldown());
+                stat.TakeDmg(dmg);
+                StartCoroutine(AttackCooldown());   
         }
 
-//>>>>>>> main
     }
     private void OnTriggerExit(Collider other)
     {
