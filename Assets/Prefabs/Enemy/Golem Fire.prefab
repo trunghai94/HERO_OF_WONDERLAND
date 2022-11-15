@@ -20609,7 +20609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeath: 325
   basicHP: 325
-  level: 8
+  level: 15
   str:
     baseValue: 10
   agi:

@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 100
-  basicHP: 100
+  basicHP: 50
   level: 8
   str:
     baseValue: 5

@@ -755,7 +755,7 @@ MonoBehaviour:
   basicHP: 80
   level: 7
   str:
-    baseValue: 5
+    baseValue: 7
   agi:
     baseValue: 1
   dmg: 0
