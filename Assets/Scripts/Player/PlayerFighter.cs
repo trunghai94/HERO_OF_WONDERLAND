@@ -8,6 +8,7 @@ public class PlayerFighter : MonoBehaviour
     private float nextFireTime = 0f;
     private float lastClickTime = 0f;
     private float maxComboDelay = 1f;
+    private bool isAttack;
 
     public float coolDownTime = 2f;
     public static int noOfClick = 0;
@@ -65,6 +66,7 @@ public class PlayerFighter : MonoBehaviour
 
     void OnClick()
     {
+        isAttack = true;
         lastClickTime = Time.time;
         noOfClick++;
         if (noOfClick == 1)

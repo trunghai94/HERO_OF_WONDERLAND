@@ -58,7 +58,7 @@ public class enemyController : MonoBehaviour
             animator.SetBool("isMoving",false);
             animator.SetBool("isAttack", false);
         }
-        if (distance <= agent.stoppingDistance)
+        if (distance <= agent.stoppingDistance && !die)
         {
             //facetoface
             FaceTarget();
@@ -87,6 +87,7 @@ public class enemyController : MonoBehaviour
         {
             die = true;
             moveSpeed = 0f;
+            
             attackBox.GetComponent<Collider>().enabled = false;
         }
     }

@@ -20609,11 +20609,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeath: 325
   basicHP: 325
-  level: 10
+  level: 8
   str:
     baseValue: 10
   agi:
-    baseValue: 0
+    baseValue: 3
   dmg: 0
   armor: 0
   animator: {fileID: 3442986813992074838}
@@ -20629,7 +20629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4b4a263dd0a7344824b4998fb4ca23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 10
+  lookRadius: 20
   moveSpeed: 5
   animator: {fileID: 3442986813992074838}
   attackBox: {fileID: 5707875953007158935, guid: 8c8976644c67ef24e938face489d7307, type: 3}

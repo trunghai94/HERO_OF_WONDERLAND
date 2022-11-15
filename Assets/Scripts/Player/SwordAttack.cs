@@ -60,7 +60,7 @@ public class SwordAttack : MonoBehaviour
 
     IEnumerator WaveFireDelay()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1f);
         var waveVfx = Instantiate(waveAttack);
         waveVfx.transform.position = StartWave.transform.position;
         waveVfx.transform.rotation = this.transform.rotation;

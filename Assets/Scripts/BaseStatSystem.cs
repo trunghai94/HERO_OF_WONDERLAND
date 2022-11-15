@@ -13,10 +13,16 @@ public class BaseStatSystem : MonoBehaviour
     public float dmg;
     public float armor;
 
+    private void Start()
+    {
+        
+    }
+
     private void Awake()
     {
-        currentHeath = maxHeath;
         caculatorStats(level);
+        currentHeath = maxHeath;
+        
     }
 
     private void Update()
@@ -65,10 +71,9 @@ public class BaseStatSystem : MonoBehaviour
         int LVL = Mathf.Clamp(level - 1, 1,int.MaxValue);
         maxHeath =((basicHP * LVL) / Mathf.Sqrt(LVL));
         Debug.Log("max heath: " + maxHeath);
-        Debug.Log("LVL: " + LVL);
-        dmg = str.getValue()+((str.getValue()*LVL)-(str.getValue()/LVL));
+        dmg = str.getValue()+((str.getValue()*LVL)+(str.getValue()/LVL));
         Debug.Log("dmg: " + dmg);
-        armor = agi.getValue()+((agi.getValue()*LVL)-(agi.getValue()/LVL));
+        armor = agi.getValue()+((agi.getValue()*LVL)+(agi.getValue()/LVL));
         Debug.Log("amor: "+ armor);
     }
     

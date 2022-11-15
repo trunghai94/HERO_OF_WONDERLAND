@@ -24,7 +24,7 @@ public class MeshTrailTut : MonoBehaviour
     private SkinnedMeshRenderer[] skinnedMeshRenderer;
     private PlayerMovement playerMovement;
     private AudioSource audioSource;
-
+ 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -53,6 +53,7 @@ public class MeshTrailTut : MonoBehaviour
             for (int i = 0; i< skinnedMeshRenderer.Length; i++)
             {
                 GameObject gobj = new GameObject();
+                gobj.layer = 3;
                 gobj.transform.SetPositionAndRotation(positionToSpawn.position, positionToSpawn.rotation);
                 MeshRenderer mr = gobj.AddComponent<MeshRenderer>();
                 MeshFilter mf = gobj.AddComponent<MeshFilter>();
