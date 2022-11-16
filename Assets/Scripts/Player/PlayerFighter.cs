@@ -12,7 +12,7 @@ public class PlayerFighter : MonoBehaviour
 
     public float coolDownTime = 2f;
     public static int noOfClick = 0;
-    public bool checkAttack;
+    public GameObject weaponObj;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,6 @@ public class PlayerFighter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkAttack = false;
         if (anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("Attack01"))
         {
             anim.SetBool("Attack1", false);
@@ -51,7 +50,8 @@ public class PlayerFighter : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 OnClick();
-                checkAttack = true;
+                weaponObj.GetComponent<Collider>().enabled = true;
+                StartCoroutine(CheckCollier());
             }
             if (Input.GetMouseButtonDown(1))
             {
@@ -89,5 +89,11 @@ public class PlayerFighter : MonoBehaviour
             anim.SetBool("Attack3", false);
             anim.SetBool("Attack4", true);
         }
+    }
+
+    IEnumerator CheckCollier()
+    {
+        yield return new WaitForSeconds(1f);
+        weaponObj.GetComponent<Collider>().enabled = false;
     }
 }
