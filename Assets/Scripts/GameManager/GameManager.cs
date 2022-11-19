@@ -17,15 +17,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         SetStartEffectVolume();
         SetStartVolume();
     }
-
-    public void ResumeGame()
-    {
-        Time.timeScale = 1f;
-    }
-    public void PauseGame()
-    {
-        Time.timeScale = 0f;
-    }
     public void EndGame()
     {
         Time.timeScale = 0f;
