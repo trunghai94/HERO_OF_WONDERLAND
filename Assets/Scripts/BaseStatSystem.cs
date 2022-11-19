@@ -64,6 +64,7 @@ public class BaseStatSystem : MonoBehaviour
     public virtual void Die()
     {
         Debug.Log(transform.name + "died.");
+        
     }
 
     public void caculatorStats(int level)
