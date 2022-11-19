@@ -8,50 +8,29 @@ public class MainUIManager : MonoBehaviour
     public GameObject continueButton;
     public GameObject pausePanel;
     public GameObject freelockCamera;
-    public GameObject Minimap;
-    public GameObject Map;
-    public GameObject SettingPanel;
-
+   
     public void OnClickPauseButton()
     {
-        Time.timeScale = 0f;
-        pausePanel.SetActive(true);
-        freelockCamera.SetActive(false);       
+       pausePanel.SetActive(true);
+       Time.timeScale = 0f;
+       freelockCamera.SetActive(false);
+
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!pausePanel.activeSelf)
             {
                 OnClickPauseButton();
             }
         }
-        if (Input.GetKey(KeyCode.Tab))
-        {
-            if (!pausePanel.activeSelf)
-            {
-                Time.timeScale = 0;
-                Minimap.SetActive(false);
-                Map.SetActive(true);
-                freelockCamera.SetActive(false);
-                
-            }            
-        }
-        else
-        {
-            Minimap.SetActive(true);
-            Map.SetActive(false);
-            freelockCamera.SetActive(true);
-            Time.timeScale = 1;
-        }
     }
     public void OnClickContinueButton()
     {
-        Time.timeScale = 1;
         pausePanel.SetActive(false);
+        Time.timeScale = 1f;
         freelockCamera.SetActive(true);
-        
     }
     public void OnRestartGameButton()
     {
@@ -63,16 +42,6 @@ public class MainUIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
-    public void OnClickSettingButton()
-    {
-        pausePanel.SetActive(false);
-        SettingPanel.SetActive(true);
-    }
-    public void OnClickSettingback()
-    {
-        pausePanel.SetActive(true);
-        SettingPanel.SetActive(false);
-    }
     public void ShowUIWinGame()
     {
         
@@ -81,6 +50,7 @@ public class MainUIManager : MonoBehaviour
     {
       
     }
+   
     IEnumerator RestartGame()
     {
         yield return new WaitForSeconds(1f);

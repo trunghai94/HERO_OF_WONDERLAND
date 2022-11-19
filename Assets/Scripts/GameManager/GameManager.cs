@@ -25,6 +25,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         Time.timeScale = 1f;
     }
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
     public void OnClickStartGame()
     {
         SceneLoader.LoadLevel("Map1");
