@@ -47,7 +47,7 @@ public class PlayerFighter : MonoBehaviour
         }
         if(Time.time > nextFireTime)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 OnClick();
                 weaponObj.GetComponent<Collider>().enabled = true;

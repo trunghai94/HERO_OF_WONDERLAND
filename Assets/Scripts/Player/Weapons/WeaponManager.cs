@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public GameObject[] weapons;
-
+    public GameObject[] swords;
+    public GameObject[] shields;
 }
