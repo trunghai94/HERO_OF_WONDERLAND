@@ -7,13 +7,16 @@ public class PlayerStats : BaseStatSystem
 {
     public Image Hp;
     private Animator animator;
-    private bool die = false;
-    private bool dead = false;
+    public bool die = false;
+    public bool dead = false;
+    
+    
 
     private void Start()
     {
         caculatorStats(level);
         animator = GetComponent<Animator>();
+        
     }
     private void Update()
     {
@@ -24,6 +27,8 @@ public class PlayerStats : BaseStatSystem
             animator.SetTrigger("Died");
             dead = true;
             //Destroy(gameObject, 5f);
+            MainUIManager.Instance.ShowUILooseGame();
+            
         }
     }
 
@@ -31,5 +36,6 @@ public class PlayerStats : BaseStatSystem
     {
         die = true;
         base.Die();
+       
     }
 }

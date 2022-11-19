@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainUIManager : MonoBehaviour
+public class MainUIManager : Singleton<MainUIManager>
 {
     public GameObject continueButton;
     public GameObject pausePanel;
     public GameObject freelockCamera;
+    public GameObject LosePanrl;
    
     public void OnClickPauseButton()
     {
@@ -18,13 +19,15 @@ public class MainUIManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!LosePanrl.activeSelf)
         {
-            if (!pausePanel.activeSelf)
+            if (Input.GetKey(KeyCode.Escape))
             {
                 OnClickPauseButton();
             }
+            
         }
+        
     }
     public void OnClickContinueButton()
     {
@@ -34,7 +37,7 @@ public class MainUIManager : MonoBehaviour
     }
     public void OnRestartGameButton()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Map1");
         StartCoroutine(RestartGame());
     }
@@ -48,7 +51,9 @@ public class MainUIManager : MonoBehaviour
     }
     public void ShowUILooseGame()
     {
-      
+        LosePanrl.SetActive(true);
+        Time.timeScale = 0f;
+        freelockCamera.SetActive(false);
     }
    
     IEnumerator RestartGame()

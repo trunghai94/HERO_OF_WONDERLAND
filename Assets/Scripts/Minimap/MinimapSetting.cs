@@ -6,6 +6,7 @@ public class MinimapSetting : MonoBehaviour
 {
     public Transform targetFollow;
     public GameObject PausePanel;
+    public GameObject losePanel;
     public GameObject MiniMap;
     public GameObject map;
     public bool rotateWithTheTarget = true;
@@ -13,18 +14,16 @@ public class MinimapSetting : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Tab))
         {
-            if(!PausePanel.activeSelf)
+            if(!PausePanel.activeSelf&&!losePanel.activeSelf)
             {
                 MiniMap.SetActive(false);
                 map.SetActive(true);
-                Time.timeScale = 0f;
             }
         }
         else
         {
             MiniMap.SetActive(true);
             map.SetActive(false);
-            Time.timeScale = 1f;
         }
     }
 }
