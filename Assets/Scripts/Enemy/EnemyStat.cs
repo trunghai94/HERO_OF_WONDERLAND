@@ -25,6 +25,7 @@ public class EnemyStat : BaseStatSystem
             animator.SetTrigger("die");
             GetXPstat.GainXPFlatRate(GetXPstat.CaculatorXPgain(level));
             dead = true;
+            
             Destroy(gameObject, 5f);
         }
     }

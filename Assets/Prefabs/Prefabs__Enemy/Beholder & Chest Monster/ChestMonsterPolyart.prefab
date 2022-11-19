@@ -568,6 +568,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1798744183351544606}
   - component: {fileID: 1798744183359333626}
+  - component: {fileID: 4464888580173852927}
+  - component: {fileID: 4464888580173852926}
+  - component: {fileID: 4464888580173852929}
+  - component: {fileID: 4464888580173852928}
   m_Layer: 0
   m_Name: ChestMonsterPolyart
   m_TagString: Untagged
@@ -601,7 +605,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798744183352039230}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ca0980e90982fe6468542f951647d58c, type: 3}
+  m_Avatar: {fileID: 9000000, guid: b5904023c79ae89489f3dca304f94bf7, type: 3}
   m_Controller: {fileID: 9100000, guid: ad18e1e3bc906104699c48eb7dfd95dc, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -612,6 +616,82 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4464888580173852927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798744183352039230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7882cf3ece012eb409662593bef6286f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHeath: 0
+  basicHP: 5000
+  level: 100
+  str:
+    baseValue: 0
+  agi:
+    baseValue: 0
+  dmg: 0
+  armor: 0
+  animator: {fileID: 1798744183359333626}
+--- !u!114 &4464888580173852926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798744183352039230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc747916a982a94e8e4edf360f37b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookRadius: 10
+  animator: {fileID: 1798744183359333626}
+  numberOfEnemies: 5
+  time: 0
+  delay: 1
+  enemies:
+  - {fileID: 1258157178069242126, guid: 068c373b8d2c46a4c82055208cfd6056, type: 3}
+  - {fileID: 5914376483835786160, guid: c3a2cbfa18f1f3d4ea4e43f6e7175e4e, type: 3}
+  maxLevel: 10
+  minLevel: 5
+  waitSecond: 30
+  spawner: {fileID: 1798744183351544606}
+--- !u!54 &4464888580173852929
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798744183352039230}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &4464888580173852928
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798744183352039230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &1798744183352039248
 GameObject:
   m_ObjectHideFlags: 0

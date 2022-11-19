@@ -24,6 +24,8 @@ public class enemyController : MonoBehaviour
 
     private float dmg;
 
+    public GameObject enemyColider;
+
     public GameObject attackBox;
 
     public Image Hpbar;
@@ -37,6 +39,7 @@ public class enemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         stat = GetComponent<EnemyStat>();
         instance = this;
+        
     }
  
     void Update()
@@ -87,7 +90,7 @@ public class enemyController : MonoBehaviour
         {
             die = true;
             moveSpeed = 0f;
-            
+            enemyColider.GetComponent<Collider>().enabled = false;
             attackBox.GetComponent<Collider>().enabled = false;
         }
     }

@@ -20632,6 +20632,7 @@ MonoBehaviour:
   lookRadius: 20
   moveSpeed: 5
   animator: {fileID: 3442986813992074838}
+  enemyColider: {fileID: 8244980668159000214}
   attackBox: {fileID: 5707875953007158935, guid: 8c8976644c67ef24e938face489d7307, type: 3}
   Hpbar: {fileID: 5510724421195144163}
 --- !u!1 &8912978442694089135
