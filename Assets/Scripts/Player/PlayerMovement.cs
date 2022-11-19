@@ -19,7 +19,10 @@ public class PlayerMovement : MonoBehaviour
     private CharacterAiming aiming;
     private Animator animator;
     private PlayerStats stat;
+    private Vector3 moveDirection;
     private float Sprint = 1f;
+    private float OriginalStepOffset;
+    private float rotationSpeed;
     private bool Delay = false;
     private bool ShiedDelay = true;
     private bool SwordAirDelay = true;
@@ -29,10 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
     public int indexWeapons = 0;
     public bool isSprint;
-
+   
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        OriginalStepOffset = characterController.stepOffset;
         mngrWeaponChange = GetComponent<ManagerWeaponChange>();
         aiming = GetComponent<CharacterAiming>();
         animator = GetComponent<Animator>();
@@ -76,12 +80,15 @@ public class PlayerMovement : MonoBehaviour
         //float sprint = isSprint ? 3f : 1f;
         animator.SetBool("isSprint", isSprint);
 
-        Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
+        moveDirection = new Vector3(horizontalInput, 0, verticalInput);
+        float magnitude = Mathf.Clamp01(moveDirection.magnitude) * moveSpeed;
+        moveDirection.Normalize();
         animator.SetFloat("InputX", horizontalInput);
         animator.SetFloat("InputY", verticalInput);
 
         if (characterController.isGrounded)
         {
+            characterController.stepOffset = OriginalStepOffset;
             animator.SetBool("isJump", false);
             if (Input.GetAxis("Jump") != 0)
             {
@@ -92,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             verticalVelocity -= gravity * Time.deltaTime;
+            characterController.stepOffset = 0;
         }
 
         if(stat.currentHeath <= 0)
@@ -100,24 +108,49 @@ public class PlayerMovement : MonoBehaviour
         }
 
         moveDirection = cam.TransformDirection(moveDirection);
-        moveDirection = new Vector3(moveDirection.x * moveSpeed * Sprint, verticalVelocity, moveDirection.z * moveSpeed * Sprint);
+        moveDirection = new Vector3(moveDirection.x * magnitude * Sprint, verticalVelocity, moveDirection.z * magnitude * Sprint);
+        if (moveDirection != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
         characterController.Move(moveDirection * Time.deltaTime);
     }
 
     private void ChangeWeapons()
     {
-        mngrWeaponChange.ChangeWeapon(indexWeapons);
-        if(playerManager.instance.Player.GetComponent<PlayerStats>().level == 5)
+        switch (playerManager.instance.Player.GetComponent<PlayerStats>().level)
         {
-            mngrWeaponChange.ChangeWeapon(indexWeapons = 1);
-        }
-        if (playerManager.instance.Player.GetComponent<PlayerStats>().level == 10)
-        {
-            mngrWeaponChange.ChangeWeapon(indexWeapons = 2);
-        }
-        if (playerManager.instance.Player.GetComponent<PlayerStats>().level == 15)
-        {
-            mngrWeaponChange.ChangeWeapon(indexWeapons = 3);
+            case 1: 
+                mngrWeaponChange.ChangeWeapon(indexWeapons);
+                break;
+            case 5: 
+                mngrWeaponChange.ChangeWeapon(indexWeapons = 1);
+                break;
+            case 10:
+                mngrWeaponChange.ChangeWeapon(indexWeapons = 2);
+                break;
+            case 15:
+                mngrWeaponChange.ChangeWeapon(indexWeapons = 3);
+                break;
+            case 20:
+                mngrWeaponChange.ChangeWeapon(indexWeapons = 4);
+                break;
+            case 25:
+                mngrWeaponChange.ChangeWeapon(indexWeapons = 5);
+                break;
+            case 30:
+                mngrWeaponChange.ChangeWeapon(indexWeapons = 6);
+                break;
+            case 35:
+                mngrWeaponChange.ChangeWeapon(indexWeapons = 7);
+                break;
+            case 40:
+                mngrWeaponChange.ChangeWeapon(indexWeapons = 8);
+                break;
+            case 45:
+                mngrWeaponChange.ChangeWeapon(indexWeapons = 9);
+                break;
         }
     }
 
@@ -163,7 +196,7 @@ public class PlayerMovement : MonoBehaviour
                 moveSpeed = 0f;
                 animator.SetTrigger("Wave");
                 SwordAttack.instance.WaveFireAttack();
-                StartCoroutine(DelayMove(3.5f));
+                StartCoroutine(DelayMove(2.5f));
             }
         }
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.F))
