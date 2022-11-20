@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainUIManager : Singleton<MainUIManager>
+public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
 {
     public GameObject continueButton;
     public GameObject pausePanel;
@@ -38,20 +38,24 @@ public class MainUIManager : Singleton<MainUIManager>
     }
     public void OnRestartGameButton()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Map1");
-        
-        StartCoroutine(RestartGame());
+        var scene = SceneManager.LoadSceneAsync("Map1");
+        StartCoroutine(RestartGaneWhenLose(scene.progress, pausePanel));
     }
-    public void OnClickBackToMenuButton()
+    public void OnClickBackToMenuButton(string scenename)
     {
-        SceneLoader.Instance.LoadReturmScene();
-        SceneLoader.Instance.LoadLevelMenu("Menu");
+        LevelManager.Instance.LoadScene(scenename);
+        Time.timeScale = 1f;
         pausePanel.SetActive(false);
     }
     public void ShowUIWinGame()
     {
+       
+    }
+    public void OnClickRestartLoseButton()
+    {
         
+       var scene= SceneManager.LoadSceneAsync("Map1");
+        StartCoroutine(RestartGaneWhenLose(scene.progress,LosePanrl));        
     }
     public void ShowUILooseGame()
     {
@@ -59,10 +63,10 @@ public class MainUIManager : Singleton<MainUIManager>
         Time.timeScale = 0f;
         freelockCamera.SetActive(false);
     }
-   
-    IEnumerator RestartGame()
+    IEnumerator RestartGaneWhenLose(float time, GameObject Panel)
     {
-        yield return new WaitForSeconds(1f);
-        pausePanel.SetActive(false);
+        yield return new WaitForSeconds(time);
+        Panel.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

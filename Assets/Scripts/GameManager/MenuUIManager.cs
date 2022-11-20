@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class MenuUIManager : SingletonMonoBehaviour<MenuUIManager>
+public class MenuUIManager : MonoBehaviour
 {
     public GameObject MainMenu;
     public GameObject SettingsMenu;
     public SettingAudio settingAudio;
     public GameObject AudioMenu;
     public GameObject GraphicMenu;
-    public SceneLoader sceneloader;
+    //public SceneLoader sceneloader;
 
 
 
-    public void OnClickPlayGame()
+    public void OnClickPlayGame(string sceneName)
     {
-        sceneloader.LoadLevel("Map1");
+        //sceneloader.LoadLevel("Map1");
+        LevelManager.Instance.LoadScene(sceneName);
+        Time.timeScale = 1f;
     }
     public void OnClickExitGame()
     {
