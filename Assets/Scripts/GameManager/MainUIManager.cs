@@ -9,6 +9,7 @@ public class MainUIManager : Singleton<MainUIManager>
     public GameObject pausePanel;
     public GameObject freelockCamera;
     public GameObject LosePanrl;
+    
    
     public void OnClickPauseButton()
     {
@@ -39,11 +40,14 @@ public class MainUIManager : Singleton<MainUIManager>
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Map1");
+        
         StartCoroutine(RestartGame());
     }
     public void OnClickBackToMenuButton()
     {
-        SceneManager.LoadScene("Menu");
+        SceneLoader.Instance.LoadReturmScene();
+        SceneLoader.Instance.LoadLevelMenu("Menu");
+        pausePanel.SetActive(false);
     }
     public void ShowUIWinGame()
     {
