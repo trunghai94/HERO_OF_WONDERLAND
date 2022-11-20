@@ -9,13 +9,13 @@ public class PlayerStats : BaseStatSystem
     private Animator animator;
     public bool die = false;
     public bool dead = false;
-   
+    
+    
 
     private void Start()
     {
         caculatorStats(level);
         animator = GetComponent<Animator>();
-        
         
     }
     private void Update()
