@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class MenuUIManager : SingletonMonoBehaviour<MenuUIManager>
+public class MenuUIManager : MonoBehaviour
 {
     public GameObject MainMenu;
     public GameObject SettingsMenu;
     public SettingAudio settingAudio;
     public GameObject AudioMenu;
     public GameObject GraphicMenu;
-    public SceneLoader sceneloader;
+    public GameObject _MainCanvas;
 
 
 
-    public void OnClickPlayGame()
+
+    public void OnClickPlayGame(string sceneName)
     {
-        sceneloader.LoadLevel("Map1");
+        LevelManager.Instance.LoaderScene(sceneName);
+        Time.timeScale = 1f;
     }
+        
     public void OnClickExitGame()
     {
 #if UNITY_EDITOR
@@ -47,5 +50,4 @@ public class MenuUIManager : SingletonMonoBehaviour<MenuUIManager>
         AudioMenu.SetActive(false);
         GraphicMenu.SetActive(true);
     }
-
 }

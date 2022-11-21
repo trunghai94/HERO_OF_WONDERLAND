@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainUIManager : Singleton<MainUIManager>
+public class MainUIManager : MonoBehaviour
 {
     public GameObject continueButton;
     public GameObject pausePanel;
@@ -36,18 +36,16 @@ public class MainUIManager : Singleton<MainUIManager>
         Time.timeScale = 1f;
         freelockCamera.SetActive(true);
     }
-    public void OnRestartGameButton()
+    public void OnRestartGameButton(string sceneName)
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Map1");
-        
-        StartCoroutine(RestartGame());
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, pausePanel));
     }
-    public void OnClickBackToMenuButton()
+    public void OnClickBackToMenuButton(string sceneName)
     {
-        SceneLoader.Instance.LoadReturmScene();
-        SceneLoader.Instance.LoadLevelMenu("Menu");
-        pausePanel.SetActive(false);
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, pausePanel));
     }
     public void ShowUIWinGame()
     {
@@ -60,9 +58,9 @@ public class MainUIManager : Singleton<MainUIManager>
         freelockCamera.SetActive(false);
     }
    
-    IEnumerator RestartGame()
+    IEnumerator RestartGame(float time, GameObject panel)
     {
-        yield return new WaitForSeconds(1f);
-        pausePanel.SetActive(false);
+        yield return new WaitForSeconds(time);
+        panel.SetActive(false);
     }
 }
