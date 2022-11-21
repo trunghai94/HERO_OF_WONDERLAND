@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainUIManager : MonoBehaviour
+public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
 {
+    
+
     public GameObject continueButton;
     public GameObject pausePanel;
-    public GameObject freelockCamera;
-    public GameObject LosePanrl;
     
-   
+    public GameObject LosePanrl;
+
+    
     public void OnClickPauseButton()
     {
        pausePanel.SetActive(true);
        Time.timeScale = 0f;
-       freelockCamera.SetActive(false);
+       
 
     }
     private void Update()
@@ -34,7 +36,7 @@ public class MainUIManager : MonoBehaviour
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
-        freelockCamera.SetActive(true);
+        
     }
     public void OnRestartGameButton(string sceneName)
     {
@@ -55,7 +57,18 @@ public class MainUIManager : MonoBehaviour
     {
         LosePanrl.SetActive(true);
         Time.timeScale = 0f;
-        freelockCamera.SetActive(false);
+        
+    }
+    public void RestartGameAtLose(string sceneName)
+    {
+        Time.timeScale = 1f;
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, LosePanrl));
+    }
+    public void BackToMenuAtLose(string sceneName)
+    {
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, LosePanrl));
     }
    
     IEnumerator RestartGame(float time, GameObject panel)

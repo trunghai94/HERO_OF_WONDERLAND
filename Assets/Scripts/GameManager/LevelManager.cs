@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private GameObject _loaderCanvas;
     [SerializeField] private Slider _progreeBar;
+    [SerializeField] private Text loadding; 
     private float _target;
 
 
@@ -47,5 +49,6 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         _progreeBar.value = Mathf.MoveTowards(_progreeBar.value, _target, 3 * Time.deltaTime);
+        loadding.text= " " + Mathf.Round(_progreeBar.value * 100) + " %";
     }
 }

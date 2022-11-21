@@ -9,7 +9,7 @@ public class PlayerStats : BaseStatSystem
     private Animator animator;
     public bool die = false;
     public bool dead = false;
-    public MainUIManager showLose;
+    
     
     
 
@@ -17,7 +17,6 @@ public class PlayerStats : BaseStatSystem
     {
         caculatorStats(level);
         animator = GetComponent<Animator>();
-        showLose = this.gameObject.GetComponent<MainUIManager>();
     }
     private void Update()
     {
@@ -28,8 +27,8 @@ public class PlayerStats : BaseStatSystem
             animator.SetTrigger("Died");
             dead = true;
             //Destroy(gameObject, 5f);
-            showLose.ShowUILooseGame();
-            
+
+            MainUIManager.Instance.ShowUILooseGame();
         }
     }
 
