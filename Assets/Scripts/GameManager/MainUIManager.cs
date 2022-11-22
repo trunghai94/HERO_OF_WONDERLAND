@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainUIManager : Singleton<MainUIManager>
+public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
 {
+    
+
     public GameObject continueButton;
     public GameObject pausePanel;
-    public GameObject freelockCamera;
+    
     public GameObject LosePanrl;
-   
+
+    
     public void OnClickPauseButton()
     {
        pausePanel.SetActive(true);
        Time.timeScale = 0f;
-       freelockCamera.SetActive(false);
+       
 
     }
     private void Update()
@@ -33,17 +36,18 @@ public class MainUIManager : Singleton<MainUIManager>
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
-        freelockCamera.SetActive(true);
+        
     }
-    public void OnRestartGameButton()
+    public void OnRestartGameButton(string sceneName)
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Map1");
-        StartCoroutine(RestartGame());
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, pausePanel));
     }
-    public void OnClickBackToMenuButton()
+    public void OnClickBackToMenuButton(string sceneName)
     {
-        SceneManager.LoadScene("Menu");
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, pausePanel));
     }
     public void ShowUIWinGame()
     {
@@ -53,12 +57,23 @@ public class MainUIManager : Singleton<MainUIManager>
     {
         LosePanrl.SetActive(true);
         Time.timeScale = 0f;
-        freelockCamera.SetActive(false);
+        
+    }
+    public void RestartGameAtLose(string sceneName)
+    {
+        Time.timeScale = 1f;
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, LosePanrl));
+    }
+    public void BackToMenuAtLose(string sceneName)
+    {
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, LosePanrl));
     }
    
-    IEnumerator RestartGame()
+    IEnumerator RestartGame(float time, GameObject panel)
     {
-        yield return new WaitForSeconds(1f);
-        pausePanel.SetActive(false);
+        yield return new WaitForSeconds(time);
+        panel.SetActive(false);
     }
 }

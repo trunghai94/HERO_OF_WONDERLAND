@@ -8,7 +8,7 @@ using System;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
-    public SceneLoader SceneLoader;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -31,15 +31,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
     public void OnClickStartGame()
     {
-        SceneLoader.LoadLevel("Map1");
-        AudioManager.Instance.StopBackgroundMusic();
+        
     }
     public void OnClickExitGame()
     {
-#if UNITY_EDITOR
-        EditorApplication.isPlaying = false;
-#endif
-        Application.Quit();
+
     }
     private void SetStartVolume()
     {
