@@ -521,6 +521,8 @@ MonoBehaviour:
   dmg: 10
   armor: 0
   Hp: {fileID: 0}
+  die: 0
+  dead: 0
 --- !u!114 &577451661513100015
 MonoBehaviour:
   m_ObjectHideFlags: 0

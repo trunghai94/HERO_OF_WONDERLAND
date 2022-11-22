@@ -41,6 +41,6 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(10f);
         SceneManager.LoadScene(sceneName);
         
-       
+  
     }
 }
