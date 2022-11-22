@@ -8,22 +8,47 @@ public class MiniMapUIManager : MonoBehaviour
     public GameObject losePanel;
     public GameObject MiniMap;
     public GameObject map;
+    public bool isPausePanelActive;
+    public bool isLosePanelAsctive;
+    public bool isMiniMaplAsctive;
+    public bool isMapActive;
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        if (PausePanel.activeSelf || losePanel.activeSelf) return;
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!PausePanel.activeSelf && !losePanel.activeSelf)
+            if (MiniMap.activeSelf)
             {
                 MiniMap.SetActive(false);
-                map.SetActive(true);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            isMapActive = true;
+            ActiveMinimap(isMapActive);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            isMapActive = false;
+            ActiveMinimap(isMapActive);
+        }
+    }
+
+    void ActiveMinimap(bool isActive)
+    {
+        if (!map.activeSelf)
+        {
+            MiniMap.SetActive(!isActive);
+            map.SetActive(isActive);
         }
         else
         {
-            MiniMap.SetActive(true);
-            map.SetActive(false);
-        }
+            MiniMap.SetActive(isActive);
+            map.SetActive(!isActive);
+        }   
     }
 }
