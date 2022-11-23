@@ -74,7 +74,12 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     {
         LosePanrl.SetActive(true);
         Time.timeScale = 0f;
-        
+        HPBar.SetActive(false);
+        freelockCam.m_XAxis.m_InputAxisName = string.Empty;
+        freelockCam.m_YAxis.m_InputAxisName = string.Empty;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
     }
     public void RestartGameAtLose(string sceneName)
     {

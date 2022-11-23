@@ -30,10 +30,13 @@ public class CharacterSelection : MonoBehaviour
         label.text = characters[selectedCharacter].name;
     }
 
-    public void StartGame()
+    public void StartGame(string sceneName)
     {
         PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync(sceneName);
     }
-
+    public void backToMenu(string sceneName)
+    {
+        SceneManager.LoadSceneAsync(sceneName);
+    }
 }
