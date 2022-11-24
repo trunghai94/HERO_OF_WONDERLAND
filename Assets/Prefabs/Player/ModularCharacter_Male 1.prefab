@@ -1641,7 +1641,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  Sprint: 1
   jump: 5
+  characterController: {fileID: 0}
+  animator: {fileID: 0}
   indexWeapons: 0
   isSprint: 0
 --- !u!114 &3153409726161395016
@@ -1718,7 +1721,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3153409726161395018}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 653596eaf25c42c46992cc2a16932c6b, type: 3}
   m_Name: 
@@ -1740,7 +1743,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3153409726161395018}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf15f1c5ece50c945b9523c0eb4fb776, type: 3}
   m_Name: 

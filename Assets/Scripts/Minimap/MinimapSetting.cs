@@ -15,6 +15,7 @@ public class MinimapSetting : MonoBehaviour
 
     private void Start()
     {
+        LoadCharacter.Instance.CreateCharacter();
         targetFollow = playerManager.instance.transform;
     }
 }

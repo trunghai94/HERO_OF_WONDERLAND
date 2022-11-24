@@ -9,8 +9,9 @@ public class LoadCharacter : SingletonMonoBehaviour<LoadCharacter>
     public CinemachineFreeLook cineCamera;
     public Transform spawnPoint;
 
-    void Start()
+    public void CreateCharacter()
     {
+        if (cineCamera == null) cineCamera = FindObjectOfType<CinemachineFreeLook>();
         int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
         GameObject prefab = characterPrefabs[selectedCharacter];
         GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
