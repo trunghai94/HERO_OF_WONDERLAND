@@ -4,26 +4,17 @@ using UnityEngine;
 
 public class MinimapSetting : MonoBehaviour
 {
+    public static MinimapSetting instance;
     public Transform targetFollow;
-    public GameObject PausePanel;
-    public GameObject losePanel;
-    public GameObject MiniMap;
-    public GameObject map;
     public bool rotateWithTheTarget = true;
-    private void Update()
+
+    private void Awake()
     {
-        if(Input.GetKey(KeyCode.Tab))
-        {
-            if(!PausePanel.activeSelf&&!losePanel.activeSelf)
-            {
-                MiniMap.SetActive(false);
-                map.SetActive(true);
-            }
-        }
-        else
-        {
-            MiniMap.SetActive(true);
-            map.SetActive(false);
-        }
+        instance = this;
+    }
+
+    private void Start()
+    {
+        targetFollow = playerManager.instance.transform;
     }
 }

@@ -1553,6 +1553,7 @@ GameObject:
   - component: {fileID: 5924482430031939056}
   - component: {fileID: 2243643512971932262}
   - component: {fileID: 6582052367405886799}
+  - component: {fileID: 1972742406233405898}
   m_Layer: 3
   m_Name: ModularCharacter_Female
   m_TagString: Player
@@ -1780,7 +1781,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4764933345594314212}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eec1cf5e0af41e64a8b6f0a601552d6c, type: 3}
   m_Name: 
@@ -1792,7 +1793,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4764933345594314212}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e328cdbb94f8fe40886c6ab8c743044, type: 3}
   m_Name: 
@@ -1863,6 +1864,8 @@ MonoBehaviour:
   dmg: 10
   armor: 0
   Hp: {fileID: 0}
+  die: 0
+  dead: 0
 --- !u!114 &6582052367405886799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1880,6 +1883,19 @@ MonoBehaviour:
   pivotR: {fileID: 4805093985042963543}
   pivotL: {fileID: 7821107338144171021}
   Effects: {fileID: 3381165586157900348}
+--- !u!114 &1972742406233405898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4764933345594314212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e3526b65a7e5642bf9636d46f5a592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 4764933345594314212}
 --- !u!1 &4785364542240437549
 GameObject:
   m_ObjectHideFlags: 0

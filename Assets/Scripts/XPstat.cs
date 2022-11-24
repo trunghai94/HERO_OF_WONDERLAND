@@ -32,6 +32,9 @@ public class XPstat : MonoBehaviour
     public void Start()
     {
         //enemy = GetComponent<EnemyStat>();
+        if (frontXPBar == null) frontXPBar = MainUIManager.Instance.frontXPBar;
+        if (backXPBar == null) backXPBar = MainUIManager.Instance.backXPBar;
+        if (textlV == null) textlV = MainUIManager.Instance.textLv;
         frontXPBar.fillAmount = currentXP / requireXP;
         backXPBar.fillAmount = currentXP / requireXP;
         requireXP = CaculatorXP();

@@ -2,19 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
+using UnityEngine.UI;
+using TMPro;
 
-public class MainUIManager : Singleton<MainUIManager>
+public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
 {
     public GameObject continueButton;
     public GameObject pausePanel;
-    public GameObject freelockCamera;
+    public GameObject MiniMap;
+    public GameObject HPBar;
     public GameObject LosePanrl;
-   
+    [HideInInspector]
+    public CinemachineFreeLook freelockCam;
+    public Image frontXPBar;
+    public Image backXPBar;
+    public Image hpImg;
+    public TextMeshProUGUI textLv;
+    
     public void OnClickPauseButton()
     {
-       pausePanel.SetActive(true);
-       Time.timeScale = 0f;
-       freelockCamera.SetActive(false);
+        if (freelockCam == null) freelockCam = LoadCharacter.Instance.cineCamera;
+        pausePanel.SetActive(true);
+        Time.timeScale = 0f;
+       
+        HPBar.SetActive(false);
+        freelockCam.m_XAxis.m_InputAxisName = string.Empty;
+        freelockCam.m_YAxis.m_InputAxisName = string.Empty;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
     }
     private void Update()
@@ -32,18 +48,28 @@ public class MainUIManager : Singleton<MainUIManager>
     public void OnClickContinueButton()
     {
         pausePanel.SetActive(false);
+        if (!MiniMap.activeSelf)
+        {
+            MiniMap.SetActive(true);
+        }
         Time.timeScale = 1f;
-        freelockCamera.SetActive(true);
+        
+        HPBar.SetActive(true);
+        freelockCam.m_XAxis.m_InputAxisName = "Mouse X";
+        freelockCam.m_YAxis.m_InputAxisName = "Mouse Y";
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
-    public void OnRestartGameButton()
+    public void OnRestartGameButton(string sceneName)
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Map1");
-        StartCoroutine(RestartGame());
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, pausePanel));
     }
-    public void OnClickBackToMenuButton()
+    public void OnClickBackToMenuButton(string sceneName)
     {
-        SceneManager.LoadScene("Menu");
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, pausePanel));
     }
     public void ShowUIWinGame()
     {
@@ -53,12 +79,34 @@ public class MainUIManager : Singleton<MainUIManager>
     {
         LosePanrl.SetActive(true);
         Time.timeScale = 0f;
-        freelockCamera.SetActive(false);
+        HPBar.SetActive(false);
+        freelockCam.m_XAxis.m_InputAxisName = string.Empty;
+        freelockCam.m_YAxis.m_InputAxisName = string.Empty;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+    }
+    public void RestartGameAtLose(string sceneName)
+    {
+        Time.timeScale = 1f;
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, LosePanrl));
+    }
+    public void BackToMenuAtLose(string sceneName)
+    {
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(RestartGame(scene.progress, LosePanrl));
     }
    
-    IEnumerator RestartGame()
+    IEnumerator RestartGame(float time, GameObject panel)
     {
-        yield return new WaitForSeconds(1f);
-        pausePanel.SetActive(false);
+        yield return new WaitForSeconds(time);
+        panel.SetActive(false);
+    }
+
+    public void OnClickedStartGame()
+    {
+        HPBar.SetActive(true);
+        MiniMap.SetActive(true);
     }
 }

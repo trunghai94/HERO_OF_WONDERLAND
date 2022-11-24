@@ -211,6 +211,8 @@ GameObject:
   - component: {fileID: 102559810806178384}
   - component: {fileID: 5510335666619192774}
   - component: {fileID: 577451661513100015}
+  - component: {fileID: 3841647991605930312}
+  - component: {fileID: 7656276079227524557}
   m_Layer: 3
   m_Name: ModularCharacter_Male
   m_TagString: Player
@@ -408,6 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jump: 5
+  animator: {fileID: 0}
   indexWeapons: 0
   isSprint: 0
 --- !u!114 &1259830707704670790
@@ -521,6 +524,8 @@ MonoBehaviour:
   dmg: 10
   armor: 0
   Hp: {fileID: 0}
+  die: 0
+  dead: 0
 --- !u!114 &577451661513100015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,6 +543,49 @@ MonoBehaviour:
   pivotR: {fileID: 1293869541278333943}
   pivotL: {fileID: 4598605493177770925}
   Effects: {fileID: 9058973973013476764}
+--- !u!114 &3841647991605930312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259830707704670788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7439d910e6ee2b7479bbbbb152ea1210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilitiesImage0: {fileID: 0}
+  cooldown0: 8
+  isCooldown0: 0
+  abilitiesImage1: {fileID: 0}
+  cooldown1: 8
+  isCooldown1: 0
+  abilitiesImage2: {fileID: 0}
+  cooldown2: 8
+  isCooldown2: 0
+  abilitiesImage3: {fileID: 0}
+  cooldown3: 8
+  isCooldown3: 0
+  abilitiesImage4: {fileID: 0}
+  cooldown4: 8
+  isCooldown4: 0
+  abilitiesImage5: {fileID: 0}
+  cooldown5: 8
+  isCooldown5: 0
+--- !u!114 &7656276079227524557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259830707704670788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e3526b65a7e5642bf9636d46f5a592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1259830707704670788}
 --- !u!1 &1296308702051768550
 GameObject:
   m_ObjectHideFlags: 0

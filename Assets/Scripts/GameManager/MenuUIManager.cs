@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class MenuUIManager : MonoBehaviour
@@ -9,6 +10,24 @@ public class MenuUIManager : MonoBehaviour
     public SettingAudio settingAudio;
     public GameObject AudioMenu;
     public GameObject GraphicMenu;
+    public GameObject _MainCanvas;
+
+
+
+
+    public void OnClickPlayGame(string sceneName)
+    {
+        LevelManager.Instance.LoaderScene(sceneName);
+        Time.timeScale = 1f;
+    }
+        
+    public void OnClickExitGame()
+    {
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
+    }
 
     public void OnClickSettingButton()
     {
@@ -31,5 +50,4 @@ public class MenuUIManager : MonoBehaviour
         AudioMenu.SetActive(false);
         GraphicMenu.SetActive(true);
     }
-
 }
