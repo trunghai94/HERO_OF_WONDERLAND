@@ -9,10 +9,7 @@ public class PlayerStats : BaseStatSystem
     private Animator animator;
     public bool die = false;
     public bool dead = false;
-    
-    
-    
-
+  
     private void Start()
     {
         caculatorStats(level);
@@ -36,6 +33,5 @@ public class PlayerStats : BaseStatSystem
     {
         die = true;
         base.Die();
-       
     }
 }

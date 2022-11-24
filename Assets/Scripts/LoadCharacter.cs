@@ -9,7 +9,7 @@ public class LoadCharacter : MonoBehaviour
     public CinemachineFreeLook cineCamera;
     public Transform spawnPoint;
 
-    void Start()
+    void Awake()
     {
         int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
         GameObject prefab = characterPrefabs[selectedCharacter];
@@ -18,6 +18,7 @@ public class LoadCharacter : MonoBehaviour
         clone.GetComponent<PlayerFighter>().enabled = true;
         cineCamera.Follow.SetParent(clone.transform);
         cineCamera.LookAt.SetParent(GameObject.Find("CameraLookAt").transform);
+        //MinimapSetting.instance.targetFollow = clone.transform;
     }
 
 }
