@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 1058986302200648320}
   - component: {fileID: 1058986302200648323}
   - component: {fileID: 1058986302200648322}
+  - component: {fileID: 8669640334019248680}
   m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
@@ -254,6 +255,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8669640334019248680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058986302200648324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12189763b492dc4ea9eba284a78e727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1061805360369221207
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +765,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 80
+  maxMana: 0
   basicHP: 80
+  basicMP: 0
   level: 7
   str:
     baseValue: 7
@@ -761,6 +776,7 @@ MonoBehaviour:
   dmg: 0
   armor: 0
   animator: {fileID: 1134883378906608496}
+  HP: {fileID: 1058986301320864925}
 --- !u!114 &5914376483835786161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,8 +792,10 @@ MonoBehaviour:
   lookRadius: 20
   moveSpeed: 2
   animator: {fileID: 1134883378906608496}
+  enemyColider: {fileID: 5914376483835786160}
   attackBox: {fileID: 1058986302496146474}
-  Hpbar: {fileID: 1058986301320864925}
+  moveSound: {fileID: 0}
+  dieSound: {fileID: 0}
 --- !u!1 &6279554270703775216
 GameObject:
   m_ObjectHideFlags: 0

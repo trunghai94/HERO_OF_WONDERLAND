@@ -24,30 +24,37 @@ public class enemyController : MonoBehaviour
 
     private float dmg;
 
+    public GameObject enemyColider;
+
     public GameObject attackBox;
 
-    public Image Hpbar;
+    
 
     private float cooldown = 10f;
     private bool die = false;
 
+    private AudioSource playMoveSound,playDieSound;
+    public AudioClip moveSound, dieSound;
     void Start()
     {
         target = playerManager.instance.Player.transform;
         agent = GetComponent<NavMeshAgent>();
         stat = GetComponent<EnemyStat>();
         instance = this;
+        playMoveSound = GetComponent<AudioSource>();
+        playDieSound = GetComponent<AudioSource>();
     }
  
     void Update()
     {
         dmg = playerManager.instance.Player.GetComponent<PlayerStats>().dmg;
-        Hpbar.fillAmount = stat.currentHeath / stat.maxHeath;
+        
         float distance = Vector3.Distance(target.position, transform.position);
         agent.speed = 0;
 
         if (distance <= lookRadius && distance>agent.stoppingDistance && !die)
         {
+            playMoveSound.PlayOneShot(moveSound);
             agent.speed = moveSpeed;
             agent.SetDestination(target.position);
             animator.SetBool("isMoving", true);
@@ -83,15 +90,16 @@ public class enemyController : MonoBehaviour
             attackBox.GetComponent<Collider>().enabled = false;
         }
 
-        if(stat.currentHeath <= 0)
+        if(stat.currentHeath <= 0&& !die)
         {
+            playDieSound.PlayOneShot(dieSound);
             die = true;
             moveSpeed = 0f;
-            
+            enemyColider.GetComponent<Collider>().enabled = false;
             attackBox.GetComponent<Collider>().enabled = false;
         }
     }
-
+   
     void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;

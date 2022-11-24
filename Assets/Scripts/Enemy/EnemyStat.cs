@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class EnemyStat : BaseStatSystem
@@ -10,6 +11,7 @@ public class EnemyStat : BaseStatSystem
     XPstat GetXPstat;
     private bool die = false;
     private bool dead = false;
+    public Image HP;
 
     private void Start()
     {
@@ -20,11 +22,13 @@ public class EnemyStat : BaseStatSystem
 
     private void Update()
     {
+        HP.fillAmount = currentHeath / maxHeath;
         if (die && !dead)
         {
             animator.SetTrigger("die");
             GetXPstat.GainXPFlatRate(GetXPstat.CaculatorXPgain(level));
             dead = true;
+            
             Destroy(gameObject, 5f);
         }
     }

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Mahfouz Games.meta
+guid: 05e20af844c78014881738366c5c5be8
+========
 guid: cd88269bf699742e383b246521d5bcf3
+>>>>>>>> main:Assets/B&J Studio.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

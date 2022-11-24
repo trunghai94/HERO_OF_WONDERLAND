@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 5510724419476160299}
   - component: {fileID: 5510724419476160292}
   - component: {fileID: 5510724419476160293}
+  - component: {fileID: 4163425190383448194}
   m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
@@ -739,6 +740,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4163425190383448194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5510724419476160295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12189763b492dc4ea9eba284a78e727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5510724419544309574
 GameObject:
   m_ObjectHideFlags: 0
@@ -20100,7 +20113,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5510724421195143965}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20608,7 +20621,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 325
+  maxMana: 0
   basicHP: 325
+  basicMP: 0
   level: 15
   str:
     baseValue: 10
@@ -20617,6 +20632,7 @@ MonoBehaviour:
   dmg: 0
   armor: 0
   animator: {fileID: 3442986813992074838}
+  HP: {fileID: 5510724421195144163}
 --- !u!114 &3442986813992074836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20632,8 +20648,10 @@ MonoBehaviour:
   lookRadius: 20
   moveSpeed: 5
   animator: {fileID: 3442986813992074838}
+  enemyColider: {fileID: 8244980668159000214}
   attackBox: {fileID: 5707875953007158935, guid: 8c8976644c67ef24e938face489d7307, type: 3}
-  Hpbar: {fileID: 5510724421195144163}
+  moveSound: {fileID: 0}
+  dieSound: {fileID: 0}
 --- !u!1 &8912978442694089135
 GameObject:
   m_ObjectHideFlags: 0

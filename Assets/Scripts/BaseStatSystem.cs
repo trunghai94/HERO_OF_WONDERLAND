@@ -3,9 +3,12 @@ using UnityEngine;
 public class BaseStatSystem : MonoBehaviour
 {
     public float maxHeath;
+    public float maxMana;
     public float basicHP;
+    public float basicMP;
     public int level;
     public float currentHeath { get; private set; }
+    public float currentMana { get; private set; }
 
     public StatSystem str;
     public StatSystem agi;
@@ -21,7 +24,8 @@ public class BaseStatSystem : MonoBehaviour
     private void Awake()
     {
         caculatorStats(level);
-        currentHeath = maxHeath;
+        
+        
         
     }
 
@@ -54,11 +58,16 @@ public class BaseStatSystem : MonoBehaviour
             atm.TakeDmg(dmg);
         }
     }
-
-    public void regen(float HPregen)
+    public void useMP(float MP)
+    {
+        currentMana -= MP;
+    }
+    public void regen(float HPregen, float MPregen)
     {
         currentHeath += HPregen;
-        currentHeath = Mathf.Clamp(currentHeath, 0, maxHeath);
+        currentHeath = Mathf.Clamp(currentMana, 0, maxMana);
+        currentMana += MPregen;
+        currentMana = Mathf.Clamp(currentMana, 0, maxMana);
     }
 
     public virtual void Die()
@@ -72,10 +81,13 @@ public class BaseStatSystem : MonoBehaviour
         int LVL = Mathf.Clamp(level - 1, 1,int.MaxValue);
         maxHeath =((basicHP * LVL) / Mathf.Sqrt(LVL));
         Debug.Log("max heath: " + maxHeath);
+        maxMana = (basicMP + ((basicMP / LVL)/(LVL+5)));
         dmg = str.getValue()+((str.getValue()*LVL)+(str.getValue()/LVL));
         Debug.Log("dmg: " + dmg);
         armor = agi.getValue()+((agi.getValue()*LVL)+(agi.getValue()/LVL));
         Debug.Log("amor: "+ armor);
+        currentHeath = maxHeath;
+        currentMana = maxMana;
     }
     
 }
