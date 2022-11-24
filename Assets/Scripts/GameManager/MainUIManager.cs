@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cinemachine;
+using UnityEngine.UI;
+using TMPro;
 
 public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
 {
-    
-
     public GameObject continueButton;
     public GameObject pausePanel;
     public GameObject MiniMap;
     public GameObject HPBar;
     public GameObject LosePanrl;
+    [HideInInspector]
     public CinemachineFreeLook freelockCam;
-
+    public Image frontXPBar;
+    public Image backXPBar;
+    public Image hpImg;
+    public TextMeshProUGUI textLv;
     
     public void OnClickPauseButton()
     {
+        if (freelockCam == null) freelockCam = LoadCharacter.Instance.cineCamera;
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
        
@@ -97,5 +102,11 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     {
         yield return new WaitForSeconds(time);
         panel.SetActive(false);
+    }
+
+    public void OnClickedStartGame()
+    {
+        HPBar.SetActive(true);
+        MiniMap.SetActive(true);
     }
 }

@@ -12,6 +12,7 @@ public class PlayerStats : BaseStatSystem
   
     private void Start()
     {
+        if (Hp == null) Hp = MainUIManager.Instance.hpImg;
         caculatorStats(level);
         animator = GetComponent<Animator>();
     }

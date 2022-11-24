@@ -34,6 +34,7 @@ public class CharacterSelection : MonoBehaviour
     {
         PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
         SceneManager.LoadSceneAsync(sceneName);
+        MainUIManager.Instance.OnClickedStartGame();
     }
     public void backToMenu(string sceneName)
     {

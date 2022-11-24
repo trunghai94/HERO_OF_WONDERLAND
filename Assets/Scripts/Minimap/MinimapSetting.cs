@@ -8,8 +8,13 @@ public class MinimapSetting : MonoBehaviour
     public Transform targetFollow;
     public bool rotateWithTheTarget = true;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        targetFollow = playerManager.instance.transform;
     }
 }
