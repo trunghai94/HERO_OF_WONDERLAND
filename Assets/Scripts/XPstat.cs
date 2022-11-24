@@ -46,7 +46,7 @@ public class XPstat : MonoBehaviour
         {
             LevelUp();
             player.caculatorStats(level);
-            player.regen(player.maxHeath);
+            
             player.level = level;
         }
 

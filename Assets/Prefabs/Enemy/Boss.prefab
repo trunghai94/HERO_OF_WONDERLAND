@@ -197,7 +197,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 100
+  maxMana: 0
   basicHP: 15000
+  basicMP: 0
   level: 0
   str:
     baseValue: 35
@@ -206,6 +208,7 @@ MonoBehaviour:
   dmg: 0
   armor: 0
   animator: {fileID: 6564001540633972946}
+  HP: {fileID: 5644816302972754687}
 --- !u!114 &919104466183457826
 MonoBehaviour:
   m_ObjectHideFlags: 0

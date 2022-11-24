@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerStats : BaseStatSystem
 {
     public Image Hp;
+    public Image Mp;
     private Animator animator;
     public bool die = false;
     public bool dead = false;
@@ -14,8 +15,9 @@ public class PlayerStats : BaseStatSystem
 
     private void Start()
     {
-        caculatorStats(level);
+        
         animator = GetComponent<Animator>();
+        
         
     }
     private void Update()

@@ -14,8 +14,7 @@ public class MonsterSpawner : MonoBehaviour
     private bool die = false;
     private int counter;
     public int numberOfEnemies;
-    public int time;
-    public float delay;
+    public bool haveEyes;
     public GameObject[] enemies;
     public int maxLevel;
     public int minLevel;
@@ -23,13 +22,15 @@ public class MonsterSpawner : MonoBehaviour
     private float dmg;
     public Transform spawner;
     private bool canSpawn = true;
-
+    public AudioClip spawnSound;
+    private AudioSource spawnSoundSource;
     void Start()
     {
         target = playerManager.instance.Player.transform;
         spawner = gameObject.GetComponent<Transform>();
         stat = GetComponent<EnemyStat>();
         counter = numberOfEnemies;
+        spawnSoundSource = gameObject.GetComponent<AudioSource>();
         
         
 
@@ -47,7 +48,10 @@ public class MonsterSpawner : MonoBehaviour
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= lookRadius && !die)
         {
-            FaceTarget();
+            if (haveEyes)
+            {
+                FaceTarget();
+            }
             animator.SetBool("active", true);
 
             isActive = true;
@@ -80,7 +84,7 @@ public class MonsterSpawner : MonoBehaviour
     }
     public void SpawnEnemy()
     {
-        
+        spawnSoundSource.PlayOneShot(spawnSound);
         animator.SetTrigger("spawn");
         if (counter > 0)
         {
@@ -131,4 +135,5 @@ public class MonsterSpawner : MonoBehaviour
         }
 
     }
+
 }

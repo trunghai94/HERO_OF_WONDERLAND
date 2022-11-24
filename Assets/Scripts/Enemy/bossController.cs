@@ -13,6 +13,7 @@ public class bossController : MonoBehaviour
     private float moveSpeed;
     public Animator animator;
     private bool isAttacking = false;
+    private bool canHit = true;
 
     Transform target;
 
@@ -24,7 +25,6 @@ public class bossController : MonoBehaviour
 
     public GameObject[] attackBox;
 
-    public Image Hpbar;
 
     private float cooldown = 7f;
     private float skillMove;
@@ -41,7 +41,7 @@ public class bossController : MonoBehaviour
     void Update()
     {
         dmg = playerManager.instance.Player.GetComponent<PlayerStats>().dmg;
-        Hpbar.fillAmount = stat.currentHeath / stat.maxHeath;
+        
         float distance = Vector3.Distance(target.position, transform.position);
         agent.speed = 0;
 
@@ -126,16 +126,16 @@ public class bossController : MonoBehaviour
             Debug.Log("mau con");
             StartCoroutine(AttackCooldown());
         }
-        //<<<<<<< HEAD
-        //=======
+        
 
-        if (other.gameObject == other.CompareTag("Weapon"))
+        if (other.gameObject == other.CompareTag("Weapon")&& canHit)
         {
+            canHit = false;
             stat.TakeDmg(dmg);
             StartCoroutine(AttackCooldown());
         }
 
-        //>>>>>>> main
+        
     }
     private void OnTriggerExit(Collider other)
     {
@@ -145,7 +145,7 @@ public class bossController : MonoBehaviour
         }
         if (other.gameObject == other.CompareTag("Weapon"))
         {
-
+            canHit = false;
 
 
         }
