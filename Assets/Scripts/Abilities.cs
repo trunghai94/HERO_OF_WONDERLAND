@@ -36,13 +36,11 @@ public class Abilities : MonoBehaviour
     public Image abilitiesImage5;
     public float cooldown5 = 8f;
     public bool isCooldown5 = false;
-    public LoadImage load;
+
     // Start is called before the first frame update
     void Start()
     {
-
-        load = FindObjectOfType<LoadImage>();
-        LoadImage(load);
+        LoadImage();
         abilitiesImage0.fillAmount = 0f;
         abilitiesImage1.fillAmount = 0f;
         abilitiesImage2.fillAmount = 0f;
@@ -214,15 +212,16 @@ public class Abilities : MonoBehaviour
         isCooldown0 = true;
         Delay = true;
     }
-    public void LoadImage(LoadImage loadImage)
+    void LoadImage()
     {
-        Debug.Log("Hello");
-        abilitiesImage0 = loadImage.images[0];
-        abilitiesImage1 = loadImage.images[1];
-        abilitiesImage2 = loadImage.images[2];
-        abilitiesImage3 = loadImage.images[3];
-        abilitiesImage4 = loadImage.images[4];
-        abilitiesImage5 = loadImage.images[5];
+        Debug.Log("heel");
+        Abilities abilities = MainUIManager.Instance.GetComponentInChildren<Abilities>();
+        abilitiesImage0 = abilities.abilitiesImage0;
+        abilitiesImage1 = abilities.abilitiesImage1;
+        abilitiesImage2 = abilities.abilitiesImage2;
+        abilitiesImage3 = abilities.abilitiesImage3;
+        abilitiesImage4 = abilities.abilitiesImage4;
+        abilitiesImage5 = abilities.abilitiesImage5;
     }
 
 }
