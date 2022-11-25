@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7343493549458076933}
   - component: {fileID: 7345086518772487383}
   - component: {fileID: 7353272390990185619}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 'Sword crater '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5044,7 +5044,7 @@ GameObject:
   - component: {fileID: 7343246167070513999}
   - component: {fileID: 7344708047521286147}
   - component: {fileID: 8747957256524300232}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9956,7 +9956,7 @@ GameObject:
   - component: {fileID: 7433062584230103299}
   - component: {fileID: 7343189343819696993}
   - component: {fileID: 7344650927242037685}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14847,7 +14847,7 @@ GameObject:
   - component: {fileID: 7437758007398444095}
   - component: {fileID: 7343431240461731723}
   - component: {fileID: 7344045348317292537}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19739,7 +19739,7 @@ GameObject:
   - component: {fileID: 7343450240503012665}
   - component: {fileID: 7344567855984592293}
   - component: {fileID: 7531416511119180529}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24634,7 +24634,7 @@ GameObject:
   - component: {fileID: 7343186063531299741}
   - component: {fileID: 7344960261040142149}
   - component: {fileID: 3263168409692610869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCrater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29528,7 +29528,7 @@ GameObject:
   - component: {fileID: 7432639918242285729}
   - component: {fileID: 7320379009810476161}
   - component: {fileID: 7344511757192777555}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TrailFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34410,7 +34410,7 @@ GameObject:
   - component: {fileID: 7437898648756485067}
   - component: {fileID: 7343928047510298241}
   - component: {fileID: 7344083359000786751}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39292,7 +39292,7 @@ GameObject:
   - component: {fileID: 7437910552482466435}
   - component: {fileID: 7343223040308135013}
   - component: {fileID: 7344149390117090323}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}

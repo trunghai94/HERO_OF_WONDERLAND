@@ -12,9 +12,6 @@ public class MenuUIManager : MonoBehaviour
     public GameObject GraphicMenu;
     public GameObject _MainCanvas;
 
-
-
-
     public void OnClickPlayGame(string sceneName)
     {
         LevelManager.Instance.LoaderScene(sceneName);

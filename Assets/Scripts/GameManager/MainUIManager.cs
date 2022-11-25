@@ -13,11 +13,13 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     public GameObject MiniMap;
     public GameObject HPBar;
     public GameObject LosePanrl;
+    public GameObject SkillBar;
     [HideInInspector]
     public CinemachineFreeLook freelockCam;
     public Image frontXPBar;
     public Image backXPBar;
     public Image hpImg;
+    public Image[] skillImg;
     public TextMeshProUGUI textLv;
     
     public void OnClickPauseButton()
@@ -27,6 +29,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
         Time.timeScale = 0f;
        
         HPBar.SetActive(false);
+        SkillBar.SetActive(false);
         freelockCam.m_XAxis.m_InputAxisName = string.Empty;
         freelockCam.m_YAxis.m_InputAxisName = string.Empty;
         Cursor.visible = true;
@@ -55,6 +58,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
         Time.timeScale = 1f;
         
         HPBar.SetActive(true);
+        SkillBar.SetActive(true);
         freelockCam.m_XAxis.m_InputAxisName = "Mouse X";
         freelockCam.m_YAxis.m_InputAxisName = "Mouse Y";
         Cursor.visible = false;
@@ -108,5 +112,6 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     {
         HPBar.SetActive(true);
         MiniMap.SetActive(true);
+        SkillBar.SetActive(true);
     }
 }

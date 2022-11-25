@@ -215,13 +215,12 @@ public class Abilities : MonoBehaviour
     void LoadImage()
     {
         Debug.Log("heel");
-        Abilities abilities = MainUIManager.Instance.GetComponentInChildren<Abilities>();
-        abilitiesImage0 = abilities.abilitiesImage0;
-        abilitiesImage1 = abilities.abilitiesImage1;
-        abilitiesImage2 = abilities.abilitiesImage2;
-        abilitiesImage3 = abilities.abilitiesImage3;
-        abilitiesImage4 = abilities.abilitiesImage4;
-        abilitiesImage5 = abilities.abilitiesImage5;
+        if(abilitiesImage0 == null) abilitiesImage0 = MainUIManager.Instance.skillImg[0];
+        if (abilitiesImage1 == null) abilitiesImage1 = MainUIManager.Instance.skillImg[1];
+        if (abilitiesImage2 == null) abilitiesImage2 = MainUIManager.Instance.skillImg[2];
+        if (abilitiesImage3 == null) abilitiesImage3 = MainUIManager.Instance.skillImg[3];
+        if (abilitiesImage4 == null) abilitiesImage4 = MainUIManager.Instance.skillImg[4];
+        if (abilitiesImage5 == null) abilitiesImage5 = MainUIManager.Instance.skillImg[5];
     }
 
 }

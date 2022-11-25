@@ -7,6 +7,8 @@ public class MiniMapUIManager : MonoBehaviour
     public GameObject PausePanel;
     public GameObject losePanel;
     public GameObject MiniMap;
+    public GameObject SkillBar;
+    public GameObject LevelHpBar;
     public GameObject map;
     public bool isPausePanelActive;
     public bool isLosePanelAsctive;
@@ -43,11 +45,15 @@ public class MiniMapUIManager : MonoBehaviour
         if (!map.activeSelf)
         {
             MiniMap.SetActive(!isActive);
+            LevelHpBar.SetActive(!isActive);
+            SkillBar.SetActive(!isActive);
             map.SetActive(isActive);
         }
         else
         {
             MiniMap.SetActive(isActive);
+            LevelHpBar.SetActive(isActive);
+            SkillBar.SetActive(isActive);
             map.SetActive(!isActive);
         }   
     }
