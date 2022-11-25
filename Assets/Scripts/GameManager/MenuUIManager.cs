@@ -11,6 +11,8 @@ public class MenuUIManager : MonoBehaviour
     public GameObject AudioMenu;
     public GameObject GraphicMenu;
     public GameObject _MainCanvas;
+    public GameObject _HowTopPlayPanel;
+
 
     public void OnClickPlayGame(string sceneName)
     {
@@ -46,5 +48,15 @@ public class MenuUIManager : MonoBehaviour
     {
         AudioMenu.SetActive(false);
         GraphicMenu.SetActive(true);
+    }
+    public void OnClickHTPlayButton()
+    {
+        MainMenu.SetActive(false);
+        _HowTopPlayPanel.SetActive(true);
+    }
+    public void OnClickBackHTPlayButton()
+    {
+        MainMenu.SetActive(true);
+        _HowTopPlayPanel.SetActive(false);
     }
 }
