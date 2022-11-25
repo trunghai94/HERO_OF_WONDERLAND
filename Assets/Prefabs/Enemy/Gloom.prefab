@@ -793,9 +793,10 @@ MonoBehaviour:
   moveSpeed: 2
   animator: {fileID: 1134883378906608496}
   enemyColider: {fileID: 5914376483835786160}
-  attackBox: {fileID: 1058986302496146474}
-  moveSound: {fileID: 0}
-  dieSound: {fileID: 0}
+  attackBox:
+  - {fileID: 1058986302496146474}
+  moveSound: {fileID: 8300000, guid: 91edc613c4aa9d0419d6cafaf07d9f15, type: 3}
+  dieSound: {fileID: 8300000, guid: 00b46db33d5c7844c8525ca242dc52e2, type: 3}
 --- !u!1 &6279554270703775216
 GameObject:
   m_ObjectHideFlags: 0

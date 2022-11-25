@@ -24,6 +24,8 @@ public class MonsterSpawner : MonoBehaviour
     private bool canSpawn = true;
     public AudioClip spawnSound;
     private AudioSource spawnSoundSource;
+
+    public GameObject[] wall;
     void Start()
     {
         target = playerManager.instance.Player.transform;
@@ -54,7 +56,20 @@ public class MonsterSpawner : MonoBehaviour
             }
             animator.SetBool("active", true);
 
+            for(int i = 0; i < wall.Length; i++)
+            {
+                wall[i].GetComponent<GameObject>().active = true;
+            }
+
             isActive = true;
+            if(isActive)
+            {
+                animator.SetBool("idle", isActive);
+            }
+            else
+            {
+                animator.SetBool("idle", isActive);
+            }
             if (counter > 0&& canSpawn)
             {
                 canSpawn = false;
@@ -73,6 +88,7 @@ public class MonsterSpawner : MonoBehaviour
         else
         {
             animator.SetBool("active",false);
+            isActive = false;
         }
         if (stat.currentHeath <= 0)
         {
@@ -80,6 +96,10 @@ public class MonsterSpawner : MonoBehaviour
             animator.SetTrigger("die");
             die = true;
             stat.Die();
+            for (int i = 0; i < wall.Length; i++)
+            {
+               wall[i].GetComponent<GameObject>().active=false;
+            }
         }
     }
     public void SpawnEnemy()

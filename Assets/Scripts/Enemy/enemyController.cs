@@ -15,7 +15,8 @@ public class enemyController : MonoBehaviour
     private float moveSpeed;
     public Animator animator;
     private bool isAttacking = false;
-
+    private bool canHit = true;
+    private bool isMoving = false;
     Transform target;
 
     NavMeshAgent agent;
@@ -26,11 +27,11 @@ public class enemyController : MonoBehaviour
 
     public GameObject enemyColider;
 
-    public GameObject attackBox;
+    public GameObject[] attackBox;
 
     
 
-    private float cooldown = 10f;
+    private float cooldown = 0.1f;
     private bool die = false;
 
     private AudioSource playMoveSound,playDieSound;
@@ -44,7 +45,8 @@ public class enemyController : MonoBehaviour
         playMoveSound = GetComponent<AudioSource>();
         playDieSound = GetComponent<AudioSource>();
     }
- 
+
+
     void Update()
     {
         dmg = playerManager.instance.Player.GetComponent<PlayerStats>().dmg;
@@ -54,13 +56,15 @@ public class enemyController : MonoBehaviour
 
         if (distance <= lookRadius && distance>agent.stoppingDistance && !die)
         {
-            playMoveSound.PlayOneShot(moveSound);
+            if (!isMoving) { playMoveSound.PlayOneShot(moveSound); isMoving = true; }
+            
             agent.speed = moveSpeed;
             agent.SetDestination(target.position);
             animator.SetBool("isMoving", true);
         }
         else if(distance > lookRadius && distance > agent.stoppingDistance)
         {
+            isMoving = false;
             agent.speed = 0f;
             animator.SetBool("isMoving",false);
             animator.SetBool("isAttack", false);
@@ -72,11 +76,20 @@ public class enemyController : MonoBehaviour
             //attack
             if (!isAttacking)
             {
+                
                 isAttacking = true;
-                attackBox.GetComponent<Collider>().enabled = true;
+                
+                for (int i = 0; i < attackBox.Length; i++)
+                {
+
+                    attackBox[i].GetComponent<Collider>().enabled = true;
+                }
                 animator.SetBool("isMoving", false);
-                StartCoroutine(AttackCooldown());
-                animator.SetBool("isAttack", true);
+                while (isAttacking)
+                {
+                    StartCoroutine(AttackCooldown());
+                    return;
+                }
             }
             else 
             {
@@ -87,16 +100,25 @@ public class enemyController : MonoBehaviour
         {
             animator.SetBool("isAttack", false);
             isAttacking = false;
-            attackBox.GetComponent<Collider>().enabled = false;
+            for (int i = 0; i < attackBox.Length; i++)
+            {
+
+                attackBox[i].GetComponent<Collider>().enabled = false;
+            }
+            
         }
 
         if(stat.currentHeath <= 0&& !die)
         {
             playDieSound.PlayOneShot(dieSound);
-            die = true;
             moveSpeed = 0f;
             enemyColider.GetComponent<Collider>().enabled = false;
-            attackBox.GetComponent<Collider>().enabled = false;
+            for (int i = 0; i < attackBox.Length; i++)
+            {
+
+                attackBox[i].GetComponent<Collider>().enabled = false;
+            }
+            die = true;
         }
     }
    
@@ -117,10 +139,11 @@ public class enemyController : MonoBehaviour
                 StartCoroutine(AttackCooldown());
         }
 
-        if(other.gameObject == other.CompareTag("Weapon"))
+        if (other.gameObject == other.CompareTag("Weapon") && canHit)
         {
-                stat.TakeDmg(dmg);
-                StartCoroutine(AttackCooldown());   
+            canHit = false;
+            stat.TakeDmg(dmg);
+            StartCoroutine(AttackCooldown());
         }
 
     }
@@ -132,16 +155,22 @@ public class enemyController : MonoBehaviour
         }
         if (other.gameObject == other.CompareTag("Weapon"))
         {
-            
+            canHit = true;
 
 
         }
 
     }
-
+    
     IEnumerator AttackCooldown()
     {
+        
+        animator.SetBool("isAttack", true);
         yield return new WaitForSeconds(cooldown);
+        animator.SetBool("isAttack", false);
+        
+
+
     }
 
     private void OnDrawGizmosSelected()

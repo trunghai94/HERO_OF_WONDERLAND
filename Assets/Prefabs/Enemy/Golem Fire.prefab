@@ -20649,7 +20649,9 @@ MonoBehaviour:
   moveSpeed: 5
   animator: {fileID: 3442986813992074838}
   enemyColider: {fileID: 8244980668159000214}
-  attackBox: {fileID: 5707875953007158935, guid: 8c8976644c67ef24e938face489d7307, type: 3}
+  attackBox:
+  - {fileID: 237692809139850545}
+  - {fileID: 237692808265072763}
   moveSound: {fileID: 0}
   dieSound: {fileID: 0}
 --- !u!1 &8912978442694089135
@@ -25662,6 +25664,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5707875953007158933, guid: 8c8976644c67ef24e938face489d7307, type: 3}
   m_PrefabInstance: {fileID: 5510724419153192684}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &237692808265072763 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5707875953007158935, guid: 8c8976644c67ef24e938face489d7307, type: 3}
+  m_PrefabInstance: {fileID: 5510724419153192684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5510724420023249830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25739,6 +25746,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8976644c67ef24e938face489d7307, type: 3}
+--- !u!1 &237692809139850545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5707875953007158935, guid: 8c8976644c67ef24e938face489d7307, type: 3}
+  m_PrefabInstance: {fileID: 5510724420023249830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &237692809139850547 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5707875953007158933, guid: 8c8976644c67ef24e938face489d7307, type: 3}
