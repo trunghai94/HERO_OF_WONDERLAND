@@ -15,13 +15,14 @@ public class EnemyStat : BaseStatSystem
 
     private void Start()
     {
-        GetXPstat = playerManager.instance.Player.GetComponent<XPstat>();
+        
         caculatorStats(level);
         
     }
 
     private void Update()
     {
+        if(GetXPstat==null) GetXPstat = playerManager.instance.Player.GetComponent<XPstat>();
         HP.fillAmount = currentHeath / maxHeath;
         if (die && !dead)
         {

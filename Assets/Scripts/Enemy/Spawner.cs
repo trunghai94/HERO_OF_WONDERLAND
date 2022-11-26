@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         spawner = gameObject.GetComponent<Transform>();
-        target = playerManager.instance.Player.transform;
+        //target = playerManager.instance.Player.transform;
         spawnSoundSource = gameObject.GetComponent<AudioSource>();
         
     }
@@ -31,6 +31,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target == null) target = playerManager.instance.Player.transform;
         counter = Mathf.Clamp(counter, 0, counter);
         for (int i = 0; i < enemies.Length; i++)
         {
@@ -60,7 +61,7 @@ public class Spawner : MonoBehaviour
         
         if (counter > 0)
         {
-            Instantiate(enemies[Random.Range(0, enemies.Length)], new Vector3(spawner.transform.position.x + Random.Range(-5, 5), spawner.transform.position.y, spawner.transform.position.z + Random.Range(-5, 5)), Quaternion.identity);
+            Instantiate(enemies[Random.Range(0, enemies.Length)], new Vector3(spawner.transform.position.x + Random.Range(0, 5), spawner.transform.position.y, spawner.transform.position.z + Random.Range(0, 5)), Quaternion.identity);
         }
     }
     private void OnDrawGizmosSelected()

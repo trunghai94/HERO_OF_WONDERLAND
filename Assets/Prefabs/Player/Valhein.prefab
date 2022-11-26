@@ -1445,7 +1445,7 @@ GameObject:
   - component: {fileID: 8556941764232061640}
   - component: {fileID: 3655653033061367265}
   - component: {fileID: 6532168405803459923}
-  - component: {fileID: 4281197000175966621}
+  - component: {fileID: -6301003715123991860}
   m_Layer: 3
   m_Name: Valhein
   m_TagString: Player
@@ -1810,7 +1810,7 @@ MonoBehaviour:
   abilitiesImage5: {fileID: 0}
   cooldown5: 8
   isCooldown5: 0
---- !u!114 &4281197000175966621
+--- !u!114 &-6301003715123991860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

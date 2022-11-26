@@ -28,18 +28,22 @@ public class MonsterSpawner : MonoBehaviour
     public GameObject[] wall;
     void Start()
     {
-        target = playerManager.instance.Player.transform;
+        
         spawner = gameObject.GetComponent<Transform>();
         stat = GetComponent<EnemyStat>();
         counter = numberOfEnemies;
         spawnSoundSource = gameObject.GetComponent<AudioSource>();
-        
-        
+        for (int i = 0; i < wall.Length; i++)
+        {
+            wall[i].gameObject.SetActive(false);
+        }
+
 
     }
    
     private void Update()
     {
+        if (target == null) target = playerManager.instance.Player.transform;
         counter = Mathf.Clamp(counter, 0, numberOfEnemies);
         dmg = playerManager.instance.Player.GetComponent<PlayerStats>().dmg;
         
@@ -58,7 +62,7 @@ public class MonsterSpawner : MonoBehaviour
 
             for(int i = 0; i < wall.Length; i++)
             {
-                wall[i].GetComponent<GameObject>().active = true;
+                wall[i].gameObject.SetActive(true);
             }
 
             isActive = true;
@@ -98,7 +102,7 @@ public class MonsterSpawner : MonoBehaviour
             stat.Die();
             for (int i = 0; i < wall.Length; i++)
             {
-               wall[i].GetComponent<GameObject>().active=false;
+                wall[i].gameObject.SetActive(false);
             }
         }
     }

@@ -38,7 +38,7 @@ public class enemyController : MonoBehaviour
     public AudioClip moveSound, dieSound;
     void Start()
     {
-        target = playerManager.instance.Player.transform;
+        
         agent = GetComponent<NavMeshAgent>();
         stat = GetComponent<EnemyStat>();
         instance = this;
@@ -49,6 +49,7 @@ public class enemyController : MonoBehaviour
 
     void Update()
     {
+        if(target==null) target = playerManager.instance.Player.transform;
         dmg = playerManager.instance.Player.GetComponent<PlayerStats>().dmg;
         
         float distance = Vector3.Distance(target.position, transform.position);

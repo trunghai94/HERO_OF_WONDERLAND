@@ -16,5 +16,10 @@ public class playerManager : MonoBehaviour
     #endregion
 
     public GameObject Player;
-    
+
+    public void findplayer()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
+    }
+
 }

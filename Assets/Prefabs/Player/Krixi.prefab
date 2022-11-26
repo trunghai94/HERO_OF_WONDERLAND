@@ -1554,7 +1554,7 @@ GameObject:
   - component: {fileID: 2243643512971932262}
   - component: {fileID: 6582052367405886799}
   - component: {fileID: 1619896109132000238}
-  - component: {fileID: 1972742406233405898}
+  - component: {fileID: 7957734035449393917}
   m_Layer: 3
   m_Name: Krixi
   m_TagString: Player
@@ -1919,7 +1919,7 @@ MonoBehaviour:
   abilitiesImage5: {fileID: 0}
   cooldown5: 8
   isCooldown5: 0
---- !u!114 &1972742406233405898
+--- !u!114 &7957734035449393917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
