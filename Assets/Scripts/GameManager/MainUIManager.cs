@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using Cinemachine;
 using UnityEngine.UI;
 using TMPro;
+using static UnityEngine.Rendering.DebugUI;
 
 public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
 {
@@ -72,8 +73,10 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     }
     public void OnClickBackToMenuButton(string sceneName)
     {
-        var scene = SceneManager.LoadSceneAsync(sceneName);
-        StartCoroutine(RestartGame(scene.progress, pausePanel));
+        LevelManager.Instance.LoaderScene(sceneName);
+        pausePanel.SetActive(false);
+        OnClickedReturnMenu();
+
     }
     public void ShowUIWinGame()
     {
@@ -93,8 +96,9 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     public void RestartGameAtLose(string sceneName)
     {
         Time.timeScale = 1f;
-        var scene = SceneManager.LoadSceneAsync(sceneName);
-        StartCoroutine(RestartGame(scene.progress, LosePanrl));
+        LevelManager.Instance.LoaderScene(sceneName);
+        pausePanel.SetActive(false);
+        OnClickedStartGame();
     }
     public void BackToMenuAtLose(string sceneName)
     {
@@ -106,6 +110,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     {
         yield return new WaitForSeconds(time);
         panel.SetActive(false);
+        OnClickedStartGame();
     }
 
     public void OnClickedStartGame()
@@ -113,5 +118,11 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
         HPBar.SetActive(true);
         MiniMap.SetActive(true);
         SkillBar.SetActive(true);
+    }
+    public void OnClickedReturnMenu()
+    {
+        HPBar.SetActive(false);
+        MiniMap.SetActive(false);
+        SkillBar.SetActive(false);
     }
 }

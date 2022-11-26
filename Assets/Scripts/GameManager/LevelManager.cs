@@ -6,10 +6,12 @@ using TMPro;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
+    public Sprite[] loadingSprite;
 
     [SerializeField] private GameObject _loaderCanvas;
     [SerializeField] private Slider _progreeBar;
     [SerializeField] private Text loadding; 
+    [SerializeField] private Image loaddingImg;
     private float _target;
 
 
@@ -31,6 +33,8 @@ public class LevelManager : MonoBehaviour
         _target = 0;
         _progreeBar.value = 0;
         var scene = SceneManager.LoadSceneAsync(sceneName);
+        int random = Random.Range(0, loadingSprite.Length);
+        loaddingImg.sprite = loadingSprite[random];
         //scene.allowSceneActivation = false;
         _loaderCanvas.SetActive(true);
         do
