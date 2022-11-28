@@ -87,17 +87,19 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
         LosePanrl.SetActive(true);
         Time.timeScale = 0f;
         HPBar.SetActive(false);
-        freelockCam.m_XAxis.m_InputAxisName = string.Empty;
-        freelockCam.m_YAxis.m_InputAxisName = string.Empty;
+        SkillBar.SetActive(false);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        //freelockCam.m_XAxis.m_InputAxisName = string.Empty;
+        //freelockCam.m_YAxis.m_InputAxisName = string.Empty;
+        
 
     }
     public void RestartGameAtLose(string sceneName)
     {
         Time.timeScale = 1f;
         LevelManager.Instance.LoaderScene(sceneName);
-        pausePanel.SetActive(false);
+        LosePanrl.SetActive(false);
         OnClickedStartGame();
     }
     public void BackToMenuAtLose(string sceneName)
