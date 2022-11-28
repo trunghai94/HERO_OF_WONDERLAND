@@ -45,9 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1e35f6d21534f40b21d3b64fc88c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingSprite:
+  - {fileID: 21300000, guid: 1f014df0756a4483389c3db39590bc2c, type: 3}
+  - {fileID: 21300000, guid: 84a8bb6e4d26c59418d620feb03a8836, type: 3}
+  - {fileID: 21300000, guid: 75913135f24154b7298fe2b32e259617, type: 3}
   _loaderCanvas: {fileID: 8169821933189676680}
   _progreeBar: {fileID: 8169821934088218010}
   loadding: {fileID: 797054114239214440}
+  loaddingImg: {fileID: 8169821933386417711}
 --- !u!1 &3941028472593538831
 GameObject:
   m_ObjectHideFlags: 0

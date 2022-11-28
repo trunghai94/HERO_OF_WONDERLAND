@@ -21,6 +21,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     public Image backXPBar;
     public Image hpImg;
     public Image[] skillImg;
+    public Image[] blockSkillImg;
     public TextMeshProUGUI textLv;
     
     public void OnClickPauseButton()
@@ -45,7 +46,6 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
             {
                 OnClickPauseButton();
             }
-            
         }
         
     }

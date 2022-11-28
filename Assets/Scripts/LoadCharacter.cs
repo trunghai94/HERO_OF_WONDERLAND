@@ -22,7 +22,6 @@ public class LoadCharacter : SingletonMonoBehaviour<LoadCharacter>
         clone.GetComponent<XPstat>().enabled = true;
         cineCamera.Follow.SetParent(clone.transform);
         cineCamera.LookAt.SetParent(GameObject.Find("CameraLookAt").transform);
-        
     }
 
 }

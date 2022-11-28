@@ -61,25 +61,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isSprint", isSprint);
         //float sprint = isSprint ? 3f : 1f;
 
-        //if(isSprint == true)
-        //{
-        //    if (Delay == false)
-        //    {
-        //        Sprint = 4f;
-        //        StartCoroutine(DelaySprint());
-        //    }
-        //    else
-        //    {
-        //        isSprint = false;
-        //        Sprint = 1f;
-        //        StartCoroutine(PlaySprint());
-        //    }
-        //}
-        //else
-        //{
-        //    Sprint = 1f;
-        //}
-
         moveDirection = new Vector3(horizontalInput, 0, verticalInput);
         float magnitude = Mathf.Clamp01(moveDirection.magnitude) * moveSpeed;
         moveDirection.Normalize();
@@ -268,6 +249,26 @@ public class PlayerMovement : MonoBehaviour
     //    yield return new WaitForSeconds(6f);
     //    playerManager.instance.Player.GetComponent<PlayerStats>().armor -= 10f;
     //    StartCoroutine(DelayShied());
+    //}
+
+
+    //if(isSprint == true)
+    //{
+    //    if (Delay == false)
+    //    {
+    //        Sprint = 4f;
+    //        StartCoroutine(DelaySprint());
+    //    }
+    //    else
+    //    {
+    //        isSprint = false;
+    //        Sprint = 1f;
+    //        StartCoroutine(PlaySprint());
+    //    }
+    //}
+    //else
+    //{
+    //    Sprint = 1f;
     //}
 
     //IEnumerator DelaySprint()

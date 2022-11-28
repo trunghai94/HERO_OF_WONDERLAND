@@ -20,7 +20,7 @@ public class PlayerFighter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("Attack01"))
         {
@@ -49,6 +49,7 @@ public class PlayerFighter : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
+                Debug.Log("" + Input.GetMouseButton(0));
                 OnClick();
                 weaponObj.GetComponent<Collider>().enabled = true;
                 StartCoroutine(CheckCollier());

@@ -1901,6 +1901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7439d910e6ee2b7479bbbbb152ea1210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockImg: []
   abilitiesImage0: {fileID: 0}
   cooldown0: 5
   isCooldown0: 0
