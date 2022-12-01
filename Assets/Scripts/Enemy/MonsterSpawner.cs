@@ -97,7 +97,8 @@ public class MonsterSpawner : MonoBehaviour
         if (stat.currentHeath <= 0)
         {
             canSpawn = false;
-            animator.SetTrigger("die");
+            animator.SetBool("active", false);
+            animator.SetBool("idle", false);
             die = true;
             stat.Die();
             for (int i = 0; i < wall.Length; i++)

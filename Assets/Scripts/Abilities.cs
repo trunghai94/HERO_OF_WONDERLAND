@@ -55,6 +55,8 @@ public class Abilities : MonoBehaviour
         abilitiesImage3.fillAmount = 0f;
         abilitiesImage4.fillAmount = 0f;
         abilitiesImage5.fillAmount = 0f;
+
+        //Clocking(false);
     }
 
     // Update is called once per frame
@@ -98,20 +100,20 @@ public class Abilities : MonoBehaviour
                 Delay = false;
                 MeshTrail.enabled = true;
             }
-        }
+            Debug.Log("a0");
+        }     
     }
 
     void Abilities1()
     {
-        if(playerManager.instance.Player.GetComponent<PlayerStats>().level >= 5)
+        if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 3)
         {
-            blockImg1.GetComponent<Image>().enabled = false;
-            blockImg1.GetComponentInChildren<TMP_Text>().enabled = false;
+            blockImg1.gameObject.SetActive(false);
             if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.Q) && isCooldown1 == false)
             {
-                SwordAttack.instance.SwordAirAttack();
+                SwordAttack.instance.TornadoAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
-                PlayerMovement.instance.animator.SetTrigger("SwordAir");
+                PlayerMovement.instance.animator.SetTrigger("Tornado");
                 isCooldown1 = true;
                 abilitiesImage1.fillAmount = 1;
                 StartCoroutine(DelayMove(3f));
@@ -126,15 +128,16 @@ public class Abilities : MonoBehaviour
                     isCooldown1 = false;
                 }
             }
+            Debug.Log("a1");
         }
+        
     }
 
     void Abilities2()
     {
-        if(playerManager.instance.Player.GetComponent<PlayerStats>().level >= 10)
+        if(playerManager.instance.Player.GetComponent<PlayerStats>().level >= 6)
         {
-            blockImg2.GetComponent<Image>().enabled = false;
-            blockImg2.GetComponentInChildren<TMP_Text>().enabled = false;
+            blockImg2.gameObject.SetActive(false);
             if (Input.GetKeyDown(KeyCode.E) && isCooldown2 == false)
             {
                 SpawnShield.instance.spawnShied();
@@ -158,18 +161,17 @@ public class Abilities : MonoBehaviour
 
     void Abilities3()
     {
-        if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 15)
+        if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 12)
         {
-            blockImg3.GetComponent<Image>().enabled = false;
-            blockImg3.GetComponentInChildren<TMP_Text>().enabled = false;
+            blockImg3.gameObject.SetActive(false);
             if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.R) && isCooldown3 == false)
             {
-                SwordAttack.instance.TornadoAttack();
+                SwordAttack.instance.WaveFireAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
-                PlayerMovement.instance.animator.SetTrigger("Tornado");
+                PlayerMovement.instance.animator.SetTrigger("Wave");
                 isCooldown3 = true;
                 abilitiesImage3.fillAmount = 1;
-                StartCoroutine(DelayMove(3f));
+                StartCoroutine(DelayMove(2.5f));
             }
 
             if (isCooldown3)
@@ -186,18 +188,17 @@ public class Abilities : MonoBehaviour
 
     void Abilities4()
     {
-        if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 20)
+        if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 17)
         {
-            blockImg4.GetComponent<Image>().enabled = false;
-            blockImg4.GetComponentInChildren<TMP_Text>().enabled = false;
+            blockImg4.gameObject.SetActive(false);
             if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.T) && isCooldown4 == false)
             {
-                SwordAttack.instance.WaveFireAttack();
+                SwordAttack.instance.BirdLightAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
-                PlayerMovement.instance.animator.SetTrigger("Wave");
+                PlayerMovement.instance.animator.SetTrigger("BirdLight");
                 isCooldown4 = true;
                 abilitiesImage4.fillAmount = 1;
-                StartCoroutine(DelayMove(2.5f));
+                StartCoroutine(DelayMove(1f));
             }
 
             if (isCooldown4)
@@ -214,18 +215,17 @@ public class Abilities : MonoBehaviour
 
     void Abilities5()
     {
-        if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 25)
+        if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 20)
         {
-            blockImg5.GetComponent<Image>().enabled = false;
-            blockImg5.GetComponentInChildren<TMP_Text>().enabled = false;
+            blockImg5.gameObject.SetActive(false);
             if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.F) && isCooldown5 == false)
             {
-                SwordAttack.instance.BirdLightAttack();
+                SwordAttack.instance.SwordAirAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
-                PlayerMovement.instance.animator.SetTrigger("BirdLight");
+                PlayerMovement.instance.animator.SetTrigger("SwordAir");
                 isCooldown5 = true;
                 abilitiesImage5.fillAmount = 1;
-                StartCoroutine(DelayMove(1f));
+                StartCoroutine(DelayMove(3f));
             }
 
             if (isCooldown5)
