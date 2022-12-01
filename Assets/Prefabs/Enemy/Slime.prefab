@@ -543,7 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeath: 100
   maxMana: 0
-  basicHP: 50
+  basicHP: 200
   basicMP: 0
   level: 2
   str:
