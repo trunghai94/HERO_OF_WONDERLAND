@@ -60,7 +60,7 @@ public class enemyController : MonoBehaviour
             if (!isMoving) { playMoveSound.PlayOneShot(moveSound); isMoving = true; }
             
             agent.speed = moveSpeed;
-            agent.SetDestination(target.position);
+            agen    t.SetDestination(target.position);
             animator.SetBool("isMoving", true);
         }
         else if(distance > lookRadius && distance > agent.stoppingDistance)

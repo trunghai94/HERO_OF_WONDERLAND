@@ -102,7 +102,7 @@ public class bossController : MonoBehaviour
         {
             die = true;
             moveSpeed = 0f;
-
+            //Win panel.setactive=true;
             for (int i = 0; i < attackBox.Length; i++)
             {
 
