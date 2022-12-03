@@ -65,7 +65,7 @@ public class BaseStatSystem : MonoBehaviour
     public void regen(float HPregen, float MPregen)
     {
         currentHeath += HPregen;
-        currentHeath = Mathf.Clamp(currentMana, 0, maxMana);
+        currentHeath = Mathf.Clamp(currentHeath, 0, maxHeath);
         currentMana += MPregen;
         currentMana = Mathf.Clamp(currentMana, 0, maxMana);
     }

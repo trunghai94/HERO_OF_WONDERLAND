@@ -33,7 +33,7 @@ public class HealingArea : MonoBehaviour
         yield return new WaitForSecondsRealtime(waitSecond);
         if (heal)
         {
-            target.GetComponent<PlayerStats>().regen(hp, mp);
+            playerManager.instance.Player.GetComponent<PlayerStats>().regen(hp,mp);
         }
         yield return new WaitForSecondsRealtime(1f);
         heal = false;
