@@ -12,7 +12,7 @@ public class PlayerFighter : MonoBehaviour
     public float coolDownTime = 2f;
     public int noOfClick = 0;
     public GameObject weaponObj;
-
+    enemyController enemyHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +50,7 @@ public class PlayerFighter : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
+                
                 noOfClick++;
                 OnClick();
                 weaponObj.GetComponent<Collider>().enabled = true;
@@ -63,6 +64,7 @@ public class PlayerFighter : MonoBehaviour
             {
                 anim.SetBool("Defend", false);
             }
+            
         }
     }
 

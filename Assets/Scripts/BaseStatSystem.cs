@@ -61,6 +61,7 @@ public class BaseStatSystem : MonoBehaviour
     public void useMP(float MP)
     {
         currentMana -= MP;
+        currentMana = Mathf.Clamp(currentMana, 0 ,int.MaxValue);
     }
     public void regen(float HPregen, float MPregen)
     {

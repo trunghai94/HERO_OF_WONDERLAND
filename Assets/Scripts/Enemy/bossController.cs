@@ -109,6 +109,10 @@ public class bossController : MonoBehaviour
                 attackBox[i].GetComponent<Collider>().enabled = false;
             }
         }
+        if(Input.GetMouseButtonUp(0))
+        {
+            canHit = true;
+        }
     }
 
     void FaceTarget()

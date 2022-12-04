@@ -111,6 +111,7 @@ public class Abilities : MonoBehaviour
             blockImg1.gameObject.SetActive(false);
             if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.Q) && isCooldown1 == false)
             {
+                playerManager.instance.Player.GetComponent<PlayerStats>().useMP (7 * playerManager.instance.Player.GetComponent<PlayerStats>().level);
                 SwordAttack.instance.TornadoAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("Tornado");
@@ -140,6 +141,7 @@ public class Abilities : MonoBehaviour
             blockImg2.gameObject.SetActive(false);
             if (Input.GetKeyDown(KeyCode.E) && isCooldown2 == false)
             {
+                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(3 * playerManager.instance.Player.GetComponent<PlayerStats>().level);
                 SpawnShield.instance.spawnShied();
                 playerManager.instance.Player.GetComponent<PlayerStats>().armor += 10f;
                 isCooldown2 = true;
@@ -166,6 +168,7 @@ public class Abilities : MonoBehaviour
             blockImg3.gameObject.SetActive(false);
             if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.R) && isCooldown3 == false)
             {
+                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(12 * playerManager.instance.Player.GetComponent<PlayerStats>().level);
                 SwordAttack.instance.WaveFireAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("Wave");
@@ -193,6 +196,7 @@ public class Abilities : MonoBehaviour
             blockImg4.gameObject.SetActive(false);
             if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.T) && isCooldown4 == false)
             {
+                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(15 * playerManager.instance.Player.GetComponent<PlayerStats>().level);
                 SwordAttack.instance.BirdLightAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("BirdLight");
@@ -220,6 +224,7 @@ public class Abilities : MonoBehaviour
             blockImg5.gameObject.SetActive(false);
             if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.F) && isCooldown5 == false)
             {
+                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(23 * playerManager.instance.Player.GetComponent<PlayerStats>().level);
                 SwordAttack.instance.SwordAirAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("SwordAir");
