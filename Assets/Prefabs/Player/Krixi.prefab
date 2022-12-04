@@ -1803,6 +1803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDownTime: 2
+  noOfClick: 0
   weaponObj: {fileID: 8642386533928705121}
 --- !u!114 &5290499265693505360
 MonoBehaviour:
@@ -1861,7 +1862,7 @@ MonoBehaviour:
   maxHeath: 0
   maxMana: 0
   basicHP: 1000
-  basicMP: 0
+  basicMP: 300
   level: 1
   str:
     baseValue: 100
@@ -1870,6 +1871,7 @@ MonoBehaviour:
   dmg: 10
   armor: 0
   Hp: {fileID: 0}
+  Mp: {fileID: 0}
   die: 0
   dead: 0
 --- !u!114 &6582052367405886799
@@ -1901,23 +1903,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7439d910e6ee2b7479bbbbb152ea1210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockImg: []
   abilitiesImage0: {fileID: 0}
   cooldown0: 5
   isCooldown0: 0
   abilitiesImage1: {fileID: 0}
+  blockImg1: {fileID: 0}
   cooldown1: 15
   isCooldown1: 0
   abilitiesImage2: {fileID: 0}
+  blockImg2: {fileID: 0}
   cooldown2: 10
   isCooldown2: 0
   abilitiesImage3: {fileID: 0}
+  blockImg3: {fileID: 0}
   cooldown3: 8
   isCooldown3: 0
   abilitiesImage4: {fileID: 0}
+  blockImg4: {fileID: 0}
   cooldown4: 9
   isCooldown4: 0
   abilitiesImage5: {fileID: 0}
+  blockImg5: {fileID: 0}
   cooldown5: 8
   isCooldown5: 0
 --- !u!114 &7957734035449393917

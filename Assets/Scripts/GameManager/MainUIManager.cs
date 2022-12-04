@@ -20,6 +20,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     public Image frontXPBar;
     public Image backXPBar;
     public Image hpImg;
+    public Image mpImg;
     public Image[] skillImg;
     public Image[] blockSkillImg;
     public TextMeshProUGUI textLv;

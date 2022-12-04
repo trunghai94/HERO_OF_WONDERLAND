@@ -15,7 +15,7 @@ public class enemyController : MonoBehaviour
     private float moveSpeed;
     public Animator animator;
     private bool isAttacking = false;
-    private bool canHit = true;
+    public bool canHit = true;
     private bool isMoving = false;
     Transform target;
 
@@ -49,6 +49,7 @@ public class enemyController : MonoBehaviour
 
     void Update()
     {
+        
         if(target==null) target = playerManager.instance.Player.transform;
         dmg = playerManager.instance.Player.GetComponent<PlayerStats>().dmg;
         
@@ -121,6 +122,10 @@ public class enemyController : MonoBehaviour
             }
             die = true;
         }
+        if(Input.GetMouseButtonUp(0))
+        {
+            canHit = true ;
+        }
     }
    
     void FaceTarget()
@@ -156,7 +161,7 @@ public class enemyController : MonoBehaviour
         }
         if (other.gameObject == other.CompareTag("Weapon"))
         {
-            canHit = true;
+            
 
 
         }
