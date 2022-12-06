@@ -24,7 +24,7 @@ public class MonsterSpawner : MonoBehaviour
     private bool canSpawn = true;
     public AudioClip spawnSound;
     private AudioSource spawnSoundSource;
-
+    public GameObject[] healing;
     public GameObject[] wall;
     void Start()
     {
@@ -105,6 +105,11 @@ public class MonsterSpawner : MonoBehaviour
             {
                 wall[i].gameObject.SetActive(false);
             }
+            for (int i = 0; i < wall.Length; i++)
+            {
+                healing[i].SetActive(true);
+            }
+            
         }
     }
     public void SpawnEnemy()

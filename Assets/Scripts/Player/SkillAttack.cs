@@ -6,6 +6,7 @@ public class SkillAttack : MonoBehaviour
 {
     private ParticleSystem _particleSystem;
     private List<ParticleCollisionEvent> particleCollisionEvents;
+    public float dmg;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class SkillAttack : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         ParticlePhysicsExtensions.GetCollisionEvents(_particleSystem, other, particleCollisionEvents);
+        
 
         for(int i = 0; i < particleCollisionEvents.Count; i++)
         {
@@ -23,7 +25,8 @@ public class SkillAttack : MonoBehaviour
             if (collider.CompareTag("Enemy"))
             {
                 var healthEnemy = collider.GetComponent<EnemyStat>();
-                healthEnemy.DealDmg(healthEnemy.gameObject);
+
+                healthEnemy.TakeDmg(dmg + (20*playerManager.instance.GetComponent<PlayerStats>().level));
             }
         }
     }
