@@ -934,6 +934,10 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2562111406475229325, guid: 6f509e28a1f6ba843b61d52d725c615f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetEffVolume
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f509e28a1f6ba843b61d52d725c615f, type: 3}
 --- !u!114 &853890813 stripped
@@ -3251,15 +3255,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundMusic:
-  - name: Background
+  - name: dab
     clip: {fileID: 8300000, guid: e6ee71813e1303e4cb8254dd48304712, type: 3}
-    volume: 1
+    volume: 0
     pitch: 1
     source: {fileID: 0}
     loop: 1
   - name: Background
     clip: {fileID: 8300000, guid: e6ee71813e1303e4cb8254dd48304712, type: 3}
-    volume: 0
+    volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 1
@@ -3276,6 +3280,8 @@ MonoBehaviour:
     pitch: 0
     source: {fileID: 0}
     loop: 1
+  bgmVolume: 0
+  effectVolume: 0
 --- !u!4 &2026891772
 Transform:
   m_ObjectHideFlags: 0
@@ -4115,8 +4121,24 @@ PrefabInstance:
       value: -125
       objectReference: {fileID: 0}
     - target: {fileID: 3665840600172874914, guid: ede625e7f43707f46b919ff799be6b8a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3665840600172874914, guid: ede625e7f43707f46b919ff799be6b8a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3665840600172874914, guid: ede625e7f43707f46b919ff799be6b8a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3665840600172874914, guid: ede625e7f43707f46b919ff799be6b8a, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetBGMUsicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3665840600172874914, guid: ede625e7f43707f46b919ff799be6b8a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SettingAudio, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ede625e7f43707f46b919ff799be6b8a, type: 3}
