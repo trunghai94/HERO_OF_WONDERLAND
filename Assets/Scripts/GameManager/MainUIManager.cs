@@ -24,6 +24,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     public Image[] skillImg;
     public Image[] blockSkillImg;
     public TextMeshProUGUI textLv;
+    public bool backBlockImg = false;
     
     public void OnClickPauseButton()
     {
@@ -69,6 +70,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     public void OnRestartGameButton(string sceneName)
     {
         Time.timeScale = 1f;
+        backBlockImg = true;
         var scene = SceneManager.LoadSceneAsync(sceneName);
         StartCoroutine(RestartGame(scene.progress, pausePanel));
     }

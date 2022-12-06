@@ -106,6 +106,10 @@ public class Abilities : MonoBehaviour
 
     void Abilities1()
     {
+        if(MainUIManager.Instance.backBlockImg == true)
+        {
+            blockImg1.gameObject.SetActive(true);
+        }
         if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 3)
         {
             blockImg1.gameObject.SetActive(false);
@@ -136,7 +140,11 @@ public class Abilities : MonoBehaviour
 
     void Abilities2()
     {
-        if(playerManager.instance.Player.GetComponent<PlayerStats>().level >= 6)
+        if (MainUIManager.Instance.backBlockImg == true)
+        {
+            blockImg2.gameObject.SetActive(true);
+        }
+        if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 6)
         {
             blockImg2.gameObject.SetActive(false);
             if (Input.GetKeyDown(KeyCode.E) && isCooldown2 == false)
@@ -163,6 +171,10 @@ public class Abilities : MonoBehaviour
 
     void Abilities3()
     {
+        if (MainUIManager.Instance.backBlockImg == true)
+        {
+            blockImg3.gameObject.SetActive(true);
+        }
         if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 12)
         {
             blockImg3.gameObject.SetActive(false);
@@ -191,6 +203,10 @@ public class Abilities : MonoBehaviour
 
     void Abilities4()
     {
+        if (MainUIManager.Instance.backBlockImg == true)
+        {
+            blockImg4.gameObject.SetActive(true);
+        }
         if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 17)
         {
             blockImg4.gameObject.SetActive(false);
@@ -219,6 +235,10 @@ public class Abilities : MonoBehaviour
 
     void Abilities5()
     {
+        if (MainUIManager.Instance.backBlockImg == true)
+        {
+            blockImg5.gameObject.SetActive(true);
+        }
         if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 20)
         {
             blockImg5.gameObject.SetActive(false);
