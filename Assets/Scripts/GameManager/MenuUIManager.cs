@@ -17,6 +17,7 @@ public class MenuUIManager : MonoBehaviour
     public void OnClickPlayGame(string sceneName)
     {
         LevelManager.Instance.LoaderScene(sceneName);
+        
         Time.timeScale = 1f;
     }
         

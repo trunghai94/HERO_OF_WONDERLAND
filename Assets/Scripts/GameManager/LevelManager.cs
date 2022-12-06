@@ -43,7 +43,10 @@ public class LevelManager : MonoBehaviour
             _target = scene.progress;
 
         } while (scene.progress < 0.9f);
-
+        if (_target == 1)
+        {
+            AudioManager.Instance.backgroundMusic[1].source.Stop();
+        }
         await System.Threading.Tasks.Task.Delay(1000);
         //scene.allowSceneActivation = true;
         _loaderCanvas.SetActive(false);

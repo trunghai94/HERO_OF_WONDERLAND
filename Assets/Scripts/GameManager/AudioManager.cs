@@ -11,8 +11,8 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
 
     private int currentPlayingBGMIndex = 999;
     private bool shouldPlayBGM = false;
-    private float bgmVolume;
-    private float effectVolume;
+    public float bgmVolume;
+    public float effectVolume;
 
     protected override void Awake()
     {
@@ -21,22 +21,24 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
         bgmVolume = PlayerPrefs.GetFloat(CONSTANT.PP_VOLUME, CONSTANT.DEFAULT_VOLUME);
         effectVolume = PlayerPrefs.GetFloat(CONSTANT.PP_EFVOLUME, CONSTANT.DEFAULT_EFVOLUME);
 
+    }
+    private void Start()
+    {
         CreateAudioSource(backgroundMusic, bgmVolume);
         CreateAudioSource(soundEffect, effectVolume);
-
     }
 
     void Update() //for 1 bgm
     {
-        if (currentPlayingBGMIndex != 999 && !backgroundMusic[currentPlayingBGMIndex].source.isPlaying)
-        {
-            currentPlayingBGMIndex++;
-            if (currentPlayingBGMIndex >= backgroundMusic.Length)
-            {
-                currentPlayingBGMIndex = 0;
-            }
-            backgroundMusic[currentPlayingBGMIndex].source.Play();
-        }
+        //if (currentPlayingBGMIndex != 999 && !backgroundMusic[currentPlayingBGMIndex].source.isPlaying)
+        //{
+        //    currentPlayingBGMIndex++;
+        //    if (currentPlayingBGMIndex >= backgroundMusic.Length)
+        //    {
+        //        currentPlayingBGMIndex = 0;
+        //    }
+        //    backgroundMusic[currentPlayingBGMIndex].source.Play();
+        //}
     }
 
     private void CreateAudioSource(Sound[] sounds, float volume)
@@ -62,15 +64,22 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
         effect.source.Play();
     }
 
-    public void PlayBackgroudMusic()
+    public void PlayBackgroudMusic(string name)
     {
-        if (shouldPlayBGM == false)
+        //if (shouldPlayBGM == false)
+        //{
+        //    shouldPlayBGM = true;
+        //    currentPlayingBGMIndex = UnityEngine.Random.Range(0, backgroundMusic.Length - 1);
+        //    backgroundMusic[currentPlayingBGMIndex].source.volume = backgroundMusic[currentPlayingBGMIndex].volume * bgmVolume;
+        //    backgroundMusic[currentPlayingBGMIndex].source.Play();
+        //}
+        Sound BGM = Array.Find(backgroundMusic, BGM => BGM.name == name);
+        if (BGM == null)
         {
-            shouldPlayBGM = true;
-            currentPlayingBGMIndex = UnityEngine.Random.Range(0, backgroundMusic.Length - 1);
-            backgroundMusic[currentPlayingBGMIndex].source.volume = backgroundMusic[currentPlayingBGMIndex].volume * bgmVolume;
-            backgroundMusic[currentPlayingBGMIndex].source.Play();
+            Debug.LogError("Unable to play effect " + name);
+            return;
         }
+        BGM.source.Play();
     }
 
     public void StopBackgroundMusic()
@@ -86,6 +95,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         return backgroundMusic[currentPlayingBGMIndex].name;
     }
+    
 
     public void SetBGMVolume(float volume)
     {
