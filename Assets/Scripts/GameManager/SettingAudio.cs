@@ -10,31 +10,33 @@ public class SettingAudio : MonoBehaviour
 {
     public Slider BGVolumeSlider;
     public Slider EffectVolumeSlider;
-    public AudioManager AudioSource;
+    AudioManager audioManager;
     private float bgValue, curValue;
     private float efValue, curEfValue;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         LoadBGVolume();
         LoadEffectVolume();
-     
     }
-   public void SetBGMUsicVolume(float value)
+
+    public void SetBGMUsicVolume(float value)
     {
-        foreach (var music in AudioSource.backgroundMusic)
+        foreach (var music in audioManager.backgroundMusic)
         {
             music.source.volume = value;
         }
-        curValue = value;
+        PlayerPrefs.SetFloat(CONSTANT.PP_VOLUME, value);
+
     }
     public void SetEffVolume(float value)
     {
-        foreach(var effect in AudioSource.soundEffect)
+        foreach (var effect in audioManager.soundEffect)
         {
             effect.source.volume = value;
         }
-        curEfValue = value;
+        PlayerPrefs.SetFloat(CONSTANT.PP_EFVOLUME, value);
     }
     void LoadBGVolume()
     {
@@ -47,18 +49,9 @@ public class SettingAudio : MonoBehaviour
     {
         efValue = PlayerPrefs.GetFloat(CONSTANT.PP_EFVOLUME, CONSTANT.DEFAULT_EFVOLUME);
         EffectVolumeSlider.value = efValue;
+        EffectVolumeSlider.value = audioManager.bgmVolume;
+
     }
 
-    public void OnApplySetting()
-    {
-        if(curValue != bgValue)
-        {
-            AudioManager.Instance?.SetBGMVolume(curValue);
-        }
-        if (curEfValue != efValue)
-        {
-            AudioManager.Instance?.SetEffectVolume(efValue);
-        }
-    }
-    
+  
 }

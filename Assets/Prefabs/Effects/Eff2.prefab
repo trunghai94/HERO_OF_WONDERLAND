@@ -4834,7 +4834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3aedeb12d02491c9d29d045f3e73c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 100
 --- !u!199 &1552133900489038918
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -29809,4 +29808,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3aedeb12d02491c9d29d045f3e73c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 50
