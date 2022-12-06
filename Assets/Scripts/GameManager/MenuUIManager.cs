@@ -37,7 +37,7 @@ public class MenuUIManager : MonoBehaviour
     {
         MainMenu.SetActive(true);
         SettingsMenu.SetActive(false);
-        settingAudio.OnApplySetting();
+        //settingAudio.OnApplySetting();
     }
     public void OnClickAudioButton()
     {
@@ -58,5 +58,13 @@ public class MenuUIManager : MonoBehaviour
     {
         MainMenu.SetActive(true);
         _HowTopPlayPanel.SetActive(false);
+    }
+    public void OnClickFaceBookButton(string url = "https://facebook.com")
+    {
+        Application.OpenURL(url);
+    }
+    public void OnClickGoogleButton(string url = "https://https://google.com")
+    {
+        Application.OpenURL(url);
     }
 }

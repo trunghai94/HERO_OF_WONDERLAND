@@ -13,4 +13,6 @@ public class Sound
     [HideInInspector]
     public AudioSource source; //Source play the sound
     public bool loop = false; //Sound should loop?
+
 }
+
