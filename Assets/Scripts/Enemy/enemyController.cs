@@ -28,22 +28,20 @@ public class enemyController : MonoBehaviour
     public GameObject enemyColider;
 
     public GameObject[] attackBox;
-
+    public int ID;
     
 
     private float cooldown = 0.1f;
     private bool die = false;
 
-    private AudioSource playMoveSound,playDieSound;
-    public AudioClip moveSound, dieSound;
+   
     void Start()
     {
         
         agent = GetComponent<NavMeshAgent>();
         stat = GetComponent<EnemyStat>();
         instance = this;
-        playMoveSound = GetComponent<AudioSource>();
-        playDieSound = GetComponent<AudioSource>();
+        
     }
 
 
@@ -58,8 +56,21 @@ public class enemyController : MonoBehaviour
 
         if (distance <= lookRadius && distance>agent.stoppingDistance && !die)
         {
-            if (!isMoving) { playMoveSound.PlayOneShot(moveSound); isMoving = true; }
-            
+            if (!isMoving)
+            {
+                isMoving = true;
+                switch (ID)
+                {
+                    case 1: AudioManager.Instance.PlayEffect("SlimeMove"); break;
+                    case 2: AudioManager.Instance.PlayEffect("GloomMove"); break;
+                    case 3: AudioManager.Instance.PlayEffect("GolemMove"); break;
+
+                    default:
+                        print("can't find ID");
+                        break;
+                }
+            }
+
             agent.speed = moveSpeed;
             agent.SetDestination(target.position);
             animator.SetBool("isMoving", true);
@@ -112,7 +123,16 @@ public class enemyController : MonoBehaviour
 
         if(stat.currentHeath <= 0&& !die)
         {
-            playDieSound.PlayOneShot(dieSound);
+            switch (ID)
+            {
+                case 1: AudioManager.Instance.PlayEffect("SlimeDead"); break;
+                case 2: AudioManager.Instance.PlayEffect("GloomDead"); break;
+                case 3: AudioManager.Instance.PlayEffect("GolemDead"); break;
+
+                default:
+                    print("can't find ID");
+                    break;
+            }
             moveSpeed = 0f;
             enemyColider.GetComponent<Collider>().enabled = false;
             for (int i = 0; i < attackBox.Length; i++)

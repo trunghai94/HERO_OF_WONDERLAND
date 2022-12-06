@@ -569,11 +569,11 @@ MonoBehaviour:
   lookRadius: 20
   moveSpeed: 3
   animator: {fileID: 1163386927420637920}
+  canHit: 1
   enemyColider: {fileID: 1258157178069242126}
   attackBox:
   - {fileID: 7696162019237896576}
-  moveSound: {fileID: 8300000, guid: bc8b271e617df774ab54db1cb089c0eb, type: 3}
-  dieSound: {fileID: 8300000, guid: bcdce082f7d89da4c8700cef33bd9b71, type: 3}
+  ID: 1
 --- !u!82 &5132695888266599083
 AudioSource:
   m_ObjectHideFlags: 0

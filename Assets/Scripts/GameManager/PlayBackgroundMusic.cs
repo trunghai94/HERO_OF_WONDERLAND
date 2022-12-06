@@ -8,6 +8,6 @@ public class PlayBackgroundMusic : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.PlayBackgroudMusic("Background");
-        AudioManager.Instance.PlayEffect("test");
+        
     }
 }

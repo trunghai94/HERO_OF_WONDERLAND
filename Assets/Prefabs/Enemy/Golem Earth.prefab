@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467574305079114993}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 20, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -922,12 +922,12 @@ MonoBehaviour:
   lookRadius: 10
   moveSpeed: 3
   animator: {fileID: 1481753164077012068}
+  canHit: 1
   enemyColider: {fileID: 5277025651198694564}
   attackBox:
   - {fileID: 5932399487724463839}
   - {fileID: 5932399488909506369}
-  moveSound: {fileID: 8300000, guid: cabec6e0044ddbc4dbcff31927a65733, type: 3}
-  dieSound: {fileID: 8300000, guid: 3364f7515bd58ff4f8b726ccd6274200, type: 3}
+  ID: 3
 --- !u!1 &5686285980318548258
 GameObject:
   m_ObjectHideFlags: 0

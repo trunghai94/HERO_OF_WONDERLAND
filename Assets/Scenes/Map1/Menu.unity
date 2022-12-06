@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3137,12 +3137,66 @@ MonoBehaviour:
     pitch: 0
     source: {fileID: 0}
     loop: 0
-  - name: test
-    clip: {fileID: 8300000, guid: 800fa3cbf14c7324b9f82a04e14355f2, type: 3}
+  - name: GloomDead
+    clip: {fileID: 8300000, guid: 00b46db33d5c7844c8525ca242dc52e2, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     source: {fileID: 0}
-    loop: 1
+    loop: 0
+  - name: GloomMove
+    clip: {fileID: 8300000, guid: 91edc613c4aa9d0419d6cafaf07d9f15, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: GolemDead
+    clip: {fileID: 8300000, guid: 3364f7515bd58ff4f8b726ccd6274200, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: GolemMove
+    clip: {fileID: 8300000, guid: 91edc613c4aa9d0419d6cafaf07d9f15, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: SlimeDead
+    clip: {fileID: 8300000, guid: bcdce082f7d89da4c8700cef33bd9b71, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: SlimeMove
+    clip: {fileID: 8300000, guid: bc8b271e617df774ab54db1cb089c0eb, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Spawn
+    clip: {fileID: 8300000, guid: d327401727851104b9a63b3d088eae81, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Boss
+    clip: {fileID: 8300000, guid: bf1074c815ae3084a973a6fafbaf17e8, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: BossScorpion
+    clip: {fileID: 8300000, guid: 603c9fcf9bf6b924699aca704383525c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: BossDead
+    clip: {fileID: 8300000, guid: d80f750d847583b4891fb14a59088708, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
   bgmVolume: 0
   effectVolume: 0
 --- !u!4 &2026891772

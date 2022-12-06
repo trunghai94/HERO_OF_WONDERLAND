@@ -8,6 +8,8 @@ public class Abilities : MonoBehaviour
 {
     private MeshTrailTut MeshTrail;
     private bool Delay = false;
+    private float manaperlevel;
+    private float manaskill1, manaskill2, manaskill3, manaskill4, manaskill5;
 
     [Header("Abilities 0")]
     public Image abilitiesImage0;
@@ -62,6 +64,12 @@ public class Abilities : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        manaperlevel = playerManager.instance.Player.GetComponent<PlayerStats>().level;
+        manaskill1 = 7 + ( 1 * manaperlevel / 10);
+        manaskill2 = 3 + (2 * manaperlevel / 10);
+        manaskill3 = 12 +(3 * manaperlevel / 10);
+        manaskill4 = 15 +(5 * manaperlevel / 10);
+        manaskill5 = 19 + (8* manaperlevel / 10);
         Abilities0();
         Abilities1();
         Abilities2();
@@ -113,9 +121,9 @@ public class Abilities : MonoBehaviour
         if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 3)
         {
             blockImg1.gameObject.SetActive(false);
-            if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.Q) && isCooldown1 == false)
+            if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.Q) && isCooldown1 == false && playerManager.instance.Player.GetComponent<PlayerStats>().currentMana>=manaskill1)
             {
-                playerManager.instance.Player.GetComponent<PlayerStats>().useMP (7 * playerManager.instance.Player.GetComponent<PlayerStats>().level);
+                playerManager.instance.Player.GetComponent<PlayerStats>().useMP (manaskill1);
                 SwordAttack.instance.TornadoAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("Tornado");
@@ -133,7 +141,7 @@ public class Abilities : MonoBehaviour
                     isCooldown1 = false;
                 }
             }
-            Debug.Log("a1");
+            
         }
         
     }
@@ -147,11 +155,11 @@ public class Abilities : MonoBehaviour
         if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 6)
         {
             blockImg2.gameObject.SetActive(false);
-            if (Input.GetKeyDown(KeyCode.E) && isCooldown2 == false)
+            if (Input.GetKeyDown(KeyCode.E) && isCooldown2 == false && playerManager.instance.Player.GetComponent<PlayerStats>().currentMana >= manaskill2)
             {
-                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(3 * playerManager.instance.Player.GetComponent<PlayerStats>().level);
+                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(manaskill2);
                 SpawnShield.instance.spawnShied();
-                playerManager.instance.Player.GetComponent<PlayerStats>().armor += 10f;
+                playerManager.instance.Player.GetComponent<PlayerStats>().armor += 100f;
                 isCooldown2 = true;
                 abilitiesImage2.fillAmount = 1;
             }
@@ -161,7 +169,7 @@ public class Abilities : MonoBehaviour
                 abilitiesImage2.fillAmount -= 1 / cooldown2 * Time.deltaTime;
                 if (abilitiesImage2.fillAmount <= 0)
                 {
-                    playerManager.instance.Player.GetComponent<PlayerStats>().armor -= 10f;
+                    playerManager.instance.Player.GetComponent<PlayerStats>().armor -= 100f;
                     abilitiesImage2.fillAmount = 0f;
                     isCooldown2 = false;
                 }
@@ -178,9 +186,9 @@ public class Abilities : MonoBehaviour
         if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 12)
         {
             blockImg3.gameObject.SetActive(false);
-            if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.R) && isCooldown3 == false)
+            if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.R) && isCooldown3 == false && playerManager.instance.Player.GetComponent<PlayerStats>().currentMana >= manaskill3)
             {
-                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(12 * playerManager.instance.Player.GetComponent<PlayerStats>().level);
+                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(manaskill3);
                 SwordAttack.instance.WaveFireAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("Wave");
@@ -210,9 +218,9 @@ public class Abilities : MonoBehaviour
         if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 17)
         {
             blockImg4.gameObject.SetActive(false);
-            if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.T) && isCooldown4 == false)
+            if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.T) && isCooldown4 == false && playerManager.instance.Player.GetComponent<PlayerStats>().currentMana >= manaskill4)
             {
-                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(15 * playerManager.instance.Player.GetComponent<PlayerStats>().level);
+                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(manaskill4);
                 SwordAttack.instance.BirdLightAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("BirdLight");
@@ -242,9 +250,9 @@ public class Abilities : MonoBehaviour
         if (playerManager.instance.Player.GetComponent<PlayerStats>().level >= 20)
         {
             blockImg5.gameObject.SetActive(false);
-            if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.F) && isCooldown5 == false)
+            if (PlayerMovement.instance.characterController.isGrounded && Input.GetKeyDown(KeyCode.F) && isCooldown5 == false && playerManager.instance.Player.GetComponent<PlayerStats>().currentMana >= manaskill5)
             {
-                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(23 * playerManager.instance.Player.GetComponent<PlayerStats>().level);
+                playerManager.instance.Player.GetComponent<PlayerStats>().useMP(manaskill5);
                 SwordAttack.instance.SwordAirAttack();
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("SwordAir");

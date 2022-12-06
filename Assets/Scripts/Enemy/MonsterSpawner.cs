@@ -22,17 +22,17 @@ public class MonsterSpawner : MonoBehaviour
     private float dmg;
     public Transform spawner;
     private bool canSpawn = true;
-    public AudioClip spawnSound;
-    private AudioSource spawnSoundSource;
+    public int levelAdd;
 
     public GameObject[] wall;
+    public GameObject[] unlocker;
     void Start()
     {
         
         spawner = gameObject.GetComponent<Transform>();
         stat = GetComponent<EnemyStat>();
         counter = numberOfEnemies;
-        spawnSoundSource = gameObject.GetComponent<AudioSource>();
+        
         for (int i = 0; i < wall.Length; i++)
         {
             wall[i].gameObject.SetActive(false);
@@ -46,10 +46,10 @@ public class MonsterSpawner : MonoBehaviour
         if (target == null) target = playerManager.instance.Player.transform;
         counter = Mathf.Clamp(counter, 0, numberOfEnemies);
         dmg = playerManager.instance.Player.GetComponent<PlayerStats>().dmg;
-        
+        levelAdd = playerManager.instance.Player.GetComponent<PlayerStats>().level;
         for (int i = 0; i < enemies.Length; i++)
         {
-            enemies[i].GetComponent<EnemyStat>().level = Random.Range(minLevel, maxLevel);
+            enemies[i].GetComponent<EnemyStat>().level = Random.Range(levelAdd+minLevel, levelAdd+maxLevel);
         }
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= lookRadius && !die)
@@ -105,11 +105,15 @@ public class MonsterSpawner : MonoBehaviour
             {
                 wall[i].gameObject.SetActive(false);
             }
+            for (int i = 0; i < wall.Length; i++)
+            {
+                unlocker[i].gameObject.SetActive(true);
+            }
         }
     }
     public void SpawnEnemy()
     {
-        spawnSoundSource.PlayOneShot(spawnSound);
+        AudioManager.Instance.PlayEffect("Spawn");
         animator.SetTrigger("spawn");
         if (counter > 0)
         {

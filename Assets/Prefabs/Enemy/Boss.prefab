@@ -228,7 +228,7 @@ MonoBehaviour:
   - {fileID: 584774278780703762}
   - {fileID: 3805616854482094411}
   - {fileID: 560287396117986793}
-  Hpbar: {fileID: 5644816302972754687}
+  ID: 1
 --- !u!1 &560287396117986793
 GameObject:
   m_ObjectHideFlags: 0

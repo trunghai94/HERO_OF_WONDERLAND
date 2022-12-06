@@ -31,7 +31,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
         if (freelockCam == null) freelockCam = LoadCharacter.Instance.cineCamera;
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
-       
+        freelockCam.m_XAxis.m_MaxSpeed = 0;
         HPBar.SetActive(false);
         SkillBar.SetActive(false);
         freelockCam.m_XAxis.m_InputAxisName = string.Empty;
@@ -59,7 +59,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
             MiniMap.SetActive(true);
         }
         Time.timeScale = 1f;
-        
+        freelockCam.m_XAxis.m_MaxSpeed = 300;
         HPBar.SetActive(true);
         SkillBar.SetActive(true);
         freelockCam.m_XAxis.m_InputAxisName = "Mouse X";
@@ -70,6 +70,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     public void OnRestartGameButton(string sceneName)
     {
         Time.timeScale = 1f;
+        freelockCam.m_XAxis.m_MaxSpeed = 0;
         backBlockImg = true;
         var scene = SceneManager.LoadSceneAsync(sceneName);
         StartCoroutine(RestartGame(scene.progress, pausePanel));
@@ -93,6 +94,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
         SkillBar.SetActive(false);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        freelockCam.m_XAxis.m_MaxSpeed = 0;
         //freelockCam.m_XAxis.m_InputAxisName = string.Empty;
         //freelockCam.m_YAxis.m_InputAxisName = string.Empty;
         
@@ -108,6 +110,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     public void BackToMenuAtLose(string sceneName)
     {
         var scene = SceneManager.LoadSceneAsync(sceneName);
+        freelockCam.m_XAxis.m_MaxSpeed = 300;
         StartCoroutine(RestartGame(scene.progress, LosePanrl));
     }
    
@@ -123,6 +126,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
         HPBar.SetActive(true);
         MiniMap.SetActive(true);
         SkillBar.SetActive(true);
+        freelockCam.m_XAxis.m_MaxSpeed = 300;
     }
     public void OnClickedReturnMenu()
     {

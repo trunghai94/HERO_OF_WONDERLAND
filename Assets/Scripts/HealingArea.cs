@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealingArea : MonoBehaviour
 {
-    private float waitSecond;
+    public float waitSecond;
     public float lookRadius = 10f;
     Transform target;
     public float hp,mp;
@@ -35,7 +35,7 @@ public class HealingArea : MonoBehaviour
         {
             playerManager.instance.Player.GetComponent<PlayerStats>().regen(hp,mp);
         }
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         heal = false;
     }
 }

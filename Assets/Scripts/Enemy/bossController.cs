@@ -24,7 +24,7 @@ public class bossController : MonoBehaviour
     private float dmg;
 
     public GameObject[] attackBox;
-
+    public int ID;
 
     private float cooldown = 7f;
     private float skillMove;
@@ -61,6 +61,11 @@ public class bossController : MonoBehaviour
         }
         if (distance <= agent.stoppingDistance && !die)
         {
+            switch (ID)
+            {
+                case 1: AudioManager.Instance.PlayEffect("Boss"); break;
+                case 2: AudioManager.Instance.PlayEffect("BossScropion"); break;
+            }
             //facetoface
             FaceTarget();
             //attack
@@ -100,6 +105,11 @@ public class bossController : MonoBehaviour
 
         if (stat.currentHeath <= 0)
         {
+            switch (ID)
+            {
+                case 1: AudioManager.Instance.PlayEffect("BossDead"); break;
+                case 2: AudioManager.Instance.PlayEffect("BossScropion"); break;
+            }
             die = true;
             moveSpeed = 0f;
             //Win panel.setactive=true;
