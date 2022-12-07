@@ -11,7 +11,7 @@ public class MeshTrailTut : MonoBehaviour
     public float meshRefreshRate = 0.1f;
     public float meshDestroyDelay = 3f;
     public Transform positionToSpawn;
-    public AudioClip audioClip;
+    //public AudioClip audioClip;
 
     [Header("Shader Related")]
     public Material mat;
@@ -36,7 +36,6 @@ public class MeshTrailTut : MonoBehaviour
         if (playerMovement.isSprint == true && !isTrailActive)
         {
             isTrailActive = true;
-            audioSource.PlayOneShot(audioClip);
             StartCoroutine(ActiveTrail(activeTime));
         }
     }

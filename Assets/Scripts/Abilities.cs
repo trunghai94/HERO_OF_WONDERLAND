@@ -84,13 +84,19 @@ public class Abilities : MonoBehaviour
         {
             if(Delay == false)
             {
-                if(PlayerMovement.instance.isSprint == true)
+                if (PlayerMovement.instance.isSprint == true)
                 {
+                    //AudioManager.Instance.soundEffect[23].source.PlayOneShot(AudioManager.Instance.soundEffect[23].clip);
+
                     PlayerMovement.instance.Sprint = 4f;
                     StartCoroutine(DelaySprint(3f));
                     abilitiesImage0.fillAmount = 1;
                 }
-                else PlayerMovement.instance.Sprint = 1f;
+                else
+                {
+                    PlayerMovement.instance.Sprint = 1f;
+                    //AudioManager.Instance.soundEffect[23].source.Stop();
+                }
 
             }
         }

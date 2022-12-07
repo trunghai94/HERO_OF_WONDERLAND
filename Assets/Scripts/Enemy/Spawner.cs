@@ -14,8 +14,8 @@ public class Spawner : MonoBehaviour
     private float lookRadius = 10f;
     Transform target;
     private bool canSpawn = true;
-    public AudioClip spawnSound;
-    private AudioSource spawnSoundSource;
+    //public AudioClip spawnSound;
+    //private AudioSource spawnSoundSource;
     public Transform spawner;
 
 
@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour
     {
         spawner = gameObject.GetComponent<Transform>();
         //target = playerManager.instance.Player.transform;
-        spawnSoundSource = gameObject.GetComponent<AudioSource>();
+        //spawnSoundSource = gameObject.GetComponent<AudioSource>();
         
     }
 
@@ -57,8 +57,7 @@ public class Spawner : MonoBehaviour
     
     public void SpawnEnemy()
     {
-        spawnSoundSource.PlayOneShot(spawnSound);
-        
+        AudioManager.Instance.PlayEffect("Spawn");
         if (counter > 0)
         {
             Instantiate(enemies[Random.Range(0, enemies.Length)], new Vector3(spawner.transform.position.x + Random.Range(0, 5), spawner.transform.position.y, spawner.transform.position.z + Random.Range(0, 5)), Quaternion.identity);

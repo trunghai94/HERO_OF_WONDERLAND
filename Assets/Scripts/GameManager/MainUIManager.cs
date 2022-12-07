@@ -15,6 +15,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     public GameObject HPBar;
     public GameObject LosePanrl;
     public GameObject SkillBar;
+    public GameObject VictoryPanel;
     [HideInInspector]
     public CinemachineFreeLook freelockCam;
     public Image frontXPBar;
@@ -31,7 +32,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
         if (freelockCam == null) freelockCam = LoadCharacter.Instance.cineCamera;
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
-        freelockCam.m_XAxis.m_MaxSpeed = 0;
+        //freelockCam.m_XAxis.m_MaxSpeed = 0;
         HPBar.SetActive(false);
         SkillBar.SetActive(false);
         freelockCam.m_XAxis.m_InputAxisName = string.Empty;
@@ -59,7 +60,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
             MiniMap.SetActive(true);
         }
         Time.timeScale = 1f;
-        freelockCam.m_XAxis.m_MaxSpeed = 300;
+        //freelockCam.m_XAxis.m_MaxSpeed = 300;
         HPBar.SetActive(true);
         SkillBar.SetActive(true);
         freelockCam.m_XAxis.m_InputAxisName = "Mouse X";
@@ -70,7 +71,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     public void OnRestartGameButton(string sceneName)
     {
         Time.timeScale = 1f;
-        freelockCam.m_XAxis.m_MaxSpeed = 0;
+        //freelockCam.m_XAxis.m_MaxSpeed = 0;
         backBlockImg = true;
         var scene = SceneManager.LoadSceneAsync(sceneName);
         StartCoroutine(RestartGame(scene.progress, pausePanel));
@@ -84,34 +85,50 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
     }
     public void ShowUIWinGame()
     {
-        
-    }
-    public void ShowUILooseGame()
-    {
-        LosePanrl.SetActive(true);
+        VictoryPanel.SetActive(true);
+        AudioManager.Instance.PlayEffect("Victory");
         Time.timeScale = 0f;
         HPBar.SetActive(false);
         SkillBar.SetActive(false);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        freelockCam.m_XAxis.m_MaxSpeed = 0;
+        //freelockCam.m_XAxis.m_MaxSpeed = 0;
+    }
+    public void ShowUILooseGame()
+    {
+        LosePanrl.SetActive(true);
+        AudioManager.Instance.PlayEffect("Lose");
+        Time.timeScale = 0f;
+        HPBar.SetActive(false);
+        SkillBar.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        //freelockCam.m_XAxis.m_MaxSpeed = 0;
         //freelockCam.m_XAxis.m_InputAxisName = string.Empty;
         //freelockCam.m_YAxis.m_InputAxisName = string.Empty;
-        
+
 
     }
     public void RestartGameAtLose(string sceneName)
     {
         Time.timeScale = 1f;
+        backBlockImg = true;
         LevelManager.Instance.LoaderScene(sceneName);
         LosePanrl.SetActive(false);
         OnClickedStartGame();
     }
     public void BackToMenuAtLose(string sceneName)
     {
-        var scene = SceneManager.LoadSceneAsync(sceneName);
+        LevelManager.Instance.LoaderScene(sceneName);
         freelockCam.m_XAxis.m_MaxSpeed = 300;
-        StartCoroutine(RestartGame(scene.progress, LosePanrl));
+        LosePanrl.SetActive(false);
+        OnClickedReturnMenu();
+    }
+    public void BacktoMenuAtWin(string sceneName)
+    {
+        LevelManager.Instance.LoaderScene(sceneName);
+        VictoryPanel.SetActive(false);
+        OnClickedReturnMenu();
     }
    
     IEnumerator RestartGame(float time, GameObject panel)

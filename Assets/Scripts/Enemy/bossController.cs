@@ -64,7 +64,7 @@ public class bossController : MonoBehaviour
             switch (ID)
             {
                 case 1: AudioManager.Instance.PlayEffect("Boss"); break;
-                case 2: AudioManager.Instance.PlayEffect("BossScropion"); break;
+                case 2: AudioManager.Instance.PlayEffect("BossScorpion"); break;
             }
             //facetoface
             FaceTarget();
@@ -108,11 +108,15 @@ public class bossController : MonoBehaviour
             switch (ID)
             {
                 case 1: AudioManager.Instance.PlayEffect("BossDead"); break;
-                case 2: AudioManager.Instance.PlayEffect("BossScropion"); break;
+                case 2: AudioManager.Instance.PlayEffect("BossScorpion"); break;
             }
             die = true;
             moveSpeed = 0f;
-            //Win panel.setactive=true;
+            if(ID==1)
+            {
+                MainUIManager.Instance.ShowUIWinGame();
+            }
+            
             for (int i = 0; i < attackBox.Length; i++)
             {
 
