@@ -23,7 +23,7 @@ public class ParticleCollisionInstance : MonoBehaviour
     }
     void OnParticleCollision(GameObject other)
     {      
-        int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);     
+        int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
         for (int i = 0; i < numCollisionEvents; i++)
         {
             foreach (var effect in EffectsOnCollision)

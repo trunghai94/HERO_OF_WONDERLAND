@@ -126,7 +126,7 @@ public class MainUIManager : SingletonMonoBehaviour<MainUIManager>
         HPBar.SetActive(true);
         MiniMap.SetActive(true);
         SkillBar.SetActive(true);
-        freelockCam.m_XAxis.m_MaxSpeed = 300;
+        //freelockCam.m_XAxis.m_MaxSpeed = 300;
     }
     public void OnClickedReturnMenu()
     {

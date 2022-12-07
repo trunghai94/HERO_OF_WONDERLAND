@@ -125,6 +125,8 @@ public class Abilities : MonoBehaviour
             {
                 playerManager.instance.Player.GetComponent<PlayerStats>().useMP (manaskill1);
                 SwordAttack.instance.TornadoAttack();
+                AudioManager.Instance.PlayEffect("SkillQ");
+                AudioManager.Instance.PlayEffect("Skill_Q");
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("Tornado");
                 isCooldown1 = true;
@@ -159,6 +161,7 @@ public class Abilities : MonoBehaviour
             {
                 playerManager.instance.Player.GetComponent<PlayerStats>().useMP(manaskill2);
                 SpawnShield.instance.spawnShied();
+                AudioManager.Instance.PlayEffect("Skill_E");
                 playerManager.instance.Player.GetComponent<PlayerStats>().armor += 100f;
                 isCooldown2 = true;
                 abilitiesImage2.fillAmount = 1;
@@ -190,6 +193,7 @@ public class Abilities : MonoBehaviour
             {
                 playerManager.instance.Player.GetComponent<PlayerStats>().useMP(manaskill3);
                 SwordAttack.instance.WaveFireAttack();
+                AudioManager.Instance.PlayEffect("Skill_R");
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("Wave");
                 isCooldown3 = true;
@@ -222,6 +226,7 @@ public class Abilities : MonoBehaviour
             {
                 playerManager.instance.Player.GetComponent<PlayerStats>().useMP(manaskill4);
                 SwordAttack.instance.BirdLightAttack();
+                AudioManager.Instance.PlayEffect("Skill_T");
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("BirdLight");
                 isCooldown4 = true;
@@ -254,6 +259,7 @@ public class Abilities : MonoBehaviour
             {
                 playerManager.instance.Player.GetComponent<PlayerStats>().useMP(manaskill5);
                 SwordAttack.instance.SwordAirAttack();
+                AudioManager.Instance.PlayEffect("Skill_F");
                 PlayerMovement.instance.moveSpeed = 0f;
                 PlayerMovement.instance.animator.SetTrigger("SwordAir");
                 isCooldown5 = true;

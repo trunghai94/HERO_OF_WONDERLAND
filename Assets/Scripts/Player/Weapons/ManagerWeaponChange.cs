@@ -40,6 +40,7 @@ public class ManagerWeaponChange : MonoBehaviour
             StartCoroutine(ChangeShields(weaponIndex));
 
             indexPreviousWeapons = weaponIndex;
+            AudioManager.Instance.PlayEffect("SwordAndShied");
         }
     }
 

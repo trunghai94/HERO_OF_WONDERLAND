@@ -50,7 +50,6 @@ public class PlayerFighter : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                
                 noOfClick++;
                 OnClick();
                 weaponObj.GetComponent<Collider>().enabled = true;
@@ -71,34 +70,35 @@ public class PlayerFighter : MonoBehaviour
     void OnClick()
     {
         lastClickTime = Time.time;
-        
         noOfClick = Mathf.Clamp(noOfClick, 0, 8);
         Debug.Log("noOfClick: " + noOfClick);
         if (noOfClick == 1)
         {
             anim.SetBool("Attack1", true);
+            AudioManager.Instance.PlayEffect("Sword_sfx");
         }
         else if (noOfClick >= 2 && anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("Attack01"))
         {
             //anim.SetBool("Attack1", false);
             //anim.SetBool("Attack2", true);
             anim.SetTrigger("attack02");
+            AudioManager.Instance.PlayEffect("Sword_sfx");
         }
         else if (noOfClick >= 3 && anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("Attack02"))
         {
             //anim.SetBool("Attack2", false);
             //anim.SetBool("Attack3", true);
             anim.SetTrigger("attack02");
+            AudioManager.Instance.PlayEffect("Sword_sfx");
         }
         else if (noOfClick >= 4 && anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("Attack03"))
         {
             //anim.SetBool("Attack3", false);
             //anim.SetBool("Attack4", true);
             anim.SetTrigger("attack02");
+            AudioManager.Instance.PlayEffect("Sword_sfx");
             noOfClick = 0;
         }
-        
-        
     }
 
     IEnumerator CheckCollier()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1302,37 +1302,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221254394}
   m_CullTransparentMesh: 1
---- !u!1 &1246614998
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1246614999}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1246614999
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246614998}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.29698, y: 72.44521, z: 28.756878}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1262899304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3193,6 +3162,54 @@ MonoBehaviour:
     loop: 0
   - name: BossDead
     clip: {fileID: 8300000, guid: d80f750d847583b4891fb14a59088708, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: SkillQ
+    clip: {fileID: 8300000, guid: bbaa01f08409bbc4f81195f97a5691b0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Skill_Q
+    clip: {fileID: 8300000, guid: 88937f0a3913262489abad1a05101b99, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Skill_R
+    clip: {fileID: 8300000, guid: a4bf404bfb6c9af4fada90735865165e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Skill_T
+    clip: {fileID: 8300000, guid: 8162fce50ef98b149937bd417cf95f82, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Skill_F
+    clip: {fileID: 8300000, guid: e6efdd1dc530432448c58b2a03c213a3, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Sword_sfx
+    clip: {fileID: 8300000, guid: e7d151049c7fe2349b919bfd3a9683b6, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Skill_E
+    clip: {fileID: 8300000, guid: ba5cfc26017b4b04b8f3d2a22b8d2f27, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: SwordAndShied
+    clip: {fileID: 8300000, guid: 895cc54e0a555f94c9facf5bf17d1a8b, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
