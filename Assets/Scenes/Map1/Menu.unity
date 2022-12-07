@@ -3437,12 +3437,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundMusic:
-  - name: dab
-    clip: {fileID: 8300000, guid: e6ee71813e1303e4cb8254dd48304712, type: 3}
-    volume: 0
-    pitch: 1
-    source: {fileID: 0}
-    loop: 1
   - name: Background
     clip: {fileID: 8300000, guid: e6ee71813e1303e4cb8254dd48304712, type: 3}
     volume: 1
