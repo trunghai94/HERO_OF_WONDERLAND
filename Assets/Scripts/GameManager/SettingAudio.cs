@@ -48,8 +48,7 @@ public class SettingAudio : MonoBehaviour
     void LoadEffectVolume()
     {
         efValue = PlayerPrefs.GetFloat(CONSTANT.PP_EFVOLUME, CONSTANT.DEFAULT_EFVOLUME);
-        EffectVolumeSlider.value = efValue;
-        EffectVolumeSlider.value = audioManager.bgmVolume;
+        EffectVolumeSlider.value = efValue;        
 
     }
 
